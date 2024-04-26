@@ -1,41 +1,43 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-import Link from 'next/link'
-import Logo from './logo'
-import Dropdown from '@/components/utils/dropdown'
-import MobileMenu from './mobile-menu'
+import Link from "next/link";
+import Logo from "./logo";
+import Dropdown from "@/components/utils/dropdown";
+import MobileMenu from "./mobile-menu";
 
 export default function Header() {
-
-  const [top, setTop] = useState<boolean>(true)
+  const [top, setTop] = useState<boolean>(true);
 
   // detect whether user has scrolled the page down by 10px
   const scrollHandler = () => {
-    window.pageYOffset > 10 ? setTop(false) : setTop(true)
-  }  
+    window.pageYOffset > 10 ? setTop(false) : setTop(true);
+  };
 
   useEffect(() => {
-    scrollHandler()
-    window.addEventListener('scroll', scrollHandler)
-    return () => window.removeEventListener('scroll', scrollHandler)
-  }, [top])
+    scrollHandler();
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
 
   return (
-    <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : ''}`}>
-      <div className="max-w-6xl mx-auto px-5 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header
+      className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
+        !top ? "bg-white backdrop-blur-sm shadow-lg" : ""
+      }`}
+    >
+      {/* <div className="max-w-6xl mx-auto px-5 sm:px-6"> */}
+      <div className="flex max-w-6xl mx-auto px-5 sm:px-6   items-center justify-between w-full h-16 md:h-20">
+        {/* Site branding */}
+        <div className="shrink-0 mr-4">
+          <Logo />
+        </div>
 
-          {/* Site branding */}
-          <div className="shrink-0 mr-4">
-            <Logo />
-          </div>
-
-          {/* Desktop navigation */}
-          {/* <nav className="hidden md:flex md:grow"> */}
-            {/* Desktop sign in links */}
-            {/* <ul className="flex grow justify-end flex-wrap items-center">
+        {/* Desktop navigation */}
+        {/* <nav className="hidden md:flex md:grow"> */}
+        {/* Desktop sign in links */}
+        {/* <ul className="flex grow justify-end flex-wrap items-center">
               <li>
                 <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
               </li>
@@ -51,10 +53,73 @@ export default function Header() {
 
           </nav> */}
 
-          <MobileMenu />
+        <nav className="hidden md:flex  md:grow justify-end">
+          <ul className="flex items-center gap-x-7 text-sm font-medium py-12">
+            <li>
+              <Link
+                href="/"
+                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/services"
+                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+              >
+                Service
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blogs"
+                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+              >
+                Blogs
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/chooseus"
+                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+              >
+                Why Choose Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+              >
+                About us
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+              >
+                Contact us
+              </Link>
+            </li>
+          </ul>
+          {/* <div className="flex items-center pl-5 gap-x-5">
+            <Link href="/signup" className="text-[#0F1B4C]">
+              Sign up
+            </Link>
+            <Link
+              href="/register"
+              className="text-white rounded-lg bg-[#0F1B4C] px-5  py-2"
+            >
+              Register
+            </Link>
+          </div> */}
+        </nav>
 
-        </div>
+        <MobileMenu />
       </div>
+      {/* </div> */}
     </header>
-  )
+  );
 }
