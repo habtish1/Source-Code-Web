@@ -54,7 +54,7 @@ export default function Header() {
           </nav> */}
 
         <nav className="hidden md:flex  md:grow justify-end">
-          <ul className="flex items-center gap-x-7 text-sm font-medium py-12">
+          <ul className="flex items-center gap-x-4 text-sm font-medium py-12">
             <li>
               <Link
                 href="/"
@@ -79,18 +79,18 @@ export default function Header() {
                 Blogs
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/chooseus"
-                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-gray-600 text-nowrap hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Why Choose Us
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="/about"
-                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-gray-600 text-nowrap hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 About us
               </Link>
@@ -98,7 +98,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact"
-                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-gray-600 text-nowrap hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Contact us
               </Link>
@@ -116,6 +116,14 @@ export default function Header() {
             </Link>
           </div> */}
         </nav>
+        <div>
+          <a
+            href="#"
+            className="max-md:hidden px-8 py-3 text-base leading-6 text-nowrap bg-blue-600 text-white ml-4 rounded-md font-medium"
+          >
+            Available gigs
+          </a>
+        </div>
 
         <MobileMenu />
       </div>
