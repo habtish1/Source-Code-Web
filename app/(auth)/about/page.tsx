@@ -7,20 +7,6 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import avatar from "@/public/images/avatar.png";
 
-// export default function DefaultLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   useEffect(() => {
-//     AOS.init({
-//       once: true,
-//       disable: "phone",
-//       duration: 700,
-//       easing: "ease-out-cubic",
-//     });
-//   });
-
 export default function About() {
   useEffect(() => {
     AOS.init({

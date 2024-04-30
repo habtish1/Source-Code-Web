@@ -116,13 +116,14 @@ export default function Header() {
             </Link>
           </div> */}
         </nav>
-        <div>
-          <a
+        <div className="ml-2 max-md:hidden">
+          <a href="tel:+1234567890"> +251 115-7890</a>
+          {/* <a
             href="#"
             className="max-md:hidden px-8 py-3 text-base leading-6 text-nowrap bg-blue-600 text-white ml-4 rounded-md font-medium"
           >
             Available gigs
-          </a>
+          </a> */}
         </div>
 
         <MobileMenu />
