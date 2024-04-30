@@ -16,7 +16,7 @@ export default function Contact() {
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="w-full flex flex-col gap-y-4 md:flex-row max-h-max mx-auto pt-32  pb-12 md:pt-40 md:pb-20">
+        <div className="w-full flex flex-col gap-y-4 md:flex-row h-auto mx-auto pt-32  pb-12 md:pt-40 md:pb-20">
           <div className="max-w-[682px]  w-full max-h-max bg-white py-8 mr-8">
             <div className="w-full h-auto ">
               <h1 className="h5 mt-4">contact us</h1>
@@ -89,8 +89,8 @@ export default function Contact() {
 
         {/* map and address */}
         <div className="w-full flex flex-col gap-y-8 md:flex-row max-h-max mx-auto pt-6  pb-12 md:pt-10 md:pb-20">
-          <div className="max-w-[682px]  w-full max-h-max  py-8">
-            <div className="w-full h-20 ">
+          <div className="max-w-[682px] w-full py-4  md:py-8">
+            <div className="w-full max-h-max ">
               <h1 className="h3 mt-4">Addis Ababa, Ethiopia</h1>
               <p className="text-base mt-4">22, around golagol</p>
               <h1 className="h4 mt-4">commet building, </h1>
