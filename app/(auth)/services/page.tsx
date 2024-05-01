@@ -6,6 +6,8 @@ export const metadata = {
 import Image from "next/image";
 import Link from "next/link";
 import team_1 from "@/public/images/team-1.png";
+import team_2 from "@/public/images/team-2.png";
+import team_3 from "@/public/images/team-3.png";
 import author from "@/public/images/author.png";
 
 export default function SignIn() {
@@ -81,7 +83,7 @@ export default function SignIn() {
           {/* <div className="w-full bg-blue-400 max-h-max"> */}
           <Image
             className="max-w-xl w-full max-h-[473px]"
-            src={team_1}
+            src={team_2}
             alt=""
           />
           {/* </div> */}
@@ -117,7 +119,7 @@ export default function SignIn() {
           {/* <div className="w-full bg-blue-400 max-h-max"> */}
           <Image
             className="max-w-xl w-full max-h-[473px]"
-            src={team_1}
+            src={team_3}
             alt=""
           />
           {/* </div> */}
