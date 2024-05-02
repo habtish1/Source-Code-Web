@@ -24,6 +24,7 @@ import python from "@/public/icons/Python.png";
 import ruby from "@/public/icons/RubyOnRails.png";
 import go from "@/public/icons/Go.png";
 import mon from "@/public/icons/mon 1.png";
+import trophy from "@/public/icons/trophy.png";
 
 export default function Services() {
   return (
@@ -247,12 +248,118 @@ export default function Services() {
       </section>
 
       {/* alkaline works */}
-      <section className="max-w-6xl h-auto mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-24 md:mt-8 ">
+      <section className="max-w-6xl bg-gray-100  h-auto mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-24 md:mt-8 ">
         <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-20 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
           <h1 className="h3 font-normal pt-6">How development </h1>
           <h1 className="h3 capitalize">through Alcaline works</h1>
         </div>
-        <div className="w-full flex h-32  border border-gray-400 justify-center items-center  gap-x-14"></div>
+
+        <div className="w-full flex h-auto justify-center items-center  gap-x-14">
+          <div className="flex flex-wrap max-[850px]:flex-col items-center justify-center p-8">
+            <div className="flex max-md:flex-col mx-auto max-md:items-center justify-between items-end gap-16 gap-y-5">
+              <div className="max-w-96 after:flex after:relative after:mx-auto after:h-10 after:w-1 after:bg-red-500 after:top-5">
+                <div className="bg-white p-4 rounded-lg shadow ">
+                  <h2 className="text-lg font-semibold">
+                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
+                      #1
+                    </span>{" "}
+                    Assemble the right team
+                  </h2>
+                  <p className="mt-2 text-zinc-600">
+                    We handle all aspects of vetting and choosing the right team
+                    that you don't have the time, expertise, or desire to do.
+                  </p>
+                </div>
+              </div>
+              <div className="max-w-96 after:flex after:relative after:mx-auto after:h-10 after:w-1 after:bg-red-500 after:top-5">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h2 className="text-lg font-semibold">
+                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
+                      #2
+                    </span>{" "}
+                    Sprint planning
+                  </h2>
+                  <p className="mt-2 text-zinc-600">
+                    Sprint roadmap is a collective planning effort. Team members
+                    collaborate to clarify items and ensure shared
+                    understanding.
+                  </p>
+                </div>
+              </div>
+
+              <div className="max-w-96 after:flex after:relative after:mx-auto after:h-10 after:w-1 after:bg-red-500 after:top-5  after:max-md:hidden">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h2 className="text-lg font-semibold">
+                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
+                      #3
+                    </span>{" "}
+                    Tech architecture
+                  </h2>
+                  <p className="mt-2 text-zinc-600">
+                    We break monolithic apps into microservices. Decoupling the
+                    code allows teams to move faster and more independently.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className=" flex w-full justify-center items-center">
+              <hr className=" w-full max-md:hidden h-1 bg-red-500 " />
+              <Image
+                className="relative max-md:invisible right-0"
+                src={trophy}
+                alt=""
+              />
+            </div>
+            {/* <hr className="h-full w-1 bg-red-500 z-10" /> */}
+            <div className="flex max-md:flex-col justify-center items-start gap-x-16 gap-y-5 ">
+              <div className="max-w-96 before:flex before:relative before:mx-auto before:h-10 before:w-1 before:bg-red-500 before:-top-5 before:max-md:top-0 ">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h2 className="text-lg font-semibold">
+                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
+                      #4
+                    </span>{" "}
+                    Standups & weekly demos
+                  </h2>
+                  <p className="mt-2 text-zinc-600">
+                    Standups, weekly demos, and weekly reviews make sure
+                    everyone is on the same page and can raise their concerns.
+                  </p>
+                </div>
+              </div>
+              <div className="max-w-96 before:flex before:relative before:mx-auto before:h-10 before:w-1 before:bg-red-500 before:-top-5 before:max-md:top-0">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h2 className="text-lg font-semibold">
+                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
+                      #5
+                    </span>{" "}
+                    Code reviews
+                  </h2>
+                  <p className="mt-2 text-zinc-600">
+                    Code reviews before release help detect issues like memory
+                    leaks, file leaks, performance signs, and general bad
+                    smells.
+                  </p>
+                </div>
+              </div>
+              <div className="max-w-96 before:flex before:relative before:mx-auto before:h-10 before:w-1 before:bg-red-500 before:-top-5 before:max-md:top-0">
+                <div className="bg-white p-4 rounded-lg shadow">
+                  <h2 className="text-lg font-semibold">
+                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
+                      #6
+                    </span>{" "}
+                    Iterative delivery
+                  </h2>
+                  <p className="mt-2 text-zinc-600">
+                    We divide the implementation process into several
+                    checkpoints rather than a single deadline.
+                  </p>
+                </div>
+                <div className="mx-auto w-1 md:hidden h-5 bg-red-500"></div>
+                <Image className="mx-auto md:hidden mt-2" src={trophy} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
   );
