@@ -1,7 +1,4 @@
-export const metadata = {
-  title: "Sign In - Simple",
-  description: "Page description",
-};
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -25,37 +22,80 @@ import ruby from "@/public/icons/RubyOnRails.png";
 import go from "@/public/icons/Go.png";
 import mon from "@/public/icons/mon 1.png";
 import trophy from "@/public/icons/trophy.png";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Services() {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  });
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white sm:px-6">
-      <section className="max-w-6xl mx-auto px-4  pt-20  pb-12 md:pt-32 md:pb-20">
+      <section className="max-w-6xl mx-auto px-4  pt-16  pb-12 md:pt-[95px] md:pb-20">
         <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-16 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1 className="h3 font-normal pt-6">Way of building</h1>
-          <h1 className="h3">Great Software</h1>
+          <h1
+            className="h3 font-normal pt-6"
+            data-aos="zoom-y-out"
+            data-aos-delay="100"
+          >
+            Way of building
+          </h1>
+          <h1 className="h3" data-aos="zoom-y-out" data-aos-delay="200">
+            Great Software
+          </h1>
         </div>
 
         <div className="flex flex-col justify-center items-center md:flex-row gap-x-24 gap-y-4 ">
           <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full  h-auto">
-            <h1 className="h4 max-h-max">Build the right team to scale</h1>
-            <p className="w-full pb-2">
+            <h1
+              className="h4 max-h-max"
+              data-aos="zoom-y-out"
+              data-aos-delay="200"
+            >
+              Build the right team to scale
+            </h1>
+            <p
+              className="w-full pb-2"
+              data-aos="zoom-y-out"
+              data-aos-delay="100"
+            >
               Finding the right talent is not easy. We help you find the talent
               that suits your needs, follows your processes, and sticks with you
               long term (not the case with freelancers
             </p>
             <div className="w-full pb-2">
-              <p className="w-full pb-2 mb-5">
+              <p className="w-full pb-2 mb-5" data-aos="zoom-y-out">
                 Our delivery model helps you cut costs and deliver within
                 budget.
               </p>
-              <q className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4">
+              <q
+                className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4"
+                data-aos="fade-out"
+                data-aos-delay="100"
+              >
                 "Simform is quick to identify larger problem with the Software
                 so we decided to expand our scope to build new modules"
               </q>
             </div>
             <div className="flex gap-2">
-              <Image className="w-10 h-10 rounded-full" src={author} alt="" />
-              <div className="flex flex-col">
+              <Image
+                className="w-10 h-10 rounded-full"
+                src={author}
+                alt=""
+                data-aos="slide-up"
+                data-aos-delay="10"
+              />
+              <div
+                className="flex flex-col"
+                data-aos="slide-left"
+                data-aos-delay="10"
+              >
                 <p className="text-sm text-nowrap">Jordan Mirchev</p>
                 <p className="text-sm font-light text-nowrap uppercase">ceo</p>
               </div>
@@ -66,31 +106,57 @@ export default function Services() {
             className="max-w-xl w-full max-h-[473px]"
             src={team_1}
             alt=""
+            data-aos="slide-left"
+            data-aos-delay="2"
           />
           {/* </div> */}
         </div>
         {/* other team */}
         <div className="flex flex-col justify-center items-center md:flex-row-reverse gap-x-24 gap-y-4 md:mt-24 ">
           <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full  h-auto">
-            <h1 className="h4 max-h-max">Build the right team to scale</h1>
-            <p className="w-full pb-2">
+            <h1
+              className="h4 max-h-max"
+              data-aos="zoom-y-out"
+              data-aos-delay="200"
+            >
+              Build the right team to scale
+            </h1>
+            <p
+              className="w-full pb-2"
+              data-aos="zoom-y-out"
+              data-aos-delay="100"
+            >
               Finding the right talent is not easy. We help you find the talent
               that suits your needs, follows your processes, and sticks with you
               long term (not the case with freelancers
             </p>
             <div className="w-full pb-2">
-              <p className="w-full pb-2 mb-5">
+              <p className="w-full pb-2 mb-5" data-aos="zoom-y-out">
                 Our delivery model helps you cut costs and deliver within
                 budget.
               </p>
-              <q className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4">
-                Simform is quick to identify larger problem with the Software so
-                we decided to expand our scope to build new modules
+              <q
+                className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4"
+                data-aos="fade-out"
+                data-aos-delay="100"
+              >
+                "Simform is quick to identify larger problem with the Software
+                so we decided to expand our scope to build new modules"
               </q>
             </div>
             <div className="flex gap-2">
-              <Image className="w-10 h-10 rounded-full" src={author} alt="" />
-              <div className="flex flex-col">
+              <Image
+                className="w-10 h-10 rounded-full"
+                src={author}
+                alt=""
+                data-aos="slide-up"
+                data-aos-delay="10"
+              />
+              <div
+                className="flex flex-col"
+                data-aos="slide-left"
+                data-aos-delay="10"
+              >
                 <p className="text-sm text-nowrap">Jordan Mirchev</p>
                 <p className="text-sm font-light text-nowrap uppercase">ceo</p>
               </div>
@@ -101,6 +167,8 @@ export default function Services() {
             className="max-w-xl w-full max-h-[473px]"
             src={team_2}
             alt=""
+            data-aos="slide-right"
+            data-aos-delay="10"
           />
           {/* </div> */}
         </div>
@@ -108,14 +176,28 @@ export default function Services() {
         {/* other team */}
         <div className="flex flex-col justify-center items-center md:flex-row gap-x-24 gap-y-4 md:mt-24">
           <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full h-auto">
-            <h1 className="h4 max-h-max">Build the right team to scale</h1>
-            <p className="w-full pb-2">
+            <h1
+              className="h4 max-h-max"
+              data-aos="zoom-y-out"
+              data-aos-delay="200"
+            >
+              Build the right team to scale
+            </h1>
+            <p
+              className="w-full pb-2"
+              data-aos="zoom-y-out"
+              data-aos-delay="100"
+            >
               Finding the right talent is not easy. We help you find the talent
               that suits your needs, follows your processes, and sticks with you
               long term (not the case with freelancers
             </p>
-            <div className="w-full pb-2">
-              <p className="w-full pb-2 mb-5">
+            <div className="w-full pb-2" data-aos="zoom-y-out">
+              <p
+                className="w-full pb-2 mb-5"
+                data-aos="fade-out"
+                data-aos-delay="100"
+              >
                 Our delivery model helps you cut costs and deliver within
                 budget.
               </p>
@@ -125,8 +207,18 @@ export default function Services() {
               </q>
             </div>
             <div className="flex gap-2">
-              <Image className="w-10 h-10 rounded-full" src={author} alt="" />
-              <div className="flex flex-col">
+              <Image
+                className="w-10 h-10 rounded-full"
+                src={author}
+                alt=""
+                data-aos="slide-up"
+                data-aos-delay="10"
+              />
+              <div
+                className="flex flex-col"
+                data-aos="slide-left"
+                data-aos-delay="10"
+              >
                 <p className="text-sm text-nowrap">Jordan Mirchev</p>
                 <p className="text-sm font-light text-nowrap uppercase">ceo</p>
               </div>
@@ -137,6 +229,8 @@ export default function Services() {
             className="max-w-xl w-full max-h-[473px]"
             src={team_3}
             alt=""
+            data-aos="slide-left"
+            data-aos-delay="2"
           />
           {/* </div> */}
         </div>
@@ -144,8 +238,16 @@ export default function Services() {
 
       <section className="max-w-6xl bg-gray-100 mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-20 md:mt-8 border-y-2 border-gray-300">
         <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-20 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1 className="h3 font-normal pt-6">Our design and</h1>
-          <h1 className="h3">development approach</h1>
+          <h1
+            className="h3 font-normal pt-6"
+            data-aos="zoom-y-out"
+            data-aos-delay="100"
+          >
+            Our design and
+          </h1>
+          <h1 className="h3" data-aos="zoom-y-out" data-aos-delay="200">
+            development approach
+          </h1>
         </div>
         {/* design cards */}
         <div className="w-full flex flex-wrap justify-center items-center h-auto  gap-6">
@@ -203,10 +305,26 @@ export default function Services() {
       {/* tech stack */}
       <section className="max-w-6xl h-auto mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-24 md:mt-8 border-b-2 border-gray-300">
         <div className="relative max-w-md  mx-auto b text-center mb-8 md:mb-20 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1 className="h3 font-normal pt-6">Our</h1>
-          <h1 className="h3 capitalize">tech stack</h1>
+          <h1
+            className="h3 font-normal pt-6"
+            data-aos="zoom-out"
+            data-aos-delay="100"
+          >
+            Our
+          </h1>
+          <h1
+            className="h3 capitalize"
+            data-aos="zoom-out"
+            data-aos-delay="250"
+          >
+            tech stack
+          </h1>
         </div>
-        <div className="max-w-3xl mx-auto flex flex-wrap justify-center gap-x-14 gap-y-5">
+        <div
+          className="max-w-3xl mx-auto flex flex-wrap justify-center gap-x-14 gap-y-5"
+          data-aos="zoom-in"
+          data-aos-delay="250"
+        >
           <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
             backend
           </button>
@@ -231,14 +349,22 @@ export default function Services() {
         </div>
 
         <div className="max-w-5xl  h-auto mx-auto flex flex-wrap justify-center gap-x-14 gap-y-5 mt-8 md:mt-16">
-          <div className="w-full flex flex-wrap justify-center items-center  gap-x-14">
+          <div
+            className="w-full flex flex-wrap justify-center items-center  gap-x-14"
+            data-aos="slide-up"
+            data-aos-delay="50"
+          >
             <Image className="w-[160px] h-[90px]" src={mode} alt="" />
             <Image className="w-[160px] h-[90px]" src={php} alt="" />
             <Image className="w-[160px] h-[90px]" src={database} alt="" />
             <Image className="w-[160px] h-[90px]" src={java} alt="" />
             <Image className="w-[160px] h-[90px]" src={core} alt="" />
           </div>
-          <div className="max-w-3xl w-full mx-auto flex  flex-wrap justify-center items-center mt-7 gap-1">
+          <div
+            className="max-w-3xl w-full mx-auto flex  flex-wrap justify-center items-center mt-7 gap-1"
+            data-aos="slide-up"
+            data-aos-delay="10"
+          >
             <Image className="w-[160px] h-[90px]" src={python} alt="" />
             <Image className="w-[160px] h-[90px]" src={ruby} alt="" />
             <Image className="w-[160px] h-[90px]" src={go} alt="" />
@@ -250,13 +376,29 @@ export default function Services() {
       {/* alkaline works */}
       <section className="max-w-6xl bg-gray-100  h-auto mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-24 md:mt-8 ">
         <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-20 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1 className="h3 font-normal pt-6">How development </h1>
-          <h1 className="h3 capitalize">through Alcaline works</h1>
+          <h1
+            className="h3 font-normal pt-6"
+            data-aos="zoom-out"
+            data-aos-delay="100"
+          >
+            How development{" "}
+          </h1>
+          <h1
+            className="h3 capitalize"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            through Alcaline works
+          </h1>
         </div>
 
         <div className="w-full flex h-auto justify-center items-center  gap-x-14">
           <div className="flex flex-wrap max-[850px]:flex-col items-center justify-center p-8">
-            <div className="flex max-md:flex-col mx-auto max-md:items-center justify-between items-end gap-16 gap-y-5">
+            <div
+              className="flex max-md:flex-col mx-auto max-md:items-center justify-between items-end gap-16 gap-y-5"
+              data-aos="slide-up"
+              data-aos-delay="50"
+            >
               <div className="max-w-96 after:flex after:relative after:mx-auto after:h-10 after:w-1 after:bg-red-500 after:top-5">
                 <div className="bg-white p-4 rounded-lg shadow ">
                   <h2 className="text-lg font-semibold">
@@ -308,10 +450,16 @@ export default function Services() {
                 className="relative max-md:invisible right-0"
                 src={trophy}
                 alt=""
+                data-aos="slide-left"
+                data-aos-delay="1"
               />
             </div>
             {/* <hr className="h-full w-1 bg-red-500 z-10" /> */}
-            <div className="flex max-md:flex-col justify-center items-start gap-x-16 gap-y-5 ">
+            <div
+              className="flex max-md:flex-col justify-center items-start gap-x-16 gap-y-5 "
+              data-aos="slide-up"
+              data-aos-delay="50"
+            >
               <div className="max-w-96 before:flex before:relative before:mx-auto before:h-10 before:w-1 before:bg-red-500 before:-top-5 before:max-md:top-0 ">
                 <div className="bg-white p-4 rounded-lg shadow">
                   <h2 className="text-lg font-semibold">
@@ -374,7 +522,11 @@ interface IProps {
 
 function DesignCards({ image, color, title, desc }: IProps) {
   return (
-    <div className="max-w-[540px] w-full min-h-[237px] hover:scale-[1.02] hover:shadow-xl ease-in-out duration-300 bg-white border border-gray-300 px-7 pt-12 pb-8">
+    <div
+      className="max-w-[540px] w-full min-h-[237px] hover:scale-[1.02] hover:shadow-xl ease-in-out duration-300 bg-white border border-gray-300 px-7 pt-12 pb-8"
+      data-aos="zoom-out"
+      data-aos-delay="300"
+    >
       <div className="flex justify-center gap-x-6">
         <div
           className={`flex justify-center items-center max-w-[59px] w-full rounded-xl h-[56px] bg-${color}`}
