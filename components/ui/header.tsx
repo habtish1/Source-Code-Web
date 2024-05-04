@@ -79,14 +79,7 @@ export default function Header() {
                 Blogs
               </Link>
             </li>
-            {/* <li>
-              <Link
-                href="/chooseus"
-                className="font-medium text-gray-600 text-nowrap hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
-              >
-                Why Choose Us
-              </Link>
-            </li> */}
+
             <li>
               <Link
                 href="/about"

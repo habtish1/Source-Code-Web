@@ -1,6 +1,8 @@
 import "./css/style.css";
+import localFont from "next/font/local";
 
 import { Inter } from "next/font/google";
+import { apmle } from "@/app/fontLoader";
 
 import Header from "@/components/ui/header";
 import Banner from "@/components/banner";
@@ -25,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} font-inter antialiased bg-white text-gray-900 tracking-tight`}
+        className={`${apmle.className} ${inter.variable} antialiased bg-white text-gray-900 tracking-tight`}
       >
-        <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+        <div
+          className={`${apmle.variable} flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip`}
+        >
           <Header />
           {children}
           {/* <Banner /> */}

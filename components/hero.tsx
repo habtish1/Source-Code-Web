@@ -41,7 +41,7 @@ export default function Hero() {
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
             <h1
-              className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
+              className="text-5xl  md:text-6xl font-bold leading-tighter tracking-tighter mb-4"
               data-aos="zoom-y-out"
             >
               Launch Your Dream Business with Powerful{" "}

@@ -29,7 +29,19 @@ export default function Contact() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua
               </p>
+              <div className="w-full flex justify-between items-center gap-2  h-20">
+                <button className="text-white text-center capitalize font-medium text-base bg-btnColor px-5 py-3 rounded-[64px]">
+                  telegram bot
+                </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
+                  Website Development
+                </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
+                  Mobile Development
+                </button>
+              </div>
             </div>
+
             <form className="w-96 h-96 mt-10 bg-white">
               {/* </div> */}
 
