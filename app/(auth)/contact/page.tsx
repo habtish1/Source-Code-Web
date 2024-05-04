@@ -29,7 +29,19 @@ export default function Contact() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua
               </p>
+              <div className="w-full flex justify-between items-center gap-2  h-20">
+                <button className="text-white text-center capitalize font-medium text-base bg-btnColor px-5 py-3 rounded-[64px]">
+                  telegram bot
+                </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
+                  Website Development
+                </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
+                  Mobile Development
+                </button>
+              </div>
             </div>
+
             <form className="w-96 h-96 mt-10 bg-white">
               {/* </div> */}
 
@@ -39,6 +51,7 @@ export default function Contact() {
                   type="email"
                   className="w-full placeholder:capitalize py-3 text-base border-y-0 border-x-0 border-b-2 border-gray-300  placeholder:text-gray-400  outline-none"
                   placeholder="enter your email"
+                  required
                 />
               </div>
               <div className="w-full  flex flex-col">
@@ -46,6 +59,7 @@ export default function Contact() {
                   type="text"
                   className="w-full placeholder:capitalize mt-6 py-3 text-base border-y-0 border-x-0 border-b-2 border-gray-300  placeholder:text-gray-400 outline-none"
                   placeholder="enter your name"
+                  required
                 />
               </div>
               <div className="w-full flex flex-col">
@@ -53,6 +67,7 @@ export default function Contact() {
                   type="text"
                   className="w-full placeholder:capitalize mt-6 py-3 text-base border-y-0 border-x-0 border-b-2 border-gray-300 placeholder:text-gray-400 outline-none"
                   placeholder="your subject here"
+                  required
                 />
               </div>
               <div className="w-full flex flex-col ">
