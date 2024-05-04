@@ -23,13 +23,13 @@ export default function About() {
         <div className="pt-32  pb-12 md:pt-40 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h1 mb-4">
+            <h1 className="h1 mb-4" data-aos="zoom-y-out">
               We enable developers to build amazing things
             </h1>
             <p
               className="text-xl text-gray-600"
               data-aos="zoom-y-out"
-              data-aos-delay="150"
+              data-aos-delay="200"
             >
               We have transformed product development, making it faster,
               simpler... better! That's why in just three years we now help more
@@ -37,19 +37,24 @@ export default function About() {
             </p>
           </div>
           {/* image goes here */}
-          <div className="mx-auto max-w-3xl h-[432px]  flex justify-center items-center bg-gray-300 border border-gray-400">
+          <div
+            className="mx-auto max-w-3xl h-[432px]  flex justify-center items-center bg-gray-300 border border-gray-400"
+            data-aos="zoom-out"
+          >
             image place
           </div>
         </div>
 
         {/* story goes here */}
-        <section className="max-w-5xl mx-auto min-h-[808px]  pb-12  md:pb-20">
+        <section className="max-w-5xl mx-auto h-auto pb-12  md:pb-20">
           <div className="max-w-3xl w-full mx-auto">
-            <h1 className="h3 mb-3">our story</h1>
+            <h1 className="h3 mb-3" data-aos="zoom-y-out">
+              our story
+            </h1>
             <p
               className="text-xl text-gray-600 mb-8"
               data-aos="zoom-y-out"
-              data-aos-delay="150"
+              data-aos-delay="200"
             >
               Aenean sed adipiscing diam donec adipiscing tristique risus nec
               feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu
@@ -61,7 +66,7 @@ export default function About() {
             <p
               className="text-xl text-gray-600 mb-8"
               data-aos="zoom-y-out"
-              data-aos-delay="150"
+              data-aos-delay="250"
             >
               Quam pellentesque nec nam aliquam sem et tortor consequat,
               pellentesque adipiscing commodo elit at imperdiet. Semper auctor
@@ -71,15 +76,21 @@ export default function About() {
             </p>
           </div>
           <div className="w-full flex flex-col md:flex-row gap-4">
-            <div className="max-w-[435px] mx-auto w-full h-80 flex justify-center items-center bg-gray-300 border border-gray-400">
+            <div
+              className="max-w-[435px] mx-auto w-full h-80 flex justify-center items-center bg-gray-300 border border-gray-400"
+              data-aos="zoom-out"
+              data-aos-delay="200"
+            >
               image goes here
             </div>
             <div className="flex flex-col w-full md:ml-16">
-              <h1 className="h3 mb-3">2017-2024</h1>
+              <h1 className="h3 mb-3" data-aos="fade" data-aos-delay="200">
+                2017-2024
+              </h1>
               <p
                 className="text-xl text-gray-600 mb-8"
                 data-aos="zoom-y-out"
-                data-aos-delay="150"
+                data-aos-delay="200"
               >
                 Quam pellentesque nec nam aliquam sem et tortor consequat,
                 pellentesque adipiscing commodo elit at imperdiet. Semper auctor
@@ -91,6 +102,8 @@ export default function About() {
                 <div className="flex items-center pr-4">
                   <svg
                     className="w-8 h-8 fill-current"
+                    data-aos="flip-left"
+                    data-aos-delay="300"
                     viewBox="0 0 12 12"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -100,7 +113,7 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <q>
+                <q data-aos="zoom-in" data-aos-delay="200">
                   love this product and would recommend it to anyone. Could be
                   not easier to use, and our multiple websites are wonderful. We
                   get nice comments all the time.
@@ -112,9 +125,11 @@ export default function About() {
 
         {/* developing mind-set */}
 
-        <div className="max-w-6xl mx-auto min-h-[1080px] pt-12  pb-12 md:pt-20  md:pb-20">
+        <div className="max-w-6xl mx-auto h-auto pt-12  pb-12 md:pt-20  md:pb-20">
           <div className="max-w-3xl  mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h1 mb-4">Developing a global mindset </h1>
+            <h1 className="h1 mb-4" data-aos="fade" data-aos-delay="200">
+              Developing a global mindset{" "}
+            </h1>
             <p
               className="text-xl text-gray-600"
               data-aos="zoom-y-out"
@@ -126,7 +141,10 @@ export default function About() {
             </p>
           </div>
           {/* world illustration */}
-          <div className="w-full min-h-[400px] mx-auto text-center flex justify-center items-center bg-gray-300 border border-gray-400  pt-16 pb-12 md:pt-20 md:pb-16">
+          <div
+            className="w-full min-h-[400px] mx-auto text-center flex justify-center items-center bg-gray-300 border border-gray-400  pt-16 pb-12 md:pt-20 md:pb-16"
+            data-aos="zoom-out"
+          >
             world illustration goes here which could be replaced by other images
           </div>
           <div className="w-auto flex flex-wrap justify-center gap-12 min-h-[400px] text-center mx-10  pt-8 md:pt-12">
@@ -167,9 +185,11 @@ export default function About() {
       {/* developers team */}
       <section className="w-full bg-gray-200 min-h-[1000px] border border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto min-h-[1080px]   pt-12  pb-12 md:pt-20  md:pb-20">
+          <div className="max-w-6xl mx-auto h-auto   pt-12  pb-12 md:pt-20  md:pb-20">
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h1 className="h2 mb-4">The humans behind the product</h1>
+              <h1 className="h2 mb-4" data-aos="zoom-out" data-aos-delay="200">
+                The humans behind the product
+              </h1>
             </div>
             <div className="max-w-6xl flex flex-wrap  gap-8 items-center justify-center">
               <TeamCard
@@ -231,11 +251,13 @@ export default function About() {
         </div>
       </section>
       {/* simple is growing */}
-      <section className="w-full bg-gray-200 min-h-[1000px] border-t border-gray-300">
+      <section className="w-full bg-gray-200 h-auto border-t border-gray-300">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto pt-12  pb-12 md:pt-20  md:pb-20">
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-              <h1 className="h2 mb-4">Simple is growing. Grow with us.</h1>
+              <h1 className="h2 mb-4" data-aos="zoom-out" data-aos-delay="200">
+                Simple is growing. Grow with us.
+              </h1>
               <p
                 className="text-xl text-gray-600"
                 data-aos="zoom-y-out"
@@ -247,12 +269,21 @@ export default function About() {
               </p>
             </div>
             {/* image below */}
-            <div className="max-w-3xl mx-auto h-[596px]  text-center flex justify-center items-center bg-gray-300 border border-gray-400  pb-12 md:pb-20">
+            <div
+              className="max-w-3xl mx-auto h-[596px]  text-center flex justify-center items-center bg-gray-300 border border-gray-400  pb-12 md:pb-20"
+              data-aos="zoom-out"
+            >
               image goes here
             </div>
             <div className="max-w-3xl mx-auto h-auto bg-inherit">
-              <h1 className="h3 mb-8">Current open positions</h1>
-              <div className="w-full ">
+              <h1 className="h3 mb-8" data-aos="zoom-out" data-aos-delay="100">
+                Current open positions
+              </h1>
+              <div
+                className="w-full "
+                data-aos="fade-down"
+                data-aos-delay="300"
+              >
                 <a
                   href="#"
                   className="w-full  p-4 mb-3 flex justify-between items-center rounded-md border border-gray-300 bg-gray-200 shadow-lg"
@@ -315,7 +346,7 @@ export default function About() {
         </div>
       </section>
       {/* process card */}
-      <section className="w-full bg-gray-200 min-h-[1000px]">
+      <section className="w-full bg-gray-200 h-auto md:pb-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto  bg-gray-200 py-12 md:py-16">
             <div className="w-full flex flex-col justify-center items-center gap-6 md:flex-row">
@@ -348,17 +379,24 @@ export default function About() {
               />
             </div>
           </div>
-          <div className="max-w-6xl min-h-20 mx-auto  bg-blue-950 px-8 py-12 md:px-12 md:py-16 mb-16 md:mb-20">
+          <div
+            className="max-w-6xl min-h-20 mx-auto  bg-blue-950 px-8 py-12 md:px-12 md:py-16 mb-16 md:mb-16"
+            data-aos="fade-up"
+          >
             <div className="w-full min-h-20 text-white flex flex-col md:flex-row justify-between items-center gap-10 ">
               <div className="text-center md:text-left max-w-lg">
-                <h1 className="w-full md:mr-6 h3">
+                <h1
+                  className="w-full md:mr-6 h3"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="200"
+                >
                   Sounds like we are building something cool?
                 </h1>
               </div>
               <div>
                 <a
                   href="#"
-                  className="px-8 py-3 text-base leading-6 text-nowrap bg-blue-600 rounded-md font-medium"
+                  className="px-8 py-3 text-base leading-6 text-nowrap capitalize bg-blue-600 rounded-md font-medium"
                 >
                   {" "}
                   join us today
@@ -379,7 +417,11 @@ interface IProps {
 
 function AchievementCard({ title, subtitle }: IProps) {
   return (
-    <div className="w-[300px] h-max bg-white">
+    <div
+      className="w-[300px] h-max bg-white"
+      data-aos="fade-up"
+      data-aos-delay="250"
+    >
       <h1 className="h3 mb-2">{title}</h1>
       <p className="text-base text-gray-600 ">{subtitle}</p>
     </div>
@@ -394,7 +436,11 @@ interface TProps {
 
 function TeamCard({ name, position, desc }: TProps) {
   return (
-    <div className="w-[320px] h-[307px] flex flex-col justify-center items-center bg-inherit">
+    <div
+      className="w-[320px] h-[307px] flex flex-col justify-center items-center bg-inherit"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
       <Image
         className="w-[120px] h-[120px] rounded-full mb-4"
         src={avatar}
@@ -421,7 +467,11 @@ interface PProps {
 
 function ProcessCard({ number, title, desc }: PProps) {
   return (
-    <div className="w-[260px] flex flex-col items-center h-max bg-white p-6 shadow-xl drop-shadow-xl">
+    <div
+      className="w-[260px] flex flex-col items-center h-max bg-white p-6 shadow-xl drop-shadow-xl"
+      data-aos="fade-right"
+      data-aos-delay="100"
+    >
       <div className="w-12 h-12 mb-3 flex justify-center items-center rounded-full bg-blue-700 text-white">
         <h1 className="h5">{number}</h1>
       </div>

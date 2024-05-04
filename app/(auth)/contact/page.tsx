@@ -16,11 +16,19 @@ export default function Contact() {
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="w-full flex flex-col gap-y-4 md:flex-row h-auto mx-auto pt-32  pb-12 md:pt-40 md:pb-20">
+        <div className="w-full flex flex-col gap-y-4 md:flex-row h-auto mx-auto pt-20  pb-12 md:pt-28 md:pb-20">
           <div className="max-w-[682px]  w-full max-h-max bg-white py-8 mr-8">
             <div className="w-full h-auto ">
-              <h1 className="h5 mt-4">contact us</h1>
-              <h1 className="h2 mt-4">Feel free to get in touch with us.</h1>
+              <h1
+                className="h5 mt-4"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                contact us
+              </h1>
+              <h1 className="h2 mt-4" data-aos="fade-out" data-aos-delay="200">
+                Feel free to get in touch with us.
+              </h1>
               <p
                 className="text-lg max-w-[682px] w-full text-gray-600"
                 data-aos="zoom-y-out"
@@ -29,7 +37,11 @@ export default function Contact() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua
               </p>
-              <div className="w-full flex justify-between items-center gap-2  h-20">
+              <div
+                className="w-full flex justify-between items-center gap-2  h-20"
+                data-aos="slide-up"
+                data-aos-delay="10"
+              >
                 <button className="text-white text-center capitalize font-medium text-base bg-btnColor px-5 py-3 rounded-[64px]">
                   telegram bot
                 </button>
@@ -42,10 +54,11 @@ export default function Contact() {
               </div>
             </div>
 
-            <form className="w-96 h-96 mt-10 bg-white">
-              {/* </div> */}
-
-              {/* <div className="flex w-max-[360px] flex-col"> */}
+            <form
+              className="w-96 h-96 mt-10 bg-white"
+              data-aos="fade"
+              data-aos-delay="200"
+            >
               <div className="w-full flex flex-col">
                 <input
                   type="email"
@@ -86,16 +99,34 @@ export default function Contact() {
               {/* </div> */}
             </form>
           </div>
-          <div className=" max-w-[533px] max-md:h-80 w-full mx-auto max-h-max bg-slate-400  "></div>
+          <div
+            className=" max-w-[533px] flex items-center justify-center max-md:h-80 w-full mx-auto max-h-max bg-slate-400  "
+            data-aos="slide-left"
+            data-aos-delay="2"
+          >
+            Image goes here
+          </div>
         </div>
         {/* our office */}
-        <div className="w-full flex flex-col justify-center items-center  mx-auto text-black max-h-max bg-white pt-16 md:pt-24 pb-6 md:pb-10">
-          <h1 className=" max-w-max h5 text-center mb-4 ">location</h1>
-          <h1 className="h2 text-center w-full">Our Offices</h1>
+        <div className="w-full flex flex-col justify-center items-center  mx-auto text-black max-h-max bg-white pt-10 md:pt-14 pb-6 md:pb-10">
+          <h1
+            className=" max-w-max h5 text-center mb-4 "
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            location
+          </h1>
+          <h1
+            className="h2 text-center w-full"
+            data-aos="zoom-y-out"
+            data-aos-delay="200"
+          >
+            Our Offices
+          </h1>
           <p
             className="max-w-xl mx-auto mt-4 text-center text-base text-gray-600"
             data-aos="zoom-y-out"
-            data-aos-delay="150"
+            data-aos-delay="250"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -106,15 +137,43 @@ export default function Contact() {
         <div className="w-full flex flex-col gap-y-8 md:flex-row max-h-max mx-auto pt-6  pb-12 md:pt-10 md:pb-20">
           <div className="max-w-[682px] w-full py-4  md:py-8">
             <div className="w-full max-h-max ">
-              <h1 className="h3 mt-4">Addis Ababa, Ethiopia</h1>
-              <p className="text-base mt-4">22, around golagol</p>
-              <h1 className="h4 mt-4">commet building, </h1>
-              <p className="text-base mt-4">office number: 201</p>
-              <p className="text-base my-4">info@gmail.com</p>
-              <a href="tel:+1234567890">Call us at (123) 456-7890</a>
+              <h1 className="h3 mt-4" data-aos="zoom-out" data-aos-delay="100">
+                Addis Ababa, Ethiopia
+              </h1>
+              <p
+                className="text-base mt-4"
+                data-aos="fade-in"
+                data-aos-delay="200"
+              >
+                22, around golagol
+              </p>
+              <h1 className="h4 mt-4" data-aos="fade-out" data-aos-delay="200">
+                commet building,{" "}
+              </h1>
+              <p
+                className="text-base mt-4"
+                data-aos="fade-out"
+                data-aos-delay="100"
+              >
+                office number: 201
+              </p>
+              <p
+                className="text-base my-4"
+                data-aos="fade-out"
+                data-aos-delay="200"
+              >
+                info@gmail.com
+              </p>
+              <a href="tel:+1234567890" data-aos="fade-in" data-aos-delay="300">
+                Call us at (123) 456-7890
+              </a>
             </div>
           </div>
-          <div className="flex justify-center items-center max-w-[533px] mx-auto h-96 w-full max-h-max bg-slate-400  ">
+          <div
+            className="flex justify-center items-center max-w-[533px] mx-auto h-96 w-full max-h-max bg-slate-400  "
+            data-aos="zoom-out"
+            data-aos-delay="100"
+          >
             google map can goes here
           </div>
         </div>
