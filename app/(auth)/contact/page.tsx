@@ -38,7 +38,7 @@ export default function Contact() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua
               </p>
               <div
-                className="w-full flex justify-between items-center gap-2  h-20"
+                className="w-full flex flex-wrap h-auto justify-start items-center gap-x-2 gap-y-4 mt-3"
                 data-aos="slide-up"
                 data-aos-delay="10"
               >
