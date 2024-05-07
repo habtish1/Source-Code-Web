@@ -32,18 +32,20 @@ export default function Blog() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </h1>
           <div
-            className="flex gap-x-1 justify-start items-center max-w-md pb-11"
+            className="flex gap-x-2 justify-start items-center max-w-md h-auto pb-11"
             data-aos="slide-up"
             data-aos-delay="5"
           >
-            <Image className="w-10 h-10" src={author} alt="" />
-            <p className="text-sm text-nowrap">By Jordan Mirchev</p>
-            <span>|</span>
-            <p className="text-sm text-nowrap">Published on</p>
-            <span>|</span>
-            <p className="text-sm text-nowrap">November 14, 2022</p>
-            <span>|</span>
-            <p className="text-sm text-nowrap">2 min read</p>
+            <Image className="w-10 h-10 inline" src={author} alt="" />
+            <div className="flex flex-wrap justify-start items-center gap-x-1">
+              <p className="text-sm text-nowrap">By Jordan Mirchev</p>
+              <span>|</span>
+              <p className="text-sm text-nowrap">Published on</p>
+              <span>|</span>
+              <p className="text-sm text-nowrap">November 14, 2022</p>
+              <span>|</span>
+              <p className="text-sm text-nowrap">2 min read</p>
+            </div>
           </div>
 
           <div
