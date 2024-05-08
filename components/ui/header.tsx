@@ -6,6 +6,8 @@ import Link from "next/link";
 import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
 import MobileMenu from "./mobile-menu";
+import Image from "next/image";
+import eth from "@/public/images/eth.png";
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
@@ -58,7 +60,7 @@ export default function Header() {
             <li>
               <Link
                 href="/"
-                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-lg text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Home
               </Link>
@@ -66,7 +68,7 @@ export default function Header() {
             <li>
               <Link
                 href="/services"
-                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-lg text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Service
               </Link>
@@ -74,7 +76,7 @@ export default function Header() {
             <li>
               <Link
                 href="/blogs"
-                className="font-medium text-gray-600 hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-lg text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Blogs
               </Link>
@@ -83,7 +85,7 @@ export default function Header() {
             <li>
               <Link
                 href="/about"
-                className="font-medium text-gray-600 text-nowrap hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-lg text-nowrap text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 About us
               </Link>
@@ -91,7 +93,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact"
-                className="font-medium text-gray-600 text-nowrap hover:text-gray-900 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-lg text-nowrap text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Contact us
               </Link>
@@ -109,14 +111,22 @@ export default function Header() {
             </Link>
           </div> */}
         </nav>
-        <div className="ml-2 max-md:hidden">
-          <a href="tel:+1234567890"> +251 115-7890</a>
-          {/* <a
-            href="#"
-            className="max-md:hidden px-8 py-3 text-base leading-6 text-nowrap bg-blue-600 text-white ml-4 rounded-md font-medium"
+        <div className="flex w-auto items-center justify-center gap-1 ml-2 md:ml-16 max-md:hidden  font-medium text-primaryColor">
+          <div className="">
+            <Image
+              className="w-6 h-6 rounded-full object-center"
+              src={eth}
+              alt=""
+            />
+          </div>
+          <a
+            className="border text-nowrap border-white hover:border hover:border-gray-200 hover:shadow-lg hover:rounded-md px-3 "
+            href="tel:+1234567890"
+            title="Call us"
           >
-            Available gigs
-          </a> */}
+            {" "}
+            +251 115-7890
+          </a>
         </div>
 
         <MobileMenu />
