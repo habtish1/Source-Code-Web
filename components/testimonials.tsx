@@ -13,11 +13,8 @@ import "@splidejs/react-splide/css";
 import "@splidejs/react-splide/css";
 
 import "@splidejs/react-splide/css/core";
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+// import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 
-// const DynamicCaurosel = dynamic(() => import("./utils/carousel"), {
-//   ssr: false,
-// });
 
 export default function Testimonials() {
   return (
