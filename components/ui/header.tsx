@@ -3,8 +3,11 @@
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
+// import { Tooltip } from "antd";
+
 import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
+import Tooltip from "@/components/utils/toolTip";
 import MobileMenu from "./mobile-menu";
 import Image from "next/image";
 import eth from "@/public/images/eth.png";
@@ -23,6 +26,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
+  const text = <span>prompt text</span>;
   return (
     <header
       className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
@@ -68,9 +72,28 @@ export default function Header() {
             <li>
               <Link
                 href="/services"
-                className="font-medium text-lg text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-bold text-lg text-primaryColor hover:text-hoverPrimary text-center transition duration-150 ease-in-out"
               >
-                Service
+                <Dropdown title="Services">
+                  <option
+                    className="text-lg text-primaryColor hover:text-hoverPrimary hover:bg-gray-200 text-center transition duration-150 ease-in-out"
+                    value="option1"
+                  >
+                    Option 1
+                  </option>
+                  <option
+                    className="text-lg text-primaryColor hover:text-hoverPrimary hover:bg-gray-200 text-center transition duration-150 ease-in-out"
+                    value="option2"
+                  >
+                    Option 2
+                  </option>
+                  <option
+                    className="text-lg text-primaryColor hover:text-hoverPrimary hover:bg-gray-200 text-center transition duration-150 ease-in-out"
+                    value="option3"
+                  >
+                    Option 3
+                  </option>
+                </Dropdown>
               </Link>
             </li>
             <li>
@@ -119,14 +142,16 @@ export default function Header() {
               alt=""
             />
           </div>
-          <a
-            className="border text-nowrap border-white hover:border hover:border-gray-200 hover:shadow-lg hover:rounded-md px-3 "
-            href="tel:+1234567890"
-            title="Call us"
-          >
-            {" "}
-            +251 115-7890
-          </a>
+
+          <Tooltip text="call us">
+            <a
+              className=" text-nowrap border-white hover:shadow-lg hover:rounded-md px-3 "
+              href="tel:+1234567890"
+            >
+              {" "}
+              +251 115-7890
+            </a>
+          </Tooltip>
         </div>
 
         <MobileMenu />
