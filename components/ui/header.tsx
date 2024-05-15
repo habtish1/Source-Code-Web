@@ -3,14 +3,12 @@
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-// import { Tooltip } from "antd";
-
+import Tooltip from "../utils/Tooltip";
 import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
 import MobileMenu from "./mobile-menu";
 import Image from "next/image";
 import eth from "@/public/images/eth.png";
-import Tooltip from "../utils/toolTip";
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
@@ -135,25 +133,10 @@ export default function Header() {
           </div> */}
         </nav>
         <div className="flex w-auto items-center justify-center gap-1 ml-2 md:ml-16 max-md:hidden  font-medium text-primaryColor">
-          <div className="">
-            <Image
-              className="w-6 h-6 rounded-full object-center"
-              src={eth}
-              alt=""
-            />
-          </div>
-
-          {/* <a
-            className=" text-nowrap border-white hover:shadow-lg hover:rounded-md px-3 "
-            href="tel:+1234567890"
-          >
-            {" "}
-            +251 115-7890
-          </a> */}
           <div>
             <Tooltip text="call us">
               <a
-                className="btn py-2 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear duration-300 ml-2"
+                className="btn py-2 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-md duration-300"
                 href="tel:+1234567890"
               >
                 +251 115-7890
