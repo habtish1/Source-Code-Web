@@ -20,7 +20,7 @@ export default function Dropdown({ children, title }: DropdownProps) {
       onBlur={() => setDropdownOpen(false)}
     >
       <a
-        className="font-medium text-lg text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+        className="font-medium text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
         href="#0"
         aria-expanded={dropdownOpen}
         onClick={(e) => e.preventDefault()}
@@ -37,7 +37,7 @@ export default function Dropdown({ children, title }: DropdownProps) {
       <Transition
         show={dropdownOpen}
         as="ul"
-        className="origin-top-right absolute top-full right-0 w-40 bg-white py-2 ml-4 rounded shadow-lg"
+        className="origin-top-right absolute top-full  -left-2 w-40 bg-white py-2 ml-4 rounded shadow-lg"
         enter="transition ease-out duration-200 transform"
         enterFrom="opacity-0 -translate-y-2"
         enterTo="opacity-100 translate-y-0"

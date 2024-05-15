@@ -7,10 +7,10 @@ import Link from "next/link";
 
 import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
-import Tooltip from "@/components/utils/toolTip";
 import MobileMenu from "./mobile-menu";
 import Image from "next/image";
 import eth from "@/public/images/eth.png";
+import Tooltip from "../utils/Tooltip";
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
@@ -64,7 +64,7 @@ export default function Header() {
             <li>
               <Link
                 href="/"
-                className="font-medium text-lg text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Home
               </Link>
@@ -72,23 +72,23 @@ export default function Header() {
             <li>
               <Link
                 href="/services"
-                className="font-bold text-lg text-primaryColor hover:text-hoverPrimary text-center transition duration-150 ease-in-out"
+                className="font-medium text-gray-600 px-3 py-2  flex items-center"
               >
                 <Dropdown title="Services">
                   <option
-                    className="text-lg text-primaryColor hover:text-hoverPrimary hover:bg-gray-200 text-center transition duration-150 ease-in-out"
+                    className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
                     value="option1"
                   >
                     Option 1
                   </option>
                   <option
-                    className="text-lg text-primaryColor hover:text-hoverPrimary hover:bg-gray-200 text-center transition duration-150 ease-in-out"
+                    className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
                     value="option2"
                   >
                     Option 2
                   </option>
                   <option
-                    className="text-lg text-primaryColor hover:text-hoverPrimary hover:bg-gray-200 text-center transition duration-150 ease-in-out"
+                    className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
                     value="option3"
                   >
                     Option 3
@@ -99,7 +99,7 @@ export default function Header() {
             <li>
               <Link
                 href="/blogs"
-                className="font-medium text-lg text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Blogs
               </Link>
@@ -108,7 +108,7 @@ export default function Header() {
             <li>
               <Link
                 href="/about"
-                className="font-medium text-lg text-nowrap text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-nowrap text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 About us
               </Link>
@@ -116,7 +116,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact"
-                className="font-medium text-lg text-nowrap text-primaryColor hover:text-hoverPrimary hover:scale-105 px-3 py-3 flex items-center transition duration-150 ease-in-out"
+                className="font-medium text-nowrap text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Contact us
               </Link>
@@ -143,15 +143,23 @@ export default function Header() {
             />
           </div>
 
-          <Tooltip text="call us">
-            <a
-              className=" text-nowrap border-white hover:shadow-lg hover:rounded-md px-3 "
-              href="tel:+1234567890"
-            >
-              {" "}
-              +251 115-7890
-            </a>
-          </Tooltip>
+          {/* <a
+            className=" text-nowrap border-white hover:shadow-lg hover:rounded-md px-3 "
+            href="tel:+1234567890"
+          >
+            {" "}
+            +251 115-7890
+          </a> */}
+          <div>
+            <Tooltip text="call us">
+              <a
+                className="btn py-2 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear duration-300 ml-2"
+                href="tel:+1234567890"
+              >
+                +251 115-7890
+              </a>
+            </Tooltip>
+          </div>
         </div>
 
         <MobileMenu />
