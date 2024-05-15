@@ -10,7 +10,7 @@ import Dropdown from "@/components/utils/dropdown";
 import MobileMenu from "./mobile-menu";
 import Image from "next/image";
 import eth from "@/public/images/eth.png";
-import Tooltip from "../utils/Tooltip";
+import Tooltip from "../utils/toolTip";
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
