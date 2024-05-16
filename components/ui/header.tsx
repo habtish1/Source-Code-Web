@@ -13,7 +13,7 @@ import eth from "@/public/images/eth.png";
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
 
-  // detect whether user has scrolled the page down by 10px
+  // detect whether user has solled the page down by 10px
   const scrollHandler = () => {
     window.pageYOffset > 10 ? setTop(false) : setTop(true);
   };
