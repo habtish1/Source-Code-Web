@@ -139,7 +139,7 @@ export default function Header() {
                 className="btn py-2 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-md duration-300"
                 href="tel:+1234567890"
               >
-                +251 115-7890
+                +251 974-017208
               </a>
             </Tooltip>
           </div>
