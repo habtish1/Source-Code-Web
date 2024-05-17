@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-import Tooltip from "../utils/toolTip";
+import Tooltip from "../utils/Tooltips";
 import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
 import MobileMenu from "./mobile-menu";
