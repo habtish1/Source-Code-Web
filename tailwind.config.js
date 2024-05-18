@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       animation: {
         "spin-slow": "spin 3s linear infinite",
-        wiggle: "wiggle 200ms ease-in-out",
+        wiggle: "wiggle 200ms ease-in-out infinite",
       },
 
       colors: {

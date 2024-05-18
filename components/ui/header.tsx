@@ -68,7 +68,9 @@ export default function Header() {
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <HiSupport />
               </span>
-              <p className="font-normal max-md:hidden">Talk to us</p>
+              <p className="font-normal text-nowrap max-md:hidden">
+                Talk to us
+              </p>
             </div>
             <div className="flex items-center">
               <span className="text-primaryColor flex justify-center items-center mr-2">
@@ -118,7 +120,7 @@ export default function Header() {
           </nav> */}
 
           <nav className="hidden md:flex  md:grow justify-end">
-            <ul className="flex justify-center items-center gap-x-4 text-sm font-medium py-12">
+            <ul className="flex justify-center items-center gap-x-4 text-sm text-nowrap font-medium py-12">
               <li>
                 <Link
                   className={`link ${
@@ -202,7 +204,7 @@ export default function Header() {
             <div>
               <Tooltip text="call us">
                 <a
-                  className="px-4 py-3 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
+                  className="animate-smallBounce block px-4 py-3 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
                   href="tel:+1234567890"
                 >
                   +251 974-017208
