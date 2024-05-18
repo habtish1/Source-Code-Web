@@ -37,7 +37,7 @@ export default function Services() {
   });
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white sm:px-6">
-      <section className="max-w-6xl mx-auto px-4  pt-16  pb-12 md:pt-[95px] md:pb-20">
+      <section className="max-w-6xl mx-auto px-4  pt-20  pb-20 md:pt-36 md:pb-20">
         <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-16 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
           <h1
             className="h3 font-normal pt-6"

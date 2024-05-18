@@ -16,7 +16,7 @@ export default function Contact() {
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="w-full flex flex-col gap-y-4 md:flex-row h-auto mx-auto pt-20  pb-12 md:pt-28 md:pb-20">
+        <div className="w-full flex flex-col gap-y-4 md:flex-row h-auto mx-auto pt-24  pb-12 md:pt-36 md:pb-20">
           <div className="max-w-[682px]  w-full max-h-max bg-white py-8 mr-8">
             <div className="w-full h-auto ">
               <h1

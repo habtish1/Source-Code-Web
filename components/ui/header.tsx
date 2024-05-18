@@ -7,7 +7,18 @@ import Tooltip from "../utils/Tooltips";
 import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
 import MobileMenu from "./mobile-menu";
-// import { useRouter } from "next/router";
+import { FaShareAlt } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaXTwitter,
+  FaLinkedinIn,
+  FaGooglePlusG,
+  FaWhatsapp,
+} from "react-icons/fa6";
+import { HiSupport } from "react-icons/hi";
+import { IoMdMail, IoLogoGoogleplus } from "react-icons/io";
+
+// import {  } from "react-icons/fa6";
 
 import { usePathname } from "next/navigation";
 
@@ -26,23 +37,71 @@ export default function Header() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
-  const text = <span>prompt text</span>;
   return (
-    <header
-      className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${
-        !top ? "bg-white backdrop-blur-sm shadow-lg" : ""
-      }`}
-    >
-      {/* <div className="max-w-6xl mx-auto px-5 sm:px-6"> */}
-      <div className="flex max-w-6xl mx-auto px-5 sm:px-6   items-center justify-between w-full h-16 md:h-20">
-        {/* Site branding */}
-        <div className="shrink-0 mr-4">
-          <Logo />
+    <>
+      <div
+        className={`fixed  flex items-center w-full mx-auto h-11 z-10 max-sm:px-5 sm:px-10 md:px-20 lg:px-32 border-b border-gray-300  duration-500 ease-in-out ${
+          !top ? "hidden" : "bg-gray-100"
+        }`}
+      >
+        <div className="flex justify-between items-center max-w-screen-2xl w-full mx-auto ">
+          <div className="flex gap-2">
+            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+              <FaShareAlt />
+            </span>
+            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+              <FaFacebookF />
+            </span>
+            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+              <FaXTwitter />
+            </span>
+            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+              <FaLinkedinIn />
+            </span>
+            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+              <IoLogoGoogleplus />
+            </span>
+          </div>
+
+          <div className="flex gap-3 text-gray-600">
+            <div className="flex items-center">
+              <span className="text-primaryColor flex justify-center items-center mr-2">
+                <HiSupport />
+              </span>
+              <p className="font-normal max-md:hidden">Talk to us</p>
+            </div>
+            <div className="flex items-center">
+              <span className="text-primaryColor flex justify-center items-center mr-2">
+                <IoMdMail />
+              </span>
+              <p className="font-normal max-md:hidden">
+                support@sourcecode.co.et
+              </p>
+            </div>
+            <div className="flex items-center">
+              <span className="text-primaryColor flex justify-center items-center mr-2">
+                <FaWhatsapp />
+              </span>
+              <p className="font-normal max-md:hidden">+251 974-017208</p>
+            </div>
+          </div>
         </div>
-        {/* Desktop navigation */}
-        {/* <nav className="hidden md:flex md:grow"> */}
-        {/* Desktop sign in links */}
-        {/* <ul className="flex grow justify-end flex-wrap items-center">
+      </div>
+      <header
+        className={`fixed w-full z-30 md:bg-opacity-90 transition duration-150 ease-linear ${
+          !top ? "bg-white backdrop-blur-sm shadow-lg" : "top-12 "
+        }`}
+      >
+        {/* <div className="max-w-6xl mx-auto px-5 sm:px-6"> */}
+        <div className="flex max-w-6xl mx-auto px-5 sm:px-6   items-center justify-between w-full h-16 md:h-20">
+          {/* Site branding */}
+          <div className="shrink-0 mr-4">
+            <Logo />
+          </div>
+          {/* Desktop navigation */}
+          {/* <nav className="hidden md:flex md:grow"> */}
+          {/* Desktop sign in links */}
+          {/* <ul className="flex grow justify-end flex-wrap items-center">
               <li>
                 <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
               </li>
@@ -58,116 +117,103 @@ export default function Header() {
 
           </nav> */}
 
-        <nav className="hidden md:flex  md:grow justify-end">
-          <ul className="flex items-center gap-x-4 text-sm font-medium py-12">
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/"
-                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.5] px-2 py-3   duration-500 ease-in"
-                }`}
-                href="/"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/services"
-                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3   duration-500 ease-in"
-                }`}
-                href="/services"
-              >
-                <Dropdown title="Services">
-                  <option
-                    className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                    value="option1"
-                  >
-                    Option 1
-                  </option>
-                  <option
-                    className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                    value="option2"
-                  >
-                    Option 2
-                  </option>
-                  <option
-                    className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                    value="option3"
-                  >
-                    Option 3
-                  </option>
-                </Dropdown>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/blogs"
-                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in"
-                }`}
-                href="/blogs"
-              >
-                Blogs
-              </Link>
-            </li>
+          <nav className="hidden md:flex  md:grow justify-end">
+            <ul className="flex justify-center items-center gap-x-4 text-sm font-medium py-12">
+              <li>
+                <Link
+                  className={`link ${
+                    pathname === "/"
+                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3   duration-500 ease-in"
+                  }`}
+                  href="/"
+                >
+                  Home
+                </Link>
+              </li>
 
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/about"
-                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
-                }`}
-                href="/about"
-              >
-                Why Choose Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={`link ${
-                  pathname === "/contact"
-                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
-                }`}
-                href="/contact"
-              >
-                Contact us
-              </Link>
-            </li>
-          </ul>
-          {/* <div className="flex items-center pl-5 gap-x-5">
-            <Link href="/signup" className="text-[#0F1B4C]">
-              Sign up
-            </Link>
-            <Link
-              href="/register"
-              className="text-white rounded-lg bg-[#0F1B4C] px-5  py-2"
-            >
-              Register
-            </Link>
-          </div> */}
-        </nav>
-        <div className="flex w-auto items-center justify-center gap-1 ml-2 md:ml-16 max-md:hidden  font-medium text-primaryColor">
-          <div>
-            <Tooltip text="call us">
-              <a
-                className="btn py-2 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-md duration-300"
-                href="tel:+1234567890"
-              >
-                +251 974-017208
-              </a>
-            </Tooltip>
+              <li>
+                <Link
+                  className="font-medium text-left text-gray-600  duration-150 ease-in-out"
+                  href="/services"
+                >
+                  <Dropdown title="Services">
+                    <option
+                      className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                      value="option1"
+                    >
+                      Option 1
+                    </option>
+                    <option
+                      className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                      value="option2"
+                    >
+                      Option 2
+                    </option>
+                    <option
+                      className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                      value="option3"
+                    >
+                      Option 3
+                    </option>
+                  </Dropdown>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`link ${
+                    pathname === "/blogs"
+                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
+                  }`}
+                  href="/blogs"
+                >
+                  Blogs
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  className={`link ${
+                    pathname === "/about"
+                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
+                  }`}
+                  href="/about"
+                >
+                  Why Choose Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`link ${
+                    pathname === "/contact"
+                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
+                  }`}
+                  href="/contact"
+                >
+                  Contact us
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="flex w-auto items-center justify-center gap-1 ml-2 md:ml-16 max-md:hidden  font-medium text-primaryColor">
+            <div>
+              <Tooltip text="call us">
+                <a
+                  className="px-4 py-3 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
+                  href="tel:+1234567890"
+                >
+                  +251 974-017208
+                </a>
+              </Tooltip>
+            </div>
           </div>
+          <MobileMenu />
         </div>
-        <MobileMenu />
-      </div>
-      {/* </div> */}
-    </header>
+        {/* </div> */}
+      </header>
+    </>
   );
 }
