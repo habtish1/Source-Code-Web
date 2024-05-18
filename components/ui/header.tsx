@@ -7,10 +7,12 @@ import Tooltip from "../utils/Tooltips";
 import Logo from "./logo";
 import Dropdown from "@/components/utils/dropdown";
 import MobileMenu from "./mobile-menu";
-import Image from "next/image";
-import eth from "@/public/images/eth.png";
+// import { useRouter } from "next/router";
+
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
   const [top, setTop] = useState<boolean>(true);
 
   // detect whether user has solled the page down by 10px
@@ -37,7 +39,6 @@ export default function Header() {
         <div className="shrink-0 mr-4">
           <Logo />
         </div>
-
         {/* Desktop navigation */}
         {/* <nav className="hidden md:flex md:grow"> */}
         {/* Desktop sign in links */}
@@ -61,16 +62,24 @@ export default function Header() {
           <ul className="flex items-center gap-x-4 text-sm font-medium py-12">
             <li>
               <Link
+                className={`link ${
+                  pathname === "/"
+                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.5] px-2 py-3   duration-500 ease-in"
+                }`}
                 href="/"
-                className="font-medium text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Home
               </Link>
             </li>
             <li>
               <Link
+                className={`link ${
+                  pathname === "/services"
+                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3   duration-500 ease-in"
+                }`}
                 href="/services"
-                className="font-medium text-gray-600 px-3 py-2  flex items-center"
               >
                 <Dropdown title="Services">
                   <option
@@ -96,8 +105,12 @@ export default function Header() {
             </li>
             <li>
               <Link
+                className={`link ${
+                  pathname === "/blogs"
+                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in"
+                }`}
                 href="/blogs"
-                className="font-medium text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Blogs
               </Link>
@@ -105,16 +118,24 @@ export default function Header() {
 
             <li>
               <Link
+                className={`link ${
+                  pathname === "/about"
+                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
+                }`}
                 href="/about"
-                className="font-medium text-nowrap text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
-                About us
+                Why Choose Us
               </Link>
             </li>
             <li>
               <Link
+                className={`link ${
+                  pathname === "/contact"
+                    ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                    : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
+                }`}
                 href="/contact"
-                className="font-medium text-nowrap text-gray-600 hover:text-gray-900 hover:scale-[1.02] px-2 py-3 flex items-center transition duration-150 ease-in-out"
               >
                 Contact us
               </Link>
@@ -144,7 +165,6 @@ export default function Header() {
             </Tooltip>
           </div>
         </div>
-
         <MobileMenu />
       </div>
       {/* </div> */}

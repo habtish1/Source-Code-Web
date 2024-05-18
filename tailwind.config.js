@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        navHoverColor: "#4a8eed",
         primaryColor: "#1554D1",
         hoverPrimary: "#0B2B6B",
         cardBrown: "#29272E",
