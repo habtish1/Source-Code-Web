@@ -15,7 +15,7 @@ export default function Dropdown({ children, title }: DropdownProps) {
   const pathname = usePathname();
 
   return (
-    <span
+    <div
       className="relative"
       onMouseEnter={() => setDropdownOpen(true)}
       onMouseLeave={() => setDropdownOpen(false)}
@@ -54,6 +54,6 @@ export default function Dropdown({ children, title }: DropdownProps) {
       >
         {children}
       </Transition>
-    </span>
+    </div>
   );
 }

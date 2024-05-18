@@ -23,41 +23,7 @@ export default function FeaturesBlocks() {
           {/* Items */}
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch md:max-w-2xl lg:max-w-none">
             {/* 1st item */}
-            <div className="hover:motion-safe:animate-bounce relative flex flex-col flex-grow items-center text-center justify-center p-6 bg-white rounded shadow-xl">
-              {/* <svg
-                className="w-16 h-16 p-1 -mt-1 mb-2"
-                viewBox="0 0 64 64"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <rect
-                    className="fill-current text-blue-600"
-                    width="64"
-                    height="64"
-                    rx="32"
-                  />
-                  <g strokeWidth="2">
-                    <path
-                      className="stroke-current text-blue-300"
-                      d="M34.514 35.429l2.057 2.285h8M20.571 26.286h5.715l2.057 2.285"
-                    />
-                    <path
-                      className="stroke-current text-white"
-                      d="M20.571 37.714h5.715L36.57 26.286h8"
-                    />
-                    <path
-                      className="stroke-current text-blue-300"
-                      strokeLinecap="square"
-                      d="M41.143 34.286l3.428 3.428-3.428 3.429"
-                    />
-                    <path
-                      className="stroke-current text-white"
-                      strokeLinecap="square"
-                      d="M41.143 29.714l3.428-3.428-3.428-3.429"
-                    />
-                  </g>
-                </g>
-              </svg> */}
+            <div className="hover:animate-smallBounce relative flex flex-col flex-grow items-center text-center justify-center p-6 bg-white rounded shadow-xl">
               <svg
                 className="w-16 h-16 p-1 -mt-1 mb-2"
                 viewBox="0 0 16 16"
@@ -68,20 +34,20 @@ export default function FeaturesBlocks() {
                 <g id="SVGRepo_iconCarrier">
                   {" "}
                   <path
-                   fillRule="nonzero"
+                    fillRule="nonzero"
                     clipRule="nonzero"
                     d="M4.84989 2.37195C4.59895 2.51683 4.33488 2.91636 4.30424 3.78785C4.28968 4.20181 3.9423 4.52559 3.52835 4.51103C3.11439 4.49647 2.79061 4.1491 2.80516 3.73514C2.84273 2.66673 3.1806 1.60366 4.09989 1.07291C5.02179 0.540653 6.11484 0.782356 7.06128 1.28727C7.42674 1.48224 7.56495 1.93656 7.36998 2.30201C7.17501 2.66747 6.72069 2.80568 6.35524 2.61072C5.5818 2.1981 5.10158 2.22663 4.84989 2.37195ZM8.87139 3.67284C9.19036 3.40858 9.66315 3.45293 9.92741 3.7719C10.4818 4.44103 11.0136 5.20405 11.4963 6.04018C12.5366 7.84191 13.178 9.68785 13.3509 11.2362C13.4372 12.0091 13.4108 12.7446 13.2303 13.3754C13.0484 14.011 12.6941 14.5863 12.0999 14.9293C11.381 15.3444 10.5509 15.2855 9.79114 15.0089C9.02868 14.7313 8.24395 14.2056 7.49586 13.5228C7.18993 13.2435 7.16831 12.7691 7.44756 12.4632C7.72681 12.1573 8.20119 12.1356 8.50712 12.4149C9.16624 13.0165 9.78567 13.4105 10.3043 13.5994C10.8257 13.7892 11.1537 13.7436 11.3499 13.6303C11.5143 13.5354 11.6797 13.342 11.7882 12.9627C11.8981 12.5787 11.9328 12.0529 11.8602 11.4026C11.7152 10.1045 11.1591 8.45607 10.1973 6.79018C9.75492 6.02396 9.27081 5.33055 8.77232 4.72886C8.50807 4.40989 8.55242 3.93709 8.87139 3.67284Z"
                     fill="#2f6dec"
                     strokeWidth="0"
                   />{" "}
                   <path
-                   fillRule="nonzero"
+                    fillRule="nonzero"
                     clipRule="nonzero"
                     d="M14.5 8.20557C14.5 7.91581 14.286 7.48735 13.5466 7.02507C13.1954 6.80549 13.0887 6.34276 13.3083 5.99154C13.5279 5.64032 13.9906 5.53361 14.3418 5.75319C15.2483 6.31993 16 7.14407 16 8.20557C16 9.27009 15.2442 10.0958 14.3337 10.663C13.9821 10.882 13.5195 10.7746 13.3005 10.423C13.0815 10.0714 13.189 9.60887 13.5405 9.38985C14.2846 8.92635 14.5 8.4962 14.5 8.20557ZM11.3626 11.0378C11.432 11.4462 11.1572 11.8335 10.7488 11.9029C9.89219 12.0484 8.96547 12.1274 8 12.1274C5.91954 12.1274 4.00018 11.76 2.57286 11.1355C1.86032 10.8238 1.23659 10.4332 0.780529 9.9615C0.320977 9.48616 0 8.89166 0 8.20557C0 7.37549 0.466082 6.68599 1.08548 6.16636C1.70712 5.64485 2.55471 5.22808 3.52013 4.92164C3.91494 4.79633 4.33657 5.01479 4.46189 5.40959C4.5872 5.80439 4.36874 6.22603 3.97394 6.35135C3.12334 6.62134 2.4724 6.96078 2.04954 7.31553C1.62442 7.67217 1.5 7.97899 1.5 8.20557C1.5 8.39536 1.58476 8.6353 1.85895 8.91891C2.13663 9.20613 2.57464 9.49905 3.17409 9.76131C4.37076 10.2848 6.07639 10.6274 8 10.6274C8.88475 10.6274 9.72732 10.5549 10.4976 10.424C10.906 10.3547 11.2933 10.6295 11.3626 11.0378Z"
                     fill="#2f6dec"
                   />{" "}
                   <path
-                   fillRule="nonzero"
+                    fillRule="nonzero"
                     clipRule="nonzero"
                     d="M4.87192 13.6303C5.12286 13.7752 5.6009 13.8041 6.37095 13.3949C6.73673 13.2005 7.19082 13.3395 7.38519 13.7052C7.57957 14.071 7.44062 14.5251 7.07484 14.7195C6.13079 15.2211 5.04121 15.4601 4.12192 14.9293C3.20003 14.3971 2.86282 13.3296 2.82687 12.2575C2.81299 11.8435 3.13733 11.4967 3.55131 11.4828C3.96529 11.4689 4.31215 11.7932 4.32603 12.2072C4.35541 13.0834 4.62023 13.485 4.87192 13.6303ZM3.98778 9.49712C3.59944 9.35301 3.40145 8.92138 3.54556 8.53304C3.84786 7.71839 4.24274 6.8763 4.72548 6.04018C5.76571 4.23845 7.04361 2.75996 8.29806 1.83609C8.92431 1.37487 9.57441 1.02999 10.211 0.870901C10.8524 0.71059 11.5278 0.729863 12.1219 1.07291C12.8408 1.48795 13.2049 2.23634 13.3452 3.03257C13.486 3.83168 13.4232 4.77409 13.2058 5.7634C13.1169 6.16796 12.7169 6.42388 12.3124 6.33501C11.9078 6.24613 11.6519 5.84612 11.7408 5.44155C11.9322 4.56992 11.9637 3.83647 11.868 3.29288C11.7717 2.7464 11.5681 2.48524 11.3719 2.37195C11.2076 2.27705 10.9574 2.23049 10.5747 2.32614C10.1871 2.42301 9.71442 2.65588 9.18757 3.04388C8.13584 3.81846 6.98632 5.12428 6.02452 6.79018C5.58214 7.55639 5.22369 8.32235 4.95185 9.0549C4.80774 9.44323 4.37611 9.64122 3.98778 9.49712Z"
                     fill="#2f6dec"
@@ -104,7 +70,7 @@ export default function FeaturesBlocks() {
             </div>
 
             {/* 2nd item */}
-            <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+            <div className="hover:animate-smallBounce  relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               {/* <svg
                 className="w-16 h-16 p-1 -mt-1 mb-2"
                 viewBox="0 0 64 64"
@@ -176,7 +142,7 @@ export default function FeaturesBlocks() {
             </div>
 
             {/* 3rd item */}
-            <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+            <div className="hover:animate-smallBounce relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               <svg
                 fill="#2f6dec"
                 className="w-16 h-16 p-1 -mt-1 mb-2"
@@ -221,7 +187,7 @@ export default function FeaturesBlocks() {
             </div>
 
             {/* 4th item */}
-            <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+            <div className="hover:animate-smallBounce relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               {/* <svg
                 className="w-16 h-16 p-1 -mt-1 mb-2"
                 viewBox="0 0 64 64"
@@ -296,7 +262,7 @@ export default function FeaturesBlocks() {
             </div>
 
             {/* 5th item */}
-            <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+            <div className="hover:animate-smallBounce relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               {/* <svg
                 className="w-16 h-16 p-1 -mt-1 mb-2"
                 viewBox="0 0 64 64"
@@ -370,7 +336,7 @@ export default function FeaturesBlocks() {
             </div>
 
             {/* 6th item */}
-            <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+            <div className="hover:animate-smallBounce relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               {/* <svg
                 className="w-16 h-16 p-1 -mt-1 mb-2"
                 viewBox="0 0 64 64"
@@ -413,7 +379,7 @@ export default function FeaturesBlocks() {
                 <g id="SVGRepo_iconCarrier">
                   {" "}
                   <path
-                   fillRule="evenodd"
+                    fillRule="evenodd"
                     clipRule="evenodd"
                     d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12.3583 9.38244C11.3857 9.787 9.44177 10.6243 6.52657 11.8944C6.05318 12.0827 5.8052 12.2669 5.78263 12.4469C5.74448 12.7513 6.12559 12.8711 6.64455 13.0343C6.71515 13.0565 6.78829 13.0795 6.86327 13.1038C7.37385 13.2698 8.06068 13.464 8.41773 13.4717C8.74161 13.4787 9.1031 13.3452 9.50219 13.0711C12.226 11.2325 13.632 10.3032 13.7202 10.2831C13.7825 10.269 13.8688 10.2512 13.9273 10.3032C13.9858 10.3552 13.98 10.4536 13.9738 10.48C13.9361 10.641 12.4401 12.0318 11.6659 12.7515C11.4246 12.9759 11.2534 13.135 11.2184 13.1714C11.14 13.2528 11.0601 13.3298 10.9833 13.4038C10.509 13.8611 10.1532 14.204 11.003 14.764C11.4114 15.0331 11.7381 15.2556 12.0641 15.4776C12.4201 15.7201 12.7752 15.9619 13.2347 16.2631C13.3517 16.3398 13.4635 16.4195 13.5724 16.4971C13.9867 16.7925 14.3589 17.0579 14.8188 17.0155C15.086 16.991 15.362 16.7397 15.5022 15.9903C15.8335 14.2193 16.4847 10.382 16.6352 8.80081C16.6484 8.66228 16.6318 8.48498 16.6185 8.40715C16.6051 8.32932 16.5773 8.21842 16.4761 8.13633C16.3563 8.03911 16.1714 8.01861 16.0886 8.02C15.7125 8.0267 15.1354 8.22735 12.3583 9.38244Z"
                     fill="#2f6dec"

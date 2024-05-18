@@ -8,6 +8,11 @@ module.exports = {
 
   theme: {
     extend: {
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+        wiggle: "wiggle 200ms ease-in-out",
+      },
+
       colors: {
         navHoverColor: "#4a8eed",
         primaryColor: "#1554D1",
@@ -128,13 +133,26 @@ module.exports = {
       },
       animation: {
         float: "float 3s ease-in-out infinite",
+        wiggle: "wiggle 200ms ease-in-out infinite",
+        smallBounce: "smallBounce 1s ease-in-out infinite",
       },
       keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-5%)" },
         },
+        smallBounce: {
+          "0%, 100%": {
+            transform: "translateY(-5%)",
+            animationTimingFunction: "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%": {
+            transform: "translateY(0)",
+            animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
+          },
+        },
       },
+
       zIndex: {
         "-1": "-1",
       },
