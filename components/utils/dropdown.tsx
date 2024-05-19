@@ -22,7 +22,7 @@ export default function Dropdown({ children, title }: DropdownProps) {
       onFocus={() => setDropdownOpen(true)}
       onBlur={() => setDropdownOpen(false)}
     >
-      <a
+      <span
         className={`link ${
           pathname === "/services"
             ? "inline-block text-base px-3 py-3 ease-in-out duration-500 text-navHoverColor"
@@ -40,7 +40,7 @@ export default function Dropdown({ children, title }: DropdownProps) {
         >
           <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
         </svg>
-      </a>
+      </span>
       <Transition
         show={dropdownOpen}
         as="ul"

@@ -25,7 +25,7 @@ const Tooltip = ({ text, children }: IProps) => {
         {children}
       </div>
       {showTooltip && (
-        <div className="absolute top-[150%] left-1/2 transform -translate-x-1/2 mt-1 px-2 py-1 bg-gray-800 text-white text-sm rounded whitespace-nowrap before:absolute before:-top-full before:left-1/2 before:ml-2 before:-translate-x-1/2 before:translate-y-full before:border-8 before:rotate-180 before:border-gray-800 before:border-b-transparent before:border-l-transparent before:border-r-transparent">
+        <div className="absolute top-[120%] left-1/2 transform -translate-x-1/2 mt-1 px-2 py-1 bg-gray-800 text-white text-sm rounded whitespace-nowrap before:absolute before:-top-full before:left-1/2 before:ml-2 before:-translate-x-1/2 before:translate-y-full before:border-8 before:rotate-180 before:border-gray-800 before:border-b-transparent before:border-l-transparent before:border-r-transparent">
           {text}
         </div>
       )}
