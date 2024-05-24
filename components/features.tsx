@@ -7,6 +7,7 @@ import FeaturesBg from "@/public/images/features-bg.png";
 import FeaturesElement from "@/public/images/features-element.png";
 import mela from "@/public/images/mela.png";
 import kacha from "@/public/images/kacha.png";
+import mela_moch from "@/public/images/mela_moch.png";
 
 export default function Features() {
   const [tab, setTab] = useState<number>(1);
@@ -188,21 +189,11 @@ export default function Features() {
                     beforeEnter={() => heightFix()}
                     unmount={false}
                   >
-                    <div className="relative inline-flex flex-col">
+                    <div className=" flex flex-col">
                       <Image
-                        className="md:max-w-none mx-auto rounded"
-                        src={FeaturesBg}
-                        width={500}
-                        height="462"
+                        className="md:max-w-none w-[350px] h-auto mx-auto rounded"
+                        src={mela_moch}
                         alt="Features bg"
-                      />
-                      <Image
-                        className="md:max-w-none absolute w-full left-0 transform animate-float"
-                        src={FeaturesElement}
-                        width={500}
-                        height="44"
-                        alt="Element"
-                        style={{ top: "30%" }}
                       />
                     </div>
                   </Transition>
