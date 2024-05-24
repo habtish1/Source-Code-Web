@@ -5,6 +5,8 @@ import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import FeaturesBg from "@/public/images/features-bg.png";
 import FeaturesElement from "@/public/images/features-element.png";
+import mela from "@/public/images/mela.png";
+import kacha from "@/public/images/kacha.png";
 
 export default function Features() {
   const [tab, setTab] = useState<number>(1);
@@ -79,14 +81,15 @@ export default function Features() {
                       administrative features built for teams.
                     </div>
                   </div>
-                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                    <svg
+                  <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                    {/* <svg
                       className="w-3 h-3 fill-current"
                       viewBox="0 0 12 12"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path d="M11.953 4.29a.5.5 0 00-.454-.292H6.14L6.984.62A.5.5 0 006.12.173l-6 7a.5.5 0 00.379.825h5.359l-.844 3.38a.5.5 0 00.864.445l6-7a.5.5 0 00.075-.534z" />
-                    </svg>
+                    </svg> */}
+                    <Image className="w-8 h-8" src={mela} alt="" />
                   </div>
                 </a>
                 <a
@@ -110,8 +113,8 @@ export default function Features() {
                       administrative features built for teams.
                     </div>
                   </div>
-                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                    <svg
+                  <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                    {/* <svg
                       className="w-3 h-3 fill-current"
                       viewBox="0 0 12 12"
                       xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +123,8 @@ export default function Features() {
                         d="M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z"
                         fillRule="nonzero"
                       />
-                    </svg>
+                    </svg> */}
+                    <Image className="w-8 h-8" src={kacha} alt="" />
                   </div>
                 </a>
                 <a
@@ -176,11 +180,11 @@ export default function Features() {
                     appear={true}
                     className="w-full"
                     enter="transition ease-in-out duration-700 transform order-first"
-                    enterFrom="opacity-0 translate-y-16"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in-out duration-300 transform absolute"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 -translate-y-16"
+                    enterFrom="opacity-0 translate-x-96"
+                    enterTo="opacity-100 translate-x-0"
+                    leave="transition ease-in-out duration-700 transform absolute"
+                    leaveFrom="opacity-100 translate-x-0"
+                    leaveTo="opacity-0 -translate-x-10"
                     beforeEnter={() => heightFix()}
                     unmount={false}
                   >
@@ -208,11 +212,11 @@ export default function Features() {
                     appear={true}
                     className="w-full"
                     enter="transition ease-in-out duration-700 transform order-first"
-                    enterFrom="opacity-0 translate-y-16"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in-out duration-300 transform absolute"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 -translate-y-16"
+                    enterFrom="opacity-0 translate-x-96"
+                    enterTo="opacity-100 translate-x-0"
+                    leave="transition ease-in-out duration-700 transform absolute"
+                    leaveFrom="opacity-100 translate-x-0"
+                    leaveTo="opacity-0 -translate-x-10"
                     beforeEnter={() => heightFix()}
                     unmount={false}
                   >
@@ -240,11 +244,11 @@ export default function Features() {
                     appear={true}
                     className="w-full"
                     enter="transition ease-in-out duration-700 transform order-first"
-                    enterFrom="opacity-0 translate-y-16"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in-out duration-300 transform absolute"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 -translate-y-16"
+                    enterFrom="opacity-0 translate-x-96"
+                    enterTo="opacity-100 translate-x-0"
+                    leave="transition ease-in-out duration-700 transform absolute"
+                    leaveFrom="opacity-100 translate-x-0"
+                    leaveTo="opacity-0 -translate-x-10"
                     beforeEnter={() => heightFix()}
                     unmount={false}
                   >

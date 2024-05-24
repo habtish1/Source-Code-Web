@@ -28,7 +28,6 @@ export default function Dropdown({ children, title }: DropdownProps) {
             ? "inline-block text-base px-3 py-3 ease-in-out duration-500 text-navHoverColor"
             : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-3 py-3   duration-500 ease-in"
         }`}
-        href="#0"
         aria-expanded={dropdownOpen}
         onClick={(e) => e.preventDefault()}
       >
