@@ -90,22 +90,22 @@ export default function Features() {
                       <div className="font-bold leading-snug tracking-tight mb-1">
                         Mela Books
                       </div>
-                      <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                        <Image className="w-8 h-8" src={mela} alt="" />
+                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                        <Image className="w-4 h-4" src={mela} alt="" />
                       </div>
                     </div>
                     <div className="text-gray-600 pr-12">
                       Melabooks is a mobile bookkeeping app designed to make it
-                      easy for small businesses and freelancers to track their
-                      finances and manage their cash flow.{" "}
+                      easy for small businesses and freelancers to track{" "}
                       <span id="dots-1">...</span>
                       <span
                         id="more-1"
                         className="hidden ease-linear duration-1000"
                       >
-                        It offers a variety of features, including: Income and
-                        expense tracking: Melabooks allows you to easily track
-                        your income and expenses, and categorize them by client,
+                        their finances and manage their cash flow. It offers a
+                        variety of features, including: Income and expense
+                        tracking: Melabooks allows you to easily track your
+                        income and expenses, and categorize them by client,
                         project, or expense type.
                       </span>
                     </div>
@@ -135,25 +135,24 @@ export default function Features() {
                       <div className="font-bold leading-snug capitalize tracking-tight mb-1">
                         kacha digital financial service
                       </div>
-                      <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                        <Image className="w-8 h-8" src={kacha} alt="" />
+                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                        <Image className="w-4 h-4" src={kacha} alt="" />
                       </div>
                     </div>
                     <div className="text-gray-600 pr-12">
                       Kacha Digital Financial Service S.C. is the first a
                       premier digital platform that provides seamless financial
-                      services in Ethiopia
                       <span id="dots-2">...</span>
                       <span
                         id="more-2"
                         className="hidden ease-linear duration-1000"
                       >
-                        It is committed to empowering customers by providing
-                        them with convenient, affordable, and secure digital
-                        financial services that meet their everyday needs. Kacha
-                        are passionate about driving positive change and
-                        creating value for customers, employees, and society as
-                        a whole.
+                        services in Ethiopia It is committed to empowering
+                        customers by providing them with convenient, affordable,
+                        and secure digital financial services that meet their
+                        everyday needs. Kacha are passionate about driving
+                        positive change and creating value for customers,
+                        employees, and society as a whole.
                       </span>
                     </div>
                     <button
@@ -182,14 +181,14 @@ export default function Features() {
                       <div className="font-bold leading-snug capitalize tracking-tight mb-1">
                         kacha digital financial service
                       </div>
-                      <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                        <Image className="w-8 h-8" src={kacha} alt="" />
+                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                        <Image className="w-4 h-4" src={kacha} alt="" />
                       </div>
                     </div>
                     <div className="text-gray-600 pr-12">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni ad eaque recusandae iste, minus sunt velit, nemo
-                      sint <span id="dots-3">...</span>
+                      Magni ad eaque recusandae iste, minus sunt velit,
+                      <span id="dots-3">...</span>
                       <span
                         id="more-3"
                         className="hidden ease-linear duration-1000"

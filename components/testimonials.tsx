@@ -124,7 +124,7 @@ export default function Testimonials() {
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 relative border-neutral-200 ">
-                    <div className="flex items-center  justify-center py-2 col-span-2 md:col-auto">
+                    <div className="flex items-center hover:scale-125 ease-in-out duration-300 justify-center py-2 col-span-2 md:col-auto">
                       <Image className="w-12 h-12" src={mela} alt="" />
                       <p className="pl-2 uppercase text-base font-bold tracking-wider">
                         Melabooks
@@ -136,7 +136,7 @@ export default function Testimonials() {
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
-                    <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
+                    <div className="flex items-center hover:scale-125 ease-in-out duration-300 justify-center py-2 col-span-2 md:col-auto">
                       <Image className="w-12 h-12" src={kacha} alt="" />
                       <p className="pl-2 uppercase text-base font-bold tracking-widest">
                         kacha
@@ -148,28 +148,44 @@ export default function Testimonials() {
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
-                    <Image className="w-36 h-auto" src={chenet} alt="" />
+                    <Image
+                      className="w-36 hover:scale-125 h-auto ease-in-out duration-300"
+                      src={chenet}
+                      alt=""
+                    />
                   </div>
                 </a>
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 relative border-neutral-200">
-                    <Image className="w-36 h-auto" src={capstone} alt="" />
+                    <Image
+                      className="w-36 h-auto hover:scale-125 ease-in-out duration-300"
+                      src={capstone}
+                      alt=""
+                    />
                   </div>
                 </a>
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
-                    <Image className="w-36 h-auto" src={duruj} alt="" />
+                    <Image
+                      className="w-36 h-auto hover:scale-125 ease-in-out duration-300"
+                      src={duruj}
+                      alt=""
+                    />
                   </div>
                 </a>
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
                   <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
-                    <Image className="w-36 h-auto" src={adopay} alt="" />
+                    <Image
+                      className="w-36 h-auto hover:scale-125 ease-in-out duration-300"
+                      src={adopay}
+                      alt=""
+                    />
                   </div>
                 </a>
               </li>
