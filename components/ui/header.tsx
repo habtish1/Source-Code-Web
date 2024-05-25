@@ -204,7 +204,7 @@ export default function Header() {
             <div>
               <Tooltip text="call us">
                 <a
-                  className="animate-smallBounce hover:animate-none block px-4 py-3 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
+                  className="animate-smallBounce hover:animate-none block py-2 px-6 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
                   href="tel:+1234567890"
                 >
                   +251 974-017208

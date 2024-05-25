@@ -123,10 +123,10 @@ export default function Testimonials() {
             <ul className="flex animate-carousel gap-4 whitespace-nowrap">
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
-                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
+                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 relative border-neutral-200 ">
                     <div className="flex items-center  justify-center py-2 col-span-2 md:col-auto">
                       <Image className="w-12 h-12" src={mela} alt="" />
-                      <p className="pl-2 uppercase text-base text-white font-bold tracking-wider">
+                      <p className="pl-2 uppercase text-base font-bold tracking-wider">
                         Melabooks
                       </p>
                     </div>{" "}
@@ -135,10 +135,10 @@ export default function Testimonials() {
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
-                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
+                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
                     <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
                       <Image className="w-12 h-12" src={kacha} alt="" />
-                      <p className="pl-2 uppercase text-base text-white font-bold tracking-widest">
+                      <p className="pl-2 uppercase text-base font-bold tracking-widest">
                         kacha
                       </p>
                     </div>
@@ -147,28 +147,28 @@ export default function Testimonials() {
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
-                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
+                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
                     <Image className="w-36 h-auto" src={chenet} alt="" />
                   </div>
                 </a>
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
-                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
+                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 relative border-neutral-200">
                     <Image className="w-36 h-auto" src={capstone} alt="" />
                   </div>
                 </a>
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
-                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
+                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
                     <Image className="w-36 h-auto" src={duruj} alt="" />
                   </div>
                 </a>
               </li>
               <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
                 <a className="relative h-full w-full" href="/product/acme-mug">
-                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
+                  <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
                     <Image className="w-36 h-auto" src={adopay} alt="" />
                   </div>
                 </a>
