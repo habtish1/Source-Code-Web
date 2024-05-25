@@ -144,19 +144,19 @@ export default function Header() {
                       className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
                       value="option1"
                     >
-                      Option 1
+                      Web Development
                     </option>
                     <option
                       className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
                       value="option2"
                     >
-                      Option 2
+                      Telegram Bots
                     </option>
                     <option
                       className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
                       value="option3"
                     >
-                      Option 3
+                      App Development
                     </option>
                   </Dropdown>
                 </Link>

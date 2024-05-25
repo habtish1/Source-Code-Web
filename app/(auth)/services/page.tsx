@@ -338,9 +338,6 @@ export default function Services() {
             BOT
           </button>
           <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-            CloudTesting
-          </button>
-          <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
             DevOps
           </button>
           <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
