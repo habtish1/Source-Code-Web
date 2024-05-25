@@ -23,16 +23,28 @@ export default function Features() {
     heightFix();
   }, []);
 
-  return (
-    <section className="relative">
-      {/* Section background (needs .relative class on parent and next sibling elements) */}
-      <div
-        className="absolute inset-0 bg-gray-100 pointer-events-none mb-16"
-        aria-hidden="true"
-      ></div>
-      <div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-gray-200 transform -translate-y-1/2"></div>
+  function myFunction(id: number): void {
+    const dots = document.getElementById(`dots-${id}`) as HTMLElement;
+    const moreText = document.getElementById(`more-${id}`) as HTMLElement;
+    const btnText = document.getElementById(`myBtn-${id}`) as HTMLButtonElement;
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "block";
+    }
+  }
+
+  return (
+    <section className="relative bg-gray-200">
+      {/* Section background (needs .relative class on parent and next sibling elements) */}
+      <div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-blue-400 transform -translate-y-1/2"></div>
+
+      <div className="relative bg-cyan-200 md:pb-20 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
@@ -74,23 +86,36 @@ export default function Features() {
                   }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">
-                      Building the Simple ecosystem
+                    <div className="flex justify-between">
+                      <div className="font-bold leading-snug tracking-tight mb-1">
+                        Mela Books
+                      </div>
+                      <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                        <Image className="w-8 h-8" src={mela} alt="" />
+                      </div>
                     </div>
-                    <div className="text-gray-600">
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
+                    <div className="text-gray-600 pr-12">
+                      Melabooks is a mobile bookkeeping app designed to make it
+                      easy for small businesses and freelancers to track their
+                      finances and manage their cash flow.{" "}
+                      <span id="dots-1">...</span>
+                      <span
+                        id="more-1"
+                        className="hidden ease-linear duration-1000"
+                      >
+                        It offers a variety of features, including: Income and
+                        expense tracking: Melabooks allows you to easily track
+                        your income and expenses, and categorize them by client,
+                        project, or expense type.
+                      </span>
                     </div>
-                  </div>
-                  <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                    {/* <svg
-                      className="w-3 h-3 fill-current"
-                      viewBox="0 0 12 12"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      className="py-2 px-3 rounded-lg mt-2 border border-gray-700 hover:bg-gray-100"
+                      onClick={() => myFunction(1)}
+                      id="myBtn-1"
                     >
-                      <path d="M11.953 4.29a.5.5 0 00-.454-.292H6.14L6.984.62A.5.5 0 006.12.173l-6 7a.5.5 0 00.379.825h5.359l-.844 3.38a.5.5 0 00.864.445l6-7a.5.5 0 00.075-.534z" />
-                    </svg> */}
-                    <Image className="w-8 h-8" src={mela} alt="" />
+                      Read more
+                    </button>
                   </div>
                 </a>
                 <a
@@ -106,26 +131,38 @@ export default function Features() {
                   }}
                 >
                   <div>
-                    <div className="font-bold  leading-snug tracking-tight mb-1">
-                      Building the Simple ecosystem
+                    <div className="flex justify-between">
+                      <div className="font-bold leading-snug capitalize tracking-tight mb-1">
+                        kacha digital financial service
+                      </div>
+                      <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                        <Image className="w-8 h-8" src={kacha} alt="" />
+                      </div>
                     </div>
-                    <div className="text-gray-600">
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
+                    <div className="text-gray-600 pr-12">
+                      Kacha Digital Financial Service S.C. is the first a
+                      premier digital platform that provides seamless financial
+                      services in Ethiopia
+                      <span id="dots-2">...</span>
+                      <span
+                        id="more-2"
+                        className="hidden ease-linear duration-1000"
+                      >
+                        It is committed to empowering customers by providing
+                        them with convenient, affordable, and secure digital
+                        financial services that meet their everyday needs. Kacha
+                        are passionate about driving positive change and
+                        creating value for customers, employees, and society as
+                        a whole.
+                      </span>
                     </div>
-                  </div>
-                  <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                    {/* <svg
-                      className="w-3 h-3 fill-current"
-                      viewBox="0 0 12 12"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      className="py-2 px-3 mt-2 border border-gray-700 rounded-lg hover:bg-gray-100"
+                      onClick={() => myFunction(2)}
+                      id="myBtn-2"
                     >
-                      <path
-                        d="M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z"
-                        fillRule="nonzero"
-                      />
-                    </svg> */}
-                    <Image className="w-8 h-8" src={kacha} alt="" />
+                      Read more
+                    </button>
                   </div>
                 </a>
                 <a
@@ -141,26 +178,35 @@ export default function Features() {
                   }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">
-                      Building the Simple ecosystem
+                    <div className="flex justify-between">
+                      <div className="font-bold leading-snug capitalize tracking-tight mb-1">
+                        kacha digital financial service
+                      </div>
+                      <div className="flex justify-center items-center w-12 h-12 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                        <Image className="w-8 h-8" src={kacha} alt="" />
+                      </div>
                     </div>
-                    <div className="text-gray-600">
-                      Take collaboration to the next level with security and
-                      administrative features built for teams.
+                    <div className="text-gray-600 pr-12">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Magni ad eaque recusandae iste, minus sunt velit, nemo
+                      sint <span id="dots-3">...</span>
+                      <span
+                        id="more-3"
+                        className="hidden ease-linear duration-1000"
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Et earum impedit dolore saepe at nostrum, corrupti
+                        nesciunt officiis quos voluptates porro vitae atque,
+                        nemo provident est voluptate nisi asperiores cupiditate?
+                      </span>
                     </div>
-                  </div>
-                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                    <svg
-                      className="w-3 h-3 fill-current"
-                      viewBox="0 0 12 12"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      className="py-2 px-3 mt-2 border rounded-lg border-gray-700 hover:bg-gray-100"
+                      onClick={() => myFunction(3)}
+                      id="myBtn-3"
                     >
-                      <path
-                        d="M11.334 8.06a.5.5 0 00-.421-.237 6.023 6.023 0 01-5.905-6c0-.41.042-.82.125-1.221a.5.5 0 00-.614-.586 6 6 0 106.832 8.529.5.5 0 00-.017-.485z"
-                        fill="#191919"
-                        fillRule="nonzero"
-                      />
-                    </svg>
+                      Read more
+                    </button>
                   </div>
                 </a>
               </div>
@@ -170,7 +216,7 @@ export default function Features() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1">
               <div className="transition-all">
                 <div
-                  className="relative flex flex-col text-center lg:text-right"
+                  className="relative flex flex-col mt-28 text-center lg:text-right"
                   data-aos="slide-left"
                   data-aos-delay="10"
                   ref={tabs}
@@ -189,9 +235,9 @@ export default function Features() {
                     beforeEnter={() => heightFix()}
                     unmount={false}
                   >
-                    <div className=" flex flex-col">
+                    <div className="flex flex-col justify-center items-center">
                       <Image
-                        className="md:max-w-none w-[350px] h-auto mx-auto rounded"
+                        className="max-w-[350px] h-auto mx-auto rounded"
                         src={mela_moch}
                         alt="Features bg"
                       />
