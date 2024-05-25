@@ -40,11 +40,11 @@ export default function Features() {
   }
 
   return (
-    <section className="relative bg-gray-200">
+    <section className="relative bg-gray-100">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
       <div className="absolute left-0 right-0 m-auto w-px p-px h-20 bg-blue-400 transform -translate-y-1/2"></div>
 
-      <div className="relative bg-cyan-200 md:pb-20 max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative md:pb-20 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
