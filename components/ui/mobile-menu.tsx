@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
+import { FaPhone } from "react-icons/fa6";
 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
@@ -72,111 +73,65 @@ export default function MobileMenu() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <ul className="px-5 py-2">
+          <ul className="flex flex-col w-full gap-3 px-10 py-2 ">
             {/* <li>
               <Link href="/signin" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>Sign in</Link>
             </li> */}
             <li>
               <Link
                 href="/"
-                className="btn-sm shadow-2xl bg-gray-200 drop-shadow-xl  w-full my-3 py-3"
+                className="flex font-medium w-full hover:bg-gray-200 text-gray-600 hover:text-gray-900 py-4 text-left"
                 onClick={() => setMobileNavOpen(false)}
               >
-                <span>Home</span>
-                <svg
-                  className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1"
-                  viewBox="0 0 12 12"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                    fill="#999"
-                    fillRule="nonzero"
-                  />
-                </svg>
+                <span className="pl-2">Home</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/services"
-                className="btn-sm shadow-2xl bg-gray-200 drop-shadow-xl  w-full my-3 py-3"
+                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 py-4 text-left border-t border-gray-200"
                 onClick={() => setMobileNavOpen(false)}
               >
-                <span>Service</span>
-                <svg
-                  className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1"
-                  viewBox="0 0 12 12"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                    fill="#999"
-                    fillRule="nonzero"
-                  />
-                </svg>
+                <span className="pl-2">Service</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/blogs"
-                className="btn-sm shadow-2xl bg-gray-200 drop-shadow-xl  w-full my-3 py-3"
+                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 py-4 text-left"
                 onClick={() => setMobileNavOpen(false)}
               >
-                <span>Blogs</span>
-                <svg
-                  className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1"
-                  viewBox="0 0 12 12"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                    fill="#999"
-                    fillRule="nonzero"
-                  />
-                </svg>
+                <span className="pl-2">Blogs</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/about"
-                className="btn-sm shadow-2xl bg-gray-200 drop-shadow-xl  w-full my-3 py-3"
+                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 py-4 text-left"
                 onClick={() => setMobileNavOpen(false)}
               >
-                <span>About us</span>
-                <svg
-                  className="w-3 h-3 fill-current text-gray-500 shrink-0 ml-2 -mr-1"
-                  viewBox="0 0 12 12"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                    fill="#999"
-                    fillRule="nonzero"
-                  />
-                </svg>
+                <span className="pl-2">About us</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/contact"
-                className="btn-sm shadow-2xl bg-gray-200 drop-shadow-xl  w-full my-3 py-3"
+                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900  text-left border-b border-gray-400 py-4"
                 onClick={() => setMobileNavOpen(false)}
               >
-                <span>Contact us</span>
-                <svg
-                  className="w-3 h-3 fill-current text-gray-500 shrink-0 ml-2 -mr-1"
-                  viewBox="0 0 12 12"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                    fill="#999"
-                    fillRule="nonzero"
-                  />
-                </svg>
+                <span className="pl-2">Contact us</span>
               </Link>
             </li>
           </ul>
+          <div className="flex px-4 mt-10">
+            <a
+              className=" flex gap-10 justify-center items-center font-medium text-xl w-full py-4 px-6 rounded-md text-center text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear duration-300"
+              href="tel:+1234567890"
+            >
+              <FaPhone className=" " />
+              <span>+251 974-017208</span>
+            </a>
+          </div>
         </Transition>
       </div>
     </div>

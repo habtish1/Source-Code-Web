@@ -156,6 +156,11 @@ module.exports = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        wiggle: {
+          "0%": { transform: "translate(1px, 1px) rotate(0deg)" },
+          "10%": { transform: "translate(-4px, -2px) rotate(-1deg)" },
+          "100%": { transform: "translate(1px, -2px) rotate(-1deg)" },
+        },
       },
 
       zIndex: {

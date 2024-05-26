@@ -235,11 +235,15 @@ export default function Features() {
                     unmount={false}
                   >
                     <div className="flex flex-col justify-center items-center">
+                      {/* <div className="w-20 h-20 bg-cyan-500"> */}
                       <Image
-                        className="max-w-[350px] h-auto mx-auto rounded"
+                        width={500}
+                        height={462}
+                        className="max-w-[400px] h-[550px]  mx-auto rounded"
                         src={mela_moch}
                         alt="Features bg"
                       />
+                      {/* </div> */}
                     </div>
                   </Transition>
                   {/* Item 2 */}
