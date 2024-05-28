@@ -80,12 +80,12 @@ export default function FeaturesBlocks() {
                 viewBox="0 0 490 490"
                 stroke="#2f6dec"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
 
                 <g id="SVGRepo_iconCarrier">
@@ -119,12 +119,12 @@ export default function FeaturesBlocks() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
 
                 <g id="SVGRepo_iconCarrier">
@@ -165,12 +165,12 @@ export default function FeaturesBlocks() {
                 viewBox="0 0 490 490"
                 stroke="#2f6dec"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
 
                 <g id="SVGRepo_iconCarrier">
@@ -243,12 +243,12 @@ export default function FeaturesBlocks() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
 
                 <g id="SVGRepo_iconCarrier">
