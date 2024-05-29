@@ -77,7 +77,7 @@ export default function Header() {
                 <IoMdMail />
               </span>
               <p className="font-normal max-md:hidden">
-                support@sourcecode.co.et
+                support@sourcecodeet.com
               </p>
             </div>
             <div className="flex items-center">
