@@ -16,6 +16,16 @@
     overflow: scroll;
     scrollbar-width: none;
   }
+  .scroll-direction {
+    position: relative;
+    direction: rtl;
+    left: 0;
+  }
+  /* .scroll-direction ::-webkit-scrollbar {
+    position: relative;
+    left: 0;
+    direction: rtl;
+  } */
 }
 
 @keyframes bounce {

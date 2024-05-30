@@ -72,7 +72,7 @@ export default function Features() {
                 </p>
               </div>
               {/* Tabs buttons */}
-              <div className="mb-8 md:mb-0 h-[450px] overflow-y-auto">
+              <div className=" mb-8 md:mb-0 h-[450px] overflow-y-auto scroll-direction ">
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
                     tab !== 1
@@ -86,7 +86,7 @@ export default function Features() {
                   }}
                 >
                   <div>
-                    <div className="flex justify-between">
+                    <div className="flex flex-row-reverse justify-between">
                       <div className="font-bold leading-snug tracking-tight mb-1">
                         Mela Books
                       </div>
@@ -94,7 +94,7 @@ export default function Features() {
                         <Image className="w-4 h-4" src={mela} alt="" />
                       </div>
                     </div>
-                    <div className="text-gray-600 pr-12">
+                    <div className="text-left text-gray-600 pr-12">
                       Melabooks is a mobile bookkeeping app designed to make it
                       easy for small businesses and freelancers to track{" "}
                     </div>
@@ -113,7 +113,7 @@ export default function Features() {
                   }}
                 >
                   <div>
-                    <div className="flex justify-between">
+                    <div className="flex flex-row-reverse justify-between">
                       <div className="font-bold leading-snug capitalize tracking-tight mb-1">
                         kacha digital financial service
                       </div>
@@ -121,7 +121,7 @@ export default function Features() {
                         <Image className="w-4 h-4" src={kacha} alt="" />
                       </div>
                     </div>
-                    <div className="text-gray-600 pr-12">
+                    <div className="text-left text-gray-600 pr-12">
                       Kacha Digital Financial Service S.C. is the first a
                       premier digital platform that provides seamless financial
                     </div>
@@ -140,7 +140,7 @@ export default function Features() {
                   }}
                 >
                   <div>
-                    <div className="flex justify-between">
+                    <div className="flex flex-row-reverse justify-between">
                       <div className="font-bold leading-snug capitalize tracking-tight mb-1">
                         kacha digital financial service
                       </div>
@@ -148,7 +148,7 @@ export default function Features() {
                         <Image className="w-4 h-4" src={kacha} alt="" />
                       </div>
                     </div>
-                    <div className="text-gray-600 pr-12">
+                    <div className="text-left text-gray-600 pr-12">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Magni ad eaque recusandae iste, minus sunt velit,
                     </div>
@@ -156,18 +156,18 @@ export default function Features() {
                 </a>
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
-                    tab !== 1
+                    tab !== 4
                       ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
                       : "bg-gray-200 border-transparent"
                   }`}
                   href="#0"
                   onClick={(e) => {
                     e.preventDefault();
-                    setTab(1);
+                    setTab(4);
                   }}
                 >
                   <div>
-                    <div className="flex justify-between">
+                    <div className="flex flex-row-reverse justify-between">
                       <div className="font-bold leading-snug tracking-tight mb-1">
                         Mela Books
                       </div>
@@ -175,7 +175,7 @@ export default function Features() {
                         <Image className="w-4 h-4" src={mela} alt="" />
                       </div>
                     </div>
-                    <div className="text-gray-600 pr-12">
+                    <div className="text-left text-gray-600 pr-12">
                       Melabooks is a mobile bookkeeping app designed to make it
                       easy for small businesses and freelancers to track{" "}
                     </div>
@@ -254,6 +254,37 @@ export default function Features() {
                   {/* Item 3 */}
                   <Transition
                     show={tab === 3}
+                    appear={true}
+                    className="w-full"
+                    enter="transition ease-in-out duration-700 transform order-first"
+                    enterFrom="opacity-0 translate-x-96"
+                    enterTo="opacity-100 translate-x-0"
+                    leave="transition ease-in-out duration-700 transform absolute"
+                    leaveFrom="opacity-100 translate-x-0"
+                    leaveTo="opacity-0 -translate-x-10"
+                    beforeEnter={() => heightFix()}
+                    unmount={false}
+                  >
+                    <div className="relative inline-flex flex-col">
+                      <Image
+                        className="md:max-w-none mx-auto rounded"
+                        src={FeaturesBg}
+                        width={500}
+                        height="462"
+                        alt="Features bg"
+                      />
+                      <Image
+                        className="md:max-w-none absolute w-full left-0 transform animate-float"
+                        src={FeaturesElement}
+                        width={500}
+                        height="44"
+                        alt="Element"
+                        style={{ top: "30%" }}
+                      />
+                    </div>
+                  </Transition>
+                  <Transition
+                    show={tab === 4}
                     appear={true}
                     className="w-full"
                     enter="transition ease-in-out duration-700 transform order-first"

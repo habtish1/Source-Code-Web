@@ -74,7 +74,7 @@ export default function Header() {
             </a> */}
 
             <a
-              href="https://t.me/habtish"
+              href="https://t.me/sourcecodeet"
               target="_blank"
               className="flex items-center hover:cursor-pointer"
             >
@@ -85,7 +85,6 @@ export default function Header() {
                 Talk to us
               </p>
             </a>
-
             <a
               href="mailto:support@sourcecodeet.com?subject=software development"
               className="flex items-center cursor-pointer"
@@ -98,7 +97,7 @@ export default function Header() {
               </span>
             </a>
             <a
-              href="https://wa.me/251913929633"
+              href="https://wa.me/251974017208"
               target="_blank"
               className="flex items-center"
             >
@@ -238,7 +237,7 @@ export default function Header() {
               <Tooltip text="call us">
                 <a
                   className="animate-smallBounce hover:animate-none block py-2 px-6 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
-                  href="tel:+1234567890"
+                  href="tel:+251974017208"
                 >
                   +251 974-017208
                 </a>
