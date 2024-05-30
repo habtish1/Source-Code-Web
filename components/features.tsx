@@ -23,21 +23,21 @@ export default function Features() {
     heightFix();
   }, []);
 
-  function myFunction(id: number): void {
-    const dots = document.getElementById(`dots-${id}`) as HTMLElement;
-    const moreText = document.getElementById(`more-${id}`) as HTMLElement;
-    const btnText = document.getElementById(`myBtn-${id}`) as HTMLButtonElement;
+  // function myFunction(id: number): void {
+  //   const dots = document.getElementById(`dots-${id}`) as HTMLElement;
+  //   const moreText = document.getElementById(`more-${id}`) as HTMLElement;
+  //   const btnText = document.getElementById(`myBtn-${id}`) as HTMLButtonElement;
 
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-    } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "block";
-    }
-  }
+  //   if (dots.style.display === "none") {
+  //     dots.style.display = "inline";
+  //     btnText.innerHTML = "Read more";
+  //     moreText.style.display = "none";
+  //   } else {
+  //     // dots.style.display = "none";
+  //     // btnText.innerHTML = "Read less";
+  //     // moreText.style.display = "block";
+  //   }
+  // }
 
   return (
     <section className="relative bg-gray-100">
@@ -72,7 +72,7 @@ export default function Features() {
                 </p>
               </div>
               {/* Tabs buttons */}
-              <div className="mb-8 md:mb-0">
+              <div className="mb-8 md:mb-0 h-[450px] overflow-y-auto">
                 <a
                   className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
                     tab !== 1
@@ -97,25 +97,7 @@ export default function Features() {
                     <div className="text-gray-600 pr-12">
                       Melabooks is a mobile bookkeeping app designed to make it
                       easy for small businesses and freelancers to track{" "}
-                      <span id="dots-1">...</span>
-                      <span
-                        id="more-1"
-                        className="hidden ease-linear duration-1000"
-                      >
-                        their finances and manage their cash flow. It offers a
-                        variety of features, including: Income and expense
-                        tracking: Melabooks allows you to easily track your
-                        income and expenses, and categorize them by client,
-                        project, or expense type.
-                      </span>
                     </div>
-                    <button
-                      className="py-2 px-3 rounded-lg mt-2 border border-gray-700 hover:bg-gray-100"
-                      onClick={() => myFunction(1)}
-                      id="myBtn-1"
-                    >
-                      Read more
-                    </button>
                   </div>
                 </a>
                 <a
@@ -142,26 +124,7 @@ export default function Features() {
                     <div className="text-gray-600 pr-12">
                       Kacha Digital Financial Service S.C. is the first a
                       premier digital platform that provides seamless financial
-                      <span id="dots-2">...</span>
-                      <span
-                        id="more-2"
-                        className="hidden ease-linear duration-1000"
-                      >
-                        services in Ethiopia It is committed to empowering
-                        customers by providing them with convenient, affordable,
-                        and secure digital financial services that meet their
-                        everyday needs. Kacha are passionate about driving
-                        positive change and creating value for customers,
-                        employees, and society as a whole.
-                      </span>
                     </div>
-                    <button
-                      className="py-2 px-3 mt-2 border border-gray-700 rounded-lg hover:bg-gray-100"
-                      onClick={() => myFunction(2)}
-                      id="myBtn-2"
-                    >
-                      Read more
-                    </button>
                   </div>
                 </a>
                 <a
@@ -188,24 +151,34 @@ export default function Features() {
                     <div className="text-gray-600 pr-12">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Magni ad eaque recusandae iste, minus sunt velit,
-                      <span id="dots-3">...</span>
-                      <span
-                        id="more-3"
-                        className="hidden ease-linear duration-1000"
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Et earum impedit dolore saepe at nostrum, corrupti
-                        nesciunt officiis quos voluptates porro vitae atque,
-                        nemo provident est voluptate nisi asperiores cupiditate?
-                      </span>
                     </div>
-                    <button
-                      className="py-2 px-3 mt-2 border rounded-lg border-gray-700 hover:bg-gray-100"
-                      onClick={() => myFunction(3)}
-                      id="myBtn-3"
-                    >
-                      Read more
-                    </button>
+                  </div>
+                </a>
+                <a
+                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                    tab !== 1
+                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                      : "bg-gray-200 border-transparent"
+                  }`}
+                  href="#0"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setTab(1);
+                  }}
+                >
+                  <div>
+                    <div className="flex justify-between">
+                      <div className="font-bold leading-snug tracking-tight mb-1">
+                        Mela Books
+                      </div>
+                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                        <Image className="w-4 h-4" src={mela} alt="" />
+                      </div>
+                    </div>
+                    <div className="text-gray-600 pr-12">
+                      Melabooks is a mobile bookkeeping app designed to make it
+                      easy for small businesses and freelancers to track{" "}
+                    </div>
                   </div>
                 </a>
               </div>

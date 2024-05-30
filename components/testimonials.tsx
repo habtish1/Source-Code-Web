@@ -70,7 +70,7 @@ export default function Testimonials() {
         </div>
         {/* test */}
 
-        <div className="w-full mx-auto overflow-x-auto pb-6 pt-1">
+        <div className="w-full mx-auto overflow-x-auto custom-scroll pb-6 pt-1">
           <ul className="flex animate-carousel gap-4 whitespace-nowrap">
             <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
               <a className="relative h-full w-full" href="/product/acme-mug">

@@ -11,11 +11,12 @@
 /* @import url("../../font/stylesheet.css"); */
 
 /* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
-/* @layer utilities {
-  .rtl {
-    direction: rtl;
+@layer utilities {
+  .custom-scroll {
+    overflow: scroll;
+    scrollbar-width: none;
   }
-} */
+}
 
 @keyframes bounce {
   0%,
