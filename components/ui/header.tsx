@@ -12,7 +12,7 @@ import {
   FaFacebookF,
   FaXTwitter,
   FaLinkedinIn,
-  FaGooglePlusG,
+  FaTelegram,
   FaWhatsapp,
 } from "react-icons/fa6";
 import { HiSupport } from "react-icons/hi";
@@ -64,28 +64,49 @@ export default function Header() {
           </div>
 
           <div className="flex gap-3 text-gray-600">
-            <div className="flex items-center">
+            {/* <a href="t.me/Silvaries" className="flex items-center">
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <HiSupport />
               </span>
-              <p className="font-normal text-nowrap max-md:hidden">
+              <span className="font-normal text-nowrap max-md:hidden">
+                Talk to us
+              </span>
+            </a> */}
+
+            <a
+              href="https://t.me/habtish"
+              target="_blank"
+              className="flex items-center hover:cursor-pointer"
+            >
+              <span className="text-primaryColor flex justify-center items-center mr-2">
+                <FaTelegram />
+              </span>
+              <p className="inline-block font-normal text-nowrap max-md:hidden">
                 Talk to us
               </p>
-            </div>
-            <div className="flex items-center">
+            </a>
+
+            <a
+              href="mailto:support@sourcecodeet.com?subject=software development"
+              className="flex items-center cursor-pointer"
+            >
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <IoMdMail />
               </span>
-              <p className="font-normal max-md:hidden">
+              <span className="font-normal max-md:hidden">
                 support@sourcecodeet.com
-              </p>
-            </div>
-            <div className="flex items-center">
+              </span>
+            </a>
+            <a
+              href="https://wa.me/251913929633"
+              target="_blank"
+              className="flex items-center"
+            >
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <FaWhatsapp />
               </span>
               <p className="font-normal max-md:hidden">+251 974-017208</p>
-            </div>
+            </a>
           </div>
         </div>
       </div>
