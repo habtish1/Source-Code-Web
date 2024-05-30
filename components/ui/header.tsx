@@ -164,6 +164,18 @@ export default function Header() {
               <li>
                 <Link
                   className={`link ${
+                    pathname === "/choose"
+                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center capitalize  duration-500 ease-in-out"
+                  }`}
+                  href="/choose"
+                >
+                  why choose us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`link ${
                     pathname === "/blogs"
                       ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
                       : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
@@ -183,7 +195,7 @@ export default function Header() {
                   }`}
                   href="/about"
                 >
-                  Why Choose Us
+                  About Us
                 </Link>
               </li>
               <li>
