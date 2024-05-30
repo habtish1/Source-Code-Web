@@ -12,7 +12,7 @@ import {
   FaFacebookF,
   FaXTwitter,
   FaLinkedinIn,
-  FaGooglePlusG,
+  FaTelegram,
   FaWhatsapp,
 } from "react-icons/fa6";
 import { HiSupport } from "react-icons/hi";
@@ -64,28 +64,48 @@ export default function Header() {
           </div>
 
           <div className="flex gap-3 text-gray-600">
-            <div className="flex items-center">
+            {/* <a href="t.me/Silvaries" className="flex items-center">
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <HiSupport />
               </span>
-              <p className="font-normal text-nowrap max-md:hidden">
+              <span className="font-normal text-nowrap max-md:hidden">
+                Talk to us
+              </span>
+            </a> */}
+
+            <a
+              href="https://t.me/sourcecodeet"
+              target="_blank"
+              className="flex items-center hover:cursor-pointer"
+            >
+              <span className="text-primaryColor flex justify-center items-center mr-2">
+                <FaTelegram />
+              </span>
+              <p className="inline-block font-normal text-nowrap max-md:hidden">
                 Talk to us
               </p>
-            </div>
-            <div className="flex items-center">
+            </a>
+            <a
+              href="mailto:support@sourcecodeet.com?subject=software development"
+              className="flex items-center cursor-pointer"
+            >
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <IoMdMail />
               </span>
-              <p className="font-normal max-md:hidden">
+              <span className="font-normal max-md:hidden">
                 support@sourcecodeet.com
-              </p>
-            </div>
-            <div className="flex items-center">
+              </span>
+            </a>
+            <a
+              href="https://wa.me/251974017208"
+              target="_blank"
+              className="flex items-center"
+            >
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <FaWhatsapp />
               </span>
               <p className="font-normal max-md:hidden">+251 974-017208</p>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -164,6 +184,18 @@ export default function Header() {
               <li>
                 <Link
                   className={`link ${
+                    pathname === "/choose"
+                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
+                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center capitalize  duration-500 ease-in-out"
+                  }`}
+                  href="/choose"
+                >
+                  why choose us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`link ${
                     pathname === "/blogs"
                       ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
                       : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
@@ -183,7 +215,7 @@ export default function Header() {
                   }`}
                   href="/about"
                 >
-                  Why Choose Us
+                  About Us
                 </Link>
               </li>
               <li>
@@ -205,7 +237,7 @@ export default function Header() {
               <Tooltip text="call us">
                 <a
                   className="animate-smallBounce hover:animate-none block py-2 px-6 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
-                  href="tel:+1234567890"
+                  href="tel:+251974017208"
                 >
                   +251 974-017208
                 </a>
