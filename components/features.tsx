@@ -63,8 +63,8 @@ export default function Features() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 20,
+    // speed: 4000,
+    autoplaySpeed: 2000,
     pauseOnHover: false,
     swipeToSlide: true,
     cssEase: "linear",
@@ -218,7 +218,7 @@ export default function Features() {
                 </div>
               </div> */}
 
-              <div className="slider-container border-b-8 border-gray-200">
+              <div className="slider-container ">
                 <Slider {...VerticalSettings}>
                   <a
                     className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
@@ -421,64 +421,53 @@ export default function Features() {
                     beforeEnter={() => heightFix()}
                     unmount={false}
                   >
-                    {/* <div className="flex flex-col justify-center items-center">
-                      <Image
-                        width={500}
-                        height={462}
-                        className="max-w-[400px] h-[550px]  mx-auto rounded"
-                        src={mela_moch}
-                        alt="Features bg"
-                      />
-                     
-                    </div> */}
-
                     <Slider className="w-[500px] rounded-box" {...settings}>
                       <div className="w-full h-full">
                         <img
                           src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
-                          className="w-[500px] h-[462px]"
+                          className="w-[500px] h-[400px] object-cover"
                           alt="Tailwind CSS Carousel component"
                         />
                       </div>
                       <div className="w-full h-full">
                         <img
                           src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
-                          className="w-[500px] h-[462px]"
+                          className="w-[500px] h-[400px] object-cover"
                           alt="Tailwind CSS Carousel component"
                         />
                       </div>
                       <div className="w-full h-full">
                         <img
                           src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
-                          className="w-[500px] h-[462px]"
+                          className="w-[500px] h-[400px] object-cover"
                           alt="Tailwind CSS Carousel component"
                         />
                       </div>
                       <div className="w-full h-full">
                         <img
                           src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
-                          className="w-[500px] h-[462px]"
+                          className="w-[500px] h-[400px] object-cover"
                           alt="Tailwind CSS Carousel component"
                         />
                       </div>
                       <div className="w-full h-full">
                         <img
                           src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
-                          className="w-[500px] h-[462px]"
+                          className="w-[500px] h-[400px] object-cover"
                           alt="Tailwind CSS Carousel component"
                         />
                       </div>
                       <div className="w-full h-full">
                         <img
                           src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
-                          className="w-[500px] h-[462px]"
+                          className="w-[500px] h-[400px] object-cover"
                           alt="Tailwind CSS Carousel component"
                         />
                       </div>
                       <div className="w-full h-full">
                         <img
                           src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
-                          className="w-[500px] h-[462px]"
+                          className="w-[500px] h-[400px] object-cover"
                           alt="Tailwind CSS Carousel component"
                         />
                       </div>
