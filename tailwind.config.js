@@ -135,8 +135,8 @@ module.exports = {
         float: "float 3s ease-in-out infinite",
         wiggle: "wiggle 200ms ease-in-out infinite",
         smallBounce: "smallBounce 1s ease-in-out infinite",
-        carousel: "carousel 60s linear infinite",
-        verticalScroll: "verticalScroll 60s linear infinite",
+        carousel: "carousel 10s linear infinite",
+        verticalScroll: "verticalScroll 120s linear infinite",
       },
       keyframes: {
         float: {
@@ -154,7 +154,7 @@ module.exports = {
           },
         },
         carousel: {
-          "0%": { transform: "translateX(0)" },
+          "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
         },
         verticalScroll: {

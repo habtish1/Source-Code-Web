@@ -5,6 +5,7 @@ import Link from "next/link";
 import author from "@/public/images/author.png";
 import feature from "@/public/images/feature.png";
 import article from "@/public/images/article.png";
+import keyboardTyping from "@/public/images/blogImage/keyboardTyping.jpg";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -21,7 +22,6 @@ export default function Blog() {
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-32  pb-12 md:pt-40 md:pb-20">
-        {/* <div className="pt-32  pb-12 md:pt-40 md:pb-20"> */}
         {/* Page header */}
         <div className="w-full mx-auto pb-12 md:pb-20">
           <h1
@@ -29,7 +29,7 @@ export default function Blog() {
             data-aos="zoom-y-out"
             data-aos-delay="100"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            How Mobile Apps Can Fuel Your Small Business Growth in 2024
           </h1>
           <div
             className="flex gap-x-2 justify-start items-center max-w-md h-auto pb-11"
@@ -53,7 +53,11 @@ export default function Blog() {
             data-aos="zoom-out"
             data-aos-delay="150"
           >
-            image goes here
+            <Image
+              alt=""
+              className="relative w-full h-full object-cover"
+              src={keyboardTyping}
+            />
           </div>
 
           <div className="flex flex-col md:flex-row gap-5 max-w-6xl p-1  mt-12">
@@ -63,13 +67,12 @@ export default function Blog() {
                 data-aos="zoom-y-out"
                 data-aos-delay="100"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
-                massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
-                sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-                Vestibulum auctor ornare leo, non suscipit magna interdum eu.
-                Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
-                amet. Pellentesque commodo lacus at sodales sodales.
+                In today's mobile-first world, consumers are glued to their
+                smartphones. This presents a massive opportunity for small
+                businesses to connect with their target audience in a convenient
+                and personalized way. A well-designed mobile app can be a
+                game-changer, boosting brand awareness, customer engagement, and
+                ultimately, sales.
               </p>
               <br />{" "}
               <p

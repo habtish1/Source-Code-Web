@@ -8,6 +8,11 @@ import FeaturesElement from "@/public/images/features-element.png";
 import mela from "@/public/images/mela.png";
 import kacha from "@/public/images/kacha.png";
 import mela_moch from "@/public/images/mela_moch.png";
+import chenet from "@/public/images/chenet.png";
+import capstone from "@/public/images/capstone.png";
+import duruj from "@/public/images/duruj.png";
+import adopay from "@/public/images/adopay.png";
+import Slider from "react-slick";
 
 export default function Features() {
   const [tab, setTab] = useState<number>(1);
@@ -38,7 +43,34 @@ export default function Features() {
   //     // moreText.style.display = "block";
   //   }
   // }
-
+  const VerticalSettings = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    lazyLoad: true,
+    autoplay: true,
+    // speed: 4000,
+    autoplaySpeed: 4000,
+    swipeToSlide: true,
+    cssEase: "ease-in",
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow />,
+  };
+  const settings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 20,
+    pauseOnHover: false,
+    swipeToSlide: true,
+    cssEase: "linear",
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow />,
+  };
   return (
     <section className="relative bg-gray-100">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
@@ -72,115 +104,297 @@ export default function Features() {
                 </p>
               </div>
               {/* Tabs buttons */}
-              <div className=" mb-8 md:mb-0 h-[450px] overflow-y-auto scroll-direction ">
-                <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
-                    tab !== 1
-                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
-                      : "bg-gray-200 border-transparent"
-                  }`}
-                  href="#0"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setTab(1);
-                  }}
-                >
+              {/* <div className=" mb-8 md:mb-0 h-[400px] overflow-y-auto scroll-direction ">
+                <div className="animate-verticalScroll">
+                  <a
+                    className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                      tab !== 1
+                        ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                        : "bg-gray-200 border-transparent"
+                    }`}
+                    href="#0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTab(1);
+                    }}
+                  >
+                    <div>
+                      <div className="flex flex-row-reverse justify-between">
+                        <div className="font-bold leading-snug tracking-tight mb-1">
+                          Mela Books
+                        </div>
+                        <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                          <Image className="w-4 h-4" src={mela} alt="" />
+                        </div>
+                      </div>
+                      <div className="text-left text-gray-600 pr-12">
+                        Melabooks is a mobile bookkeeping app designed to make
+                        it easy for small businesses and freelancers to track{" "}
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    className={` flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                      tab !== 2
+                        ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                        : "bg-gray-200 border-transparent"
+                    }`}
+                    href="#0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTab(2);
+                    }}
+                  >
+                    <div>
+                      <div className="flex flex-row-reverse justify-between">
+                        <div className="font-bold leading-snug capitalize tracking-tight mb-1">
+                          kacha digital financial service
+                        </div>
+                        <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                          <Image className="w-4 h-4" src={kacha} alt="" />
+                        </div>
+                      </div>
+                      <div className="text-left text-gray-600 pr-12">
+                        Kacha Digital Financial Service S.C. is the first a
+                        premier digital platform that provides seamless
+                        financial
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                      tab !== 3
+                        ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                        : "bg-gray-200 border-transparent"
+                    }`}
+                    href="#0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTab(3);
+                    }}
+                  >
+                    <div>
+                      <div className="flex flex-row-reverse justify-between">
+                        <div className="font-bold leading-snug capitalize tracking-tight mb-1">
+                          kacha digital financial service
+                        </div>
+                        <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                          <Image className="w-4 h-4" src={kacha} alt="" />
+                        </div>
+                      </div>
+                      <div className="text-left text-gray-600 pr-12">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Magni ad eaque recusandae iste, minus sunt velit,
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                      tab !== 4
+                        ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                        : "bg-gray-200 border-transparent"
+                    }`}
+                    href="#0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTab(4);
+                    }}
+                  >
+                    <div>
+                      <div className="flex flex-row-reverse justify-between">
+                        <div className="font-bold leading-snug tracking-tight mb-1">
+                          Mela Books
+                        </div>
+                        <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                          <Image className="w-4 h-4" src={mela} alt="" />
+                        </div>
+                      </div>
+                      <div className="text-left text-gray-600 pr-12">
+                        Melabooks is a mobile bookkeeping app designed to make
+                        it easy for small businesses and freelancers to track{" "}
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div> */}
+
+              <div className="slider-container border-b-8 border-gray-200">
+                <Slider {...VerticalSettings}>
+                  <a
+                    className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                      tab !== 1
+                        ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                        : "bg-gray-200 border-transparent"
+                    }`}
+                    href="#0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setTab(1);
+                    }}
+                  >
+                    <div>
+                      <div className="flex justify-between">
+                        <div className="font-bold leading-snug tracking-tight mb-1">
+                          Mela Books
+                        </div>
+                        <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                          <Image className="w-4 h-4" src={mela} alt="" />
+                        </div>
+                      </div>
+                      <div className="text-left text-gray-600 pr-12">
+                        Melabooks is a mobile bookkeeping app designed to make
+                        it easy for small businesses and freelancers to track{" "}
+                      </div>
+                    </div>
+                  </a>
+
                   <div>
-                    <div className="flex flex-row-reverse justify-between">
-                      <div className="font-bold leading-snug tracking-tight mb-1">
-                        Mela Books
+                    <a
+                      className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                        tab !== 2
+                          ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                          : "bg-gray-200 border-transparent"
+                      }`}
+                      href="#0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setTab(2);
+                      }}
+                    >
+                      <div>
+                        <div className="flex  justify-between">
+                          <div className="font-bold leading-snug tracking-tight mb-1">
+                            kacha financial service
+                          </div>
+                          <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                            <Image className="w-4 h-4" src={kacha} alt="" />
+                          </div>
+                        </div>
+                        <div className="text-left text-gray-600 pr-12">
+                          kacha is a mobile bookkeeping app designed to make it
+                          easy for small businesses and freelancers to track{" "}
+                        </div>
                       </div>
-                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                        <Image className="w-4 h-4" src={mela} alt="" />
-                      </div>
-                    </div>
-                    <div className="text-left text-gray-600 pr-12">
-                      Melabooks is a mobile bookkeeping app designed to make it
-                      easy for small businesses and freelancers to track{" "}
-                    </div>
+                    </a>
                   </div>
-                </a>
-                <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
-                    tab !== 2
-                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
-                      : "bg-gray-200 border-transparent"
-                  }`}
-                  href="#0"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setTab(2);
-                  }}
-                >
                   <div>
-                    <div className="flex flex-row-reverse justify-between">
-                      <div className="font-bold leading-snug capitalize tracking-tight mb-1">
-                        kacha digital financial service
+                    <a
+                      className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                        tab !== 3
+                          ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                          : "bg-gray-200 border-transparent"
+                      }`}
+                      href="#0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setTab(3);
+                      }}
+                    >
+                      <div>
+                        <div className="flex justify-between">
+                          <div className="font-bold leading-snug capitalize tracking-tight mb-1">
+                            chenet logistic service
+                          </div>
+                          <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                            <Image className="w-4 h-4" src={chenet} alt="" />
+                          </div>
+                        </div>
+                        <div className="text-left text-gray-600 pr-12">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Magni ad eaque recusandae iste, minus sunt
+                          velit,
+                        </div>
                       </div>
-                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                        <Image className="w-4 h-4" src={kacha} alt="" />
-                      </div>
-                    </div>
-                    <div className="text-left text-gray-600 pr-12">
-                      Kacha Digital Financial Service S.C. is the first a
-                      premier digital platform that provides seamless financial
-                    </div>
+                    </a>
                   </div>
-                </a>
-                <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
-                    tab !== 3
-                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
-                      : "bg-gray-200 border-transparent"
-                  }`}
-                  href="#0"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setTab(3);
-                  }}
-                >
                   <div>
-                    <div className="flex flex-row-reverse justify-between">
-                      <div className="font-bold leading-snug capitalize tracking-tight mb-1">
-                        kacha digital financial service
+                    <a
+                      className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                        tab !== 4
+                          ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                          : "bg-gray-200 border-transparent"
+                      }`}
+                      href="#0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setTab(4);
+                      }}
+                    >
+                      <div>
+                        <div className="flex justify-between">
+                          <div className="font-bold leading-snug tracking-tight mb-1">
+                            capstone
+                          </div>
+                          <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                            <Image className="w-4 h-4" src={capstone} alt="" />
+                          </div>
+                        </div>
+                        <div className="text-left text-gray-600 pr-12">
+                          capstone is a mobile bookkeeping app designed to make
+                          it easy for small businesses and freelancers to track{" "}
+                        </div>
                       </div>
-                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                        <Image className="w-4 h-4" src={kacha} alt="" />
-                      </div>
-                    </div>
-                    <div className="text-left text-gray-600 pr-12">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni ad eaque recusandae iste, minus sunt velit,
-                    </div>
+                    </a>
                   </div>
-                </a>
-                <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
-                    tab !== 4
-                      ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
-                      : "bg-gray-200 border-transparent"
-                  }`}
-                  href="#0"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setTab(4);
-                  }}
-                >
                   <div>
-                    <div className="flex flex-row-reverse justify-between">
-                      <div className="font-bold leading-snug tracking-tight mb-1">
-                        Mela Books
+                    <a
+                      className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                        tab !== 5
+                          ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                          : "bg-gray-200 border-transparent"
+                      }`}
+                      href="#0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setTab(5);
+                      }}
+                    >
+                      <div>
+                        <div className="flex  justify-between">
+                          <div className="font-bold leading-snug tracking-tight mb-1">
+                            duruj
+                          </div>
+                          <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                            <Image className="w-4 h-4" src={duruj} alt="" />
+                          </div>
+                        </div>
+                        <div className="text-left text-gray-600 pr-12">
+                          duruj is a mobile bookkeeping app designed to make it
+                          easy for small businesses and freelancers to track{" "}
+                        </div>
                       </div>
-                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
-                        <Image className="w-4 h-4" src={mela} alt="" />
-                      </div>
-                    </div>
-                    <div className="text-left text-gray-600 pr-12">
-                      Melabooks is a mobile bookkeeping app designed to make it
-                      easy for small businesses and freelancers to track{" "}
-                    </div>
+                    </a>
                   </div>
-                </a>
+                  <div>
+                    <a
+                      className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${
+                        tab !== 6
+                          ? "bg-white shadow-md border-gray-200 hover:shadow-lg"
+                          : "bg-gray-200 border-transparent"
+                      }`}
+                      href="#0"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setTab(6);
+                      }}
+                    >
+                      <div>
+                        <div className="flex justify-between">
+                          <div className="font-bold leading-snug tracking-tight mb-1">
+                            Ado pay
+                          </div>
+                          <div className="flex justify-center items-center w-8 h-8 bg-white rounded-lg shadow flex-shrink-0 ml-3">
+                            <Image className="w-4 h-4" src={adopay} alt="" />
+                          </div>
+                        </div>
+                        <div className="text-left text-gray-600 pr-12">
+                          Melabooks is a mobile bookkeeping app designed to make
+                          it easy for small businesses and freelancers to track{" "}
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </Slider>
               </div>
             </div>
 
@@ -188,7 +402,7 @@ export default function Features() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1">
               <div className="transition-all">
                 <div
-                  className="relative flex flex-col mt-28 text-center lg:text-right"
+                  className="relative flex flex-col text-center lg:text-right"
                   data-aos="slide-left"
                   data-aos-delay="10"
                   ref={tabs}
@@ -207,8 +421,7 @@ export default function Features() {
                     beforeEnter={() => heightFix()}
                     unmount={false}
                   >
-                    <div className="flex flex-col justify-center items-center">
-                      {/* <div className="w-20 h-20 bg-cyan-500"> */}
+                    {/* <div className="flex flex-col justify-center items-center">
                       <Image
                         width={500}
                         height={462}
@@ -216,8 +429,62 @@ export default function Features() {
                         src={mela_moch}
                         alt="Features bg"
                       />
-                      {/* </div> */}
-                    </div>
+                     
+                    </div> */}
+
+                    {/* <div className="w-[500px] h-[462px] bg-cyan-700 rounded-box"> */}
+                    <Slider className="w-[500px] rounded-box" {...settings}>
+                      <div className="w-full h-full">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+                          className="w-[500px] h-[462px]"
+                          alt="Tailwind CSS Carousel component"
+                        />
+                      </div>
+                      <div className="w-full h-full">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
+                          className="w-[500px] h-[462px]"
+                          alt="Tailwind CSS Carousel component"
+                        />
+                      </div>
+                      <div className="w-full h-full">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
+                          className="w-[500px] h-[462px]"
+                          alt="Tailwind CSS Carousel component"
+                        />
+                      </div>
+                      <div className="w-full h-full">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
+                          className="w-[500px] h-[462px]"
+                          alt="Tailwind CSS Carousel component"
+                        />
+                      </div>
+                      <div className="w-full h-full">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
+                          className="w-[500px] h-[462px]"
+                          alt="Tailwind CSS Carousel component"
+                        />
+                      </div>
+                      <div className="w-full h-full">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
+                          className="w-[500px] h-[462px]"
+                          alt="Tailwind CSS Carousel component"
+                        />
+                      </div>
+                      <div className="w-full h-full">
+                        <img
+                          src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
+                          className="w-[500px] h-[462px]"
+                          alt="Tailwind CSS Carousel component"
+                        />
+                      </div>
+                    </Slider>
+                    {/* </div> */}
                   </Transition>
                   {/* Item 2 */}
                   <Transition
@@ -322,4 +589,9 @@ export default function Features() {
       </div>
     </section>
   );
+}
+
+function Arrow(props: any) {
+  const { className, style } = props;
+  return <div className={className} style={{ ...style, display: "none" }} />;
 }

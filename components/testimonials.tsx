@@ -8,14 +8,38 @@ import chenet from "@/public/images/chenet.png";
 import capstone from "@/public/images/capstone.png";
 import duruj from "@/public/images/duruj.png";
 import adopay from "@/public/images/adopay.png";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 export default function Testimonials() {
   const settings = {
-    dots: true,
     infinite: true,
-    speed: 100,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 20,
+    pauseOnHover: false,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          // initialSlide: 2,
+        },
+      },
+    ],
   };
 
   return (
@@ -70,7 +94,80 @@ export default function Testimonials() {
         </div>
         {/* test */}
 
-        <div className="w-full mx-auto overflow-x-auto custom-scroll pb-6 pt-1">
+        <div className="w-full mx-auto pb-6 pt-1">
+          <Slider className="" {...settings}>
+            <div className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[450px] mr-2 flex-none md:w-1/3">
+              <a className="relative h-full w-full" href="/product/acme-mug">
+                <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 relative border-neutral-200 ">
+                  <div className="flex items-center hover:scale-125 ease-in-out duration-300 justify-center py-2 col-span-2 md:col-auto">
+                    <Image className="w-12 h-12" src={mela} alt="" />
+                    <p className="pl-2 uppercase text-base font-bold tracking-wider">
+                      Melabooks
+                    </p>
+                  </div>{" "}
+                </div>
+              </a>
+            </div>
+            <div className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[450px] mr-2 flex-none md:w-1/3">
+              <a className="relative h-full w-full" href="/product/acme-mug">
+                <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
+                  <div className="flex items-center hover:scale-125 ease-in-out duration-300 justify-center py-2 col-span-2 md:col-auto">
+                    <Image className="w-12 h-12" src={kacha} alt="" />
+                    <p className="pl-2 uppercase text-base font-bold tracking-widest">
+                      kacha
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[450px] mr-2 flex-none md:w-1/3">
+              <a className="relative h-full w-full" href="/product/acme-mug">
+                <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
+                  <Image
+                    className="w-36 hover:scale-125 h-auto ease-in-out duration-300"
+                    src={chenet}
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[450px] mr-2 flex-none md:w-1/3">
+              <a className="relative h-full w-full" href="/product/acme-mug">
+                <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 relative border-neutral-200">
+                  <Image
+                    className="w-36 h-auto hover:scale-125 ease-in-out duration-300"
+                    src={capstone}
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[450px] mr-2 flex-none md:w-1/3">
+              <a className="relative h-full w-full" href="/product/acme-mug">
+                <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
+                  <Image
+                    className="w-36 h-auto hover:scale-125 ease-in-out duration-300"
+                    src={duruj}
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[450px] mr-2 flex-none md:w-1/3">
+              <a className="relative h-full w-full" href="/product/acme-mug">
+                <div className="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600  relative border-neutral-200">
+                  <Image
+                    className="w-36 h-auto hover:scale-125 ease-in-out duration-300"
+                    src={adopay}
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+          </Slider>
+        </div>
+
+        {/* <div className="w-full mx-auto overflow-x-auto custom-scroll pb-6 pt-1">
           <ul className="flex animate-carousel gap-4 whitespace-nowrap">
             <li className="relative aspect-square h-[30vh] max-h-[275px] w-2/3 max-w-[475px] flex-none md:w-1/3">
               <a className="relative h-full w-full" href="/product/acme-mug">
@@ -141,7 +238,7 @@ export default function Testimonials() {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Testimonials */}
         <div className="max-w-3xl mx-auto mt-20 mb-10" data-aos="zoom-y-out">
