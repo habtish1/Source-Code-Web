@@ -49,7 +49,7 @@ export default function Blog() {
           </div>
 
           <div
-            className="w-full flex justify-center items-center h-[594px] bg-cyan-200"
+            className="w-full flex justify-center items-center h-[594px]"
             data-aos="zoom-out"
             data-aos-delay="150"
           >
@@ -75,85 +75,154 @@ export default function Blog() {
                 ultimately, sales.
               </p>
               <br />{" "}
-              <p
+              <div
                 className=" text-xl text-gray-600"
                 data-aos="zoom-y-out"
                 data-aos-delay="200"
               >
-                Quisque sagittis orci ut diam condimentum, vel euismod erat
-                placerat. In iaculis arcu eros, eget tempus orci facilisis
-                id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
-                sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-                Vestibulum auctor ornare leo, non suscipit magna interdum eu.
-                Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
-                amet.
-              </p>
+                <h1 className="text-2xl font-bold">
+                  Why Mobile Apps Matter for Small Businesses
+                </h1>
+                <p className="font-medium">
+                  Here's how a mobile app can act as a digital growth engine for
+                  your small business:
+                </p>
+                <ul className="list-disc ml-6">
+                  <li>
+                    <span className="font-bold mr-1">
+                      Enhanced Customer Experience:
+                    </span>
+                    Apps provide a seamless platform for interaction. Features
+                    like loyalty programs, mobile ordering, or appointment
+                    booking can streamline processes and improve customer
+                    satisfaction
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Improved Brand Loyalty:
+                    </span>
+                    Push notifications keep your business top-of-mind, while
+                    features like mobile wallets can incentivize repeat
+                    purchases.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Data-Driven Decisions:
+                    </span>
+                    App analytics provide valuable customer insights into
+                    behavior and preferences. This data can be used to
+                    personalize marketing campaigns and optimize your offerings.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Increased Visibility:
+                    </span>
+                    A well-designed app with clear calls to action can
+                    significantly boost brand awareness and attract new
+                    customers.
+                  </li>
+                </ul>
+              </div>
               <br />{" "}
-              <p
+              <div
                 className=" text-xl text-gray-600"
                 data-aos="zoom-y-out"
                 data-aos-delay="300"
               >
-                Pellentesque commodo lacus at sodales sodales. Quisque sagittis
-                orci ut diam condimentum, vel euismod erat placerat. In iaculis
-                arcu eros, eget tempus orci facilisis id.Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in
-                hendrerit urna. Pellentesque sit amet sapien fringilla, mattis
-                ligula consectetur, ultrices mauris. Maecenas vitae mattis
-                tellus.
-              </p>
+                <h1 className="text-2xl font-bold">
+                  Why Mobile Apps Matter for Small Businesses
+                </h1>
+                <p className="font-medium">
+                  Before diving into development, take some time to plan:
+                </p>
+                <ul className="list-disc ml-6">
+                  <li>
+                    <span className="font-bold mr-1">Identify Your Needs:</span>
+                    What problem does your app solve? Who is your target
+                    audience?
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">Prioritize Features:</span>
+                    Start with a "Minimum Viable Product" (MVP) that offers core
+                    functionalities. You can always add more features later
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Design for Usability:
+                    </span>
+                    A user-friendly interface is crucial. The app should be
+                    intuitive and navigate easily.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Consider Development Options:
+                    </span>
+                    There are various approaches - hiring a development team,
+                    using low-code app builders, or outsourcing
+                  </li>
+                </ul>
+              </div>
               <h1
-                className="max-w-3xl text-5xl mt-6 mb-7"
+                className="max-w-3xl text-5xl mt-4 mb-2"
                 data-aos="zoom-y-out"
                 data-aos-delay="200"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Tech Trends to Look Out For
               </h1>
               <p
                 className=" text-xl text-gray-600"
                 data-aos="zoom-y-out"
                 data-aos-delay="300"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
-                massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
-                sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-                Vestibulum auctor ornare leo, non suscipit magna interdum eu.
-                Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
-                amet. Pellentesque commodo lacus at sodales sodales.
+                The mobile app development landscape is constantly evolving.
+                Here are some exciting trends to keep an eye on:
               </p>
-              <br />{" "}
-              <p
+              <div
                 className=" text-xl text-gray-600"
                 data-aos="zoom-y-out"
                 data-aos-delay="300"
               >
-                Quisque sagittis orci ut diam condimentum, vel euismod erat
-                placerat. In iaculis arcu eros, eget tempus orci facilisis
-                id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
-                sapien fringilla, mattis ligula consectetur, ultrices mauris.
-                Maecenas vitae mattis tellus. Nullam quis imperdiet augue.
-                Vestibulum auctor ornare leo, non suscipit magna interdum eu.
-                Curabitur pellentesque nibh nibh, at maximus ante fermentum sit
-                amet.
-              </p>
+                <ul className="list-disc ml-6">
+                  <li>
+                    <span className="font-bold mr-1">
+                      Artificial Intelligence (AI):
+                    </span>
+                    AI-powered chatbots can provide 24/7 customer support and
+                    personalized recommendations.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Augmented Reality (AR) and Virtual Reality (VR):{" "}
+                    </span>
+                    These technologies can create immersive shopping experiences
+                    or product demonstrations.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">Blockchain:</span>A
+                    Blockchain can enhance security and transparency for
+                    transactions within your app.
+                  </li>
+                </ul>
+              </div>
               <br />{" "}
-              <p
+              <div
                 className=" text-xl text-gray-600"
                 data-aos="zoom-y-out"
                 data-aos-delay="300"
               >
-                Pellentesque commodo lacus at sodales sodales. Quisque sagittis
-                orci ut diam condimentum, vel euismod erat placerat. In iaculis
-                arcu eros, eget tempus orci facilisis id.Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in
-                hendrerit urna. Pellentesque sit amet sapien fringilla, mattis
-                ligula consectetur, ultrices mauris. Maecenas vitae mattis
-                tellus.
-              </p>
+                <h1 className="text-2xl font-bold">conclusion</h1>
+                <p
+                  className=" text-xl text-gray-600"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="300"
+                >
+                  By leveraging mobile app technology, small businesses can gain
+                  a competitive edge and unlock significant growth potential.
+                  Remember, a successful app is all about solving real customer
+                  problems and providing a valuable, user-friendly experience.
+                  So, get started today and watch your business take off!
+                </p>
+              </div>
             </div>
             <div className="flex flex-col items-center gap-y-6">
               <div className="flex flex-col gap-y-2 w-[318px] min-h-[545px]">
