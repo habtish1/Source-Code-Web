@@ -1,0 +1,550 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import author from "@/public/images/author.png";
+import feature from "@/public/images/feature.png";
+import article from "@/public/images/article.png";
+import keyboardTyping from "@/public/images/blogImage/keyboardTyping.jpg";
+import binaryTech from "@/public/images/blogImage/binaryTech.jpg";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+export default function Blog() {
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  });
+  return (
+    <section className="bg-gradient-to-b from-gray-100 to-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-32  pb-12 md:pt-40 md:pb-20">
+        {/* Page header */}
+        <div className="w-full mx-auto pb-12 md:pb-20">
+          <h1
+            className="max-w-6xl text-5xl pb-20"
+            data-aos="zoom-y-out"
+            data-aos-delay="100"
+          >
+            How Software Development is Igniting Ethiopian Entrepreneurship
+          </h1>
+          <div
+            className="flex gap-x-2 justify-start items-center max-w-md h-auto pb-11"
+            data-aos="slide-up"
+            data-aos-delay="5"
+          >
+            <Image className="w-10 h-10 inline" src={author} alt="" />
+            <div className="flex flex-wrap justify-start items-center gap-x-1">
+              <p className="text-sm text-nowrap">By Jordan Mirchev</p>
+              <span>|</span>
+              <p className="text-sm text-nowrap">Published on</p>
+              <span>|</span>
+              <p className="text-sm text-nowrap">November 14, 2022</p>
+              <span>|</span>
+              <p className="text-sm text-nowrap">2 min read</p>
+            </div>
+          </div>
+
+          <div
+            className="w-full flex justify-center items-center h-[594px]"
+            data-aos="zoom-out"
+            data-aos-delay="150"
+          >
+            <Image
+              alt=""
+              className="relative w-full h-full object-cover"
+              src={binaryTech}
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-5 max-w-6xl p-1  mt-12">
+            <div className="max-w-3xl">
+              <p
+                className=" text-xl text-gray-600"
+                data-aos="zoom-y-out"
+                data-aos-delay="100"
+              ></p>
+              <br />{" "}
+              <div
+                className=" text-xl text-gray-600"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                <p className="font-medium">
+                  Here's why software development is a game-changer for
+                  Ethiopian entrepreneurs:
+                </p>
+                Ethiopian developers have a unique understanding of the local
+                context. They can create software solutions that address
+                specific challenges faced by Ethiopian businesses and
+                individuals. Global Marketplace:
+                <ul className="list-disc ml-6">
+                  <li>
+                    <span className="font-bold mr-1">
+                      Low Barrier to Entry:
+                    </span>
+                    Compared to traditional businesses, software development
+                    requires less upfront capital. With a computer, an internet
+                    connection, and the right skills, aspiring entrepreneurs can
+                    turn their ideas into reality.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">Scalability:</span>
+                    Software products can be scaled easily, reaching a wider
+                    audience without significant additional investment. This
+                    allows Ethiopian entrepreneurs to compete on a global scale.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Solving Local Problems:
+                    </span>
+                    Ethiopian developers have a unique understanding of the
+                    local context. They can create software solutions that
+                    address specific challenges faced by Ethiopian businesses
+                    and individuals.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">Global Marketplace:</span>A
+                    The world is hungry for tech talent. Ethiopian software
+                    developers can offer their skills on international
+                    platforms, creating new income streams and promoting
+                    Ethiopian innovation.
+                  </li>
+                </ul>
+              </div>
+              <br />{" "}
+              <div
+                className=" text-xl text-gray-600"
+                data-aos="zoom-y-out"
+                data-aos-delay="300"
+              >
+                <h1 className="text-2xl font-bold">
+                  Examples of Ethiopian Software Success:
+                </h1>
+                <p className="font-medium">
+                  There are already inspiring examples of how Ethiopians are
+                  leveraging software development for entrepreneurial success:{" "}
+                </p>
+                Educational Technology: Ethiopian-made educational apps are
+                providing greater access to learning opportunities.
+                <ul className="list-disc ml-6">
+                  <li>
+                    <span className="font-bold mr-1">FinTech Solutions:</span>
+                    Mobile payment apps like Amole and TeleBirr are transforming
+                    financial inclusion in Ethiopia.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">AgTech Platforms:</span>
+                    Software solutions are being developed to connect farmers
+                    with markets, improve agricultural practices, and streamline
+                    logistics.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">
+                      Educational Technology:
+                    </span>
+                    Ethiopian-made educational apps are providing greater access
+                    to learning opportunities.
+                  </li>
+                </ul>
+              </div>
+              <h1
+                className="text-3xl my-2 font-bold"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                The Future is Bright:{" "}
+              </h1>
+              <p
+                className=" text-xl text-gray-600"
+                data-aos="zoom-y-out"
+                data-aos-delay="300"
+              >
+                The future of Ethiopian entrepreneurship is bright, fueled by
+                the creativity and technical expertise of its software
+                developers. With continued investment in education,
+                infrastructure, and support networks, Ethiopia has the potential
+                to become a major tech hub in Africa.
+              </p>
+              <div
+                className=" text-xl text-gray-600"
+                data-aos="zoom-y-out"
+                data-aos-delay="300"
+              >
+                <h1
+                  className="text-2xl font-bold"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="200"
+                >
+                  Call to Action:
+                </h1>
+                <p>
+                  Are you an aspiring Ethiopian entrepreneur? Here are some
+                  resources to get you started:
+                </p>
+
+                <ul className="list-disc ml-6">
+                  <li>
+                    <span className="font-bold mr-1">
+                      Join an incubator or co-working space:
+                    </span>
+                    These provide valuable mentorship, networking opportunities,
+                    and access to resources.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">Learn to code:</span>
+                    There are numerous online and offline coding bootcamps
+                    available in Ethiopia.
+                  </li>
+                  <li>
+                    <span className="font-bold mr-1">Identify a problem:</span>A
+                    Look for challenges faced by Ethiopians and brainstorm
+                    tech-based solutions.
+                  </li>
+                </ul>
+              </div>
+              <p
+                className=" text-xl text-gray-600"
+                data-aos="zoom-y-out"
+                data-aos-delay="300"
+              >
+                With hard work, dedication, and the power of software
+                development, Ethiopian entrepreneurs can not only build
+                successful businesses but also contribute to the nation's
+                economic transformation
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-y-6">
+              <div className="flex flex-col gap-y-2 w-[318px] min-h-[545px]">
+                <div className="flex  gap-x-9  pb-8 border-b-2 border-slate-600">
+                  <Image
+                    className="w-[80px] h-[80px] mx-auto"
+                    src={article}
+                    alt=""
+                    data-aos="zoom-out"
+                    data-aos-delay="200"
+                  />
+                  <div className="flex flex-col gap-x-3 justify-center">
+                    <p
+                      className="uppercase text-xs"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="100"
+                    >
+                      product
+                    </p>
+
+                    <p
+                      className="text-xl"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="100"
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    {/* <hr className="mt-10 bg-black" /> */}
+                  </div>
+                </div>
+                <div className="flex  gap-x-9 gap-y-2 pb-10 border-b-2 border-slate-600">
+                  <Image
+                    className="w-[80px] h-[80px] mx-auto"
+                    src={article}
+                    alt=""
+                    data-aos="zoom-out"
+                    data-aos-delay="250"
+                  />
+                  <div className="flex flex-col gap-x-3 justify-center">
+                    <p
+                      className="uppercase text-xs"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="100"
+                    >
+                      product
+                    </p>
+
+                    <p
+                      className="text-xl"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="200"
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    {/* <hr className="mt-10 bg-black" /> */}
+                  </div>
+                </div>
+                <div className="flex  gap-x-9 gap-y-2 pb-10 border-b-2 border-slate-600">
+                  <Image
+                    className="w-[80px] h-[80px] mx-auto"
+                    src={article}
+                    alt=""
+                    data-aos="zoom-out"
+                    data-aos-delay="300"
+                  />
+                  <div className="flex flex-col gap-x-3 justify-center">
+                    <p
+                      className="uppercase text-xs"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="100"
+                    >
+                      product
+                    </p>
+
+                    <p
+                      className="text-xl"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="200"
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    {/* <hr className="mt-10 bg-black" /> */}
+                  </div>
+                </div>
+                <div className="flex  gap-x-9 gap-y-2 pb-10 border-b-2 border-slate-600">
+                  <Image
+                    className="w-[80px] h-[80px] mx-auto"
+                    src={article}
+                    alt=""
+                    data-aos="zoom-out"
+                    data-aos-delay="300"
+                  />
+                  <div className="flex flex-col gap-x-3 justify-center">
+                    <p
+                      className="uppercase text-xs"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="100"
+                    >
+                      product
+                    </p>
+
+                    <p
+                      className="text-xl"
+                      data-aos="zoom-y-out"
+                      data-aos-delay="200"
+                    >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    {/* <hr className="mt-10 bg-black" /> */}
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-4 justify-center text-white items-center w-[318px] h-[345px] bg-[#FCA130] rounded-sm">
+                <h1
+                  className="text-2xl text-center px-8"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="200"
+                >
+                  Get More Done Together With US
+                </h1>
+                <h1
+                  className="text-xl text-center px-8"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="200"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </h1>
+                <button
+                  className="capitalize px-3 py-2 text-black bg-slate-200 mt-6"
+                  data-aos="slide-up"
+                  data-aos-delay="50"
+                >
+                  get started
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-end max-w-3xl  h-20 border-t-2 border-gray-300 mt-12">
+          <p
+            className=" text-xl text-gray-600"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            Good or bad, we’d love to hear your thoughts. Find us on Twitter
+            (@twitter)
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-y-9 max-w-3xl  min-h-[800px] mt-12 pb-20 md:pb-40">
+          <p
+            className="uppercase text-xs"
+            data-aos="zoom-y-out"
+            data-aos-delay="200"
+          >
+            Here are some related articles you may find interesting:
+          </p>
+          <a href="#" className="flex max-sm:flex-col gap-x-9 gap-y-2 ">
+            <Image
+              className="w-[270px] h-[203px] mx-auto"
+              src={article}
+              alt=""
+              data-aos="zoom-out"
+              data-aos-delay="300"
+            />
+            <div className="flex flex-col max-sm:items-center gap-x-2 justify-center">
+              <div className="flex gap-2">
+                <p
+                  className="uppercase"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="100"
+                >
+                  product
+                </p>
+                <p
+                  className="uppercase"
+                  data-aos="zoom-out"
+                  data-aos-delay="100"
+                >
+                  4 minuts read
+                </p>
+              </div>
+              <h1
+                className="text-2xl"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h1>
+              <p
+                className="text-base"
+                data-aos="zoom-y-out"
+                data-aos-delay="150"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
+                metus nec fringilla accumsan, risus sem{" "}
+              </p>
+            </div>
+          </a>
+          <a href="#" className="flex max-sm:flex-col gap-x-9 gap-y-2 ">
+            <Image
+              className="w-[270px] h-[203px] mx-auto"
+              src={article}
+              alt=""
+              data-aos="zoom-out"
+              data-aos-delay="300"
+            />
+            <div className="flex flex-col max-sm:items-center gap-x-2 justify-center">
+              <div className="flex gap-2">
+                <p
+                  className="uppercase"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="100"
+                >
+                  product
+                </p>
+                <p
+                  className="uppercase"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="200"
+                >
+                  4 minuts read
+                </p>
+              </div>
+              <h1
+                className="text-2xl"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h1>
+              <p
+                className="text-base"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
+                metus nec fringilla accumsan, risus sem{" "}
+              </p>
+            </div>
+          </a>
+          <a href="#" className="flex max-sm:flex-col gap-x-9 gap-y-2 ">
+            <Image
+              className="w-[270px] h-[203px] mx-auto"
+              src={article}
+              alt=""
+              data-aos="zoom-out"
+              data-aos-delay="300"
+            />
+            <div className="flex flex-col max-sm:items-center gap-x-2 justify-center">
+              <div className="flex gap-2">
+                <p
+                  className="uppercase"
+                  data-aos="zoom-out"
+                  data-aos-delay="100"
+                >
+                  product
+                </p>
+                <p
+                  className="uppercase"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="200"
+                >
+                  4 minuts read
+                </p>
+              </div>
+              <h1
+                className="text-2xl"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h1>
+              <p className="text-base" data-aos="zoom-out" data-aos-delay="200">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
+                metus nec fringilla accumsan, risus sem{" "}
+              </p>
+            </div>
+          </a>
+          <a href="#" className="flex max-sm:flex-col gap-x-9 gap-y-2 ">
+            <Image
+              className="w-[270px] h-[203px] mx-auto"
+              src={article}
+              alt=""
+              data-aos="zoom-out"
+              data-aos-delay="300"
+            />
+            <div className="flex flex-col max-sm:items-center gap-x-2 justify-center">
+              <div className="flex gap-2">
+                <p
+                  className="uppercase"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="100"
+                >
+                  product
+                </p>
+                <p
+                  className="uppercase"
+                  data-aos="zoom-y-out"
+                  data-aos-delay="200"
+                >
+                  4 minuts read
+                </p>
+              </div>
+              <h1
+                className="text-2xl"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h1>
+              <p
+                className="text-base"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
+                metus nec fringilla accumsan, risus sem{" "}
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      {/* </div> */}
+    </section>
+  );
+}
