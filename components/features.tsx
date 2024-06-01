@@ -12,7 +12,7 @@ import chenet from "@/public/images/chenet.png";
 import capstone from "@/public/images/capstone.png";
 import duruj from "@/public/images/duruj.png";
 import adopay from "@/public/images/adopay.png";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 
 export default function Features() {
   const [tab, setTab] = useState<number>(1);
@@ -43,16 +43,16 @@ export default function Features() {
   //     // moreText.style.display = "block";
   //   }
   // }
-  const VerticalSettings = {
+  const VerticalSettings: Settings = {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
-    lazyLoad: true,
+    lazyLoad: "ondemand",
     autoplay: true,
     // speed: 4000,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 2000,
     swipeToSlide: true,
     cssEase: "ease-in",
     nextArrow: <Arrow />,
@@ -64,7 +64,7 @@ export default function Features() {
     slidesToScroll: 1,
     autoplay: true,
     // speed: 4000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     pauseOnHover: false,
     swipeToSlide: true,
     cssEase: "linear",
