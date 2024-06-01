@@ -432,7 +432,6 @@ export default function Features() {
                      
                     </div> */}
 
-                    {/* <div className="w-[500px] h-[462px] bg-cyan-700 rounded-box"> */}
                     <Slider className="w-[500px] rounded-box" {...settings}>
                       <div className="w-full h-full">
                         <img
