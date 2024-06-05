@@ -2,7 +2,9 @@
 
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 import { useEffect } from "react";
+import map from "@/public/images/map/googleMap.png";
 
 export default function Contact() {
   useEffect(() => {
@@ -173,11 +175,11 @@ export default function Contact() {
             </div>
           </div>
           <div
-            className="flex justify-center items-center max-w-[533px] mx-auto h-96 w-full max-h-max bg-slate-400  "
+            className="flex justify-center items-center max-w-[533px] mx-auto h-96 w-full max-h-max"
             data-aos="zoom-out"
             data-aos-delay="100"
           >
-            google map can goes here
+            <Image className="object-contain" src={map} alt="" />
           </div>
         </div>
       </div>
