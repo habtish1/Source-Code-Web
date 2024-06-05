@@ -38,7 +38,7 @@ export default function Contact() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua
               </p>
               <div
-                className="w-full flex flex-wrap h-auto justify-start items-center gap-x-2 gap-y-4 mt-3"
+                className="w-full max-w-lg overflow-x-scroll flex h-24 text-nowrap justify-start items-center gap-x-2 gap-y-4 mt-3"
                 data-aos="slide-up"
                 data-aos-delay="10"
               >
@@ -50,6 +50,9 @@ export default function Contact() {
                 </button>
                 <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
                   Mobile Development
+                </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
+                  Database administration
                 </button>
               </div>
             </div>
