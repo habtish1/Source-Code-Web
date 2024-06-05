@@ -56,6 +56,12 @@ export default function Contact() {
                 <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
                   Database administration
                 </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
+                  IT consultation
+                </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
+                  ISystem Architecture and Design
+                </button>
               </div>
             </div>
 
