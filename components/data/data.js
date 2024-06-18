@@ -11,7 +11,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "professional website that drives results? Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "public/images/serviceImage/mock-1.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
   {
     id: "telegram-bots",
@@ -25,7 +26,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "professional website that drives results? Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "public/images/serviceImage/mock-2.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
   {
     id: "app-developments",
@@ -39,7 +41,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "professional website that drives results? Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "public/images/serviceImage/mock-2.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
 
   {
@@ -54,7 +57,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "professional website that drives results? Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "/images/image3.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
   {
     id: "erp",
@@ -68,7 +72,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "professional ERP that drives results? Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "/images/image3.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
   {
     id: "it-consultation",
@@ -82,7 +87,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "professional IT consultation that drives results? Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "/images/image3.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
   {
     id: "system-architecture-and-design",
@@ -96,7 +102,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "professional System Architecture and Design that drives results? Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "/images/image3.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
   {
     id: "Whatsapp-bot",
@@ -110,7 +117,8 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "WhatsApp bot development that drives results, Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "/images/image3.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
   {
     id: "database-adminstration",
@@ -124,6 +132,7 @@ export const contentData = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     mockDescriptionTwo:
       "Database Administration that drives results, Look no further! Our team of expert developers crafts stunning, user-friendly websites tailored to your needs. With cutting-edge design, seamless functionality, and responsive layouts, we ensure your site not only looks great but also performs exceptionally on all devices. Elevate your online presence with a website that stands out and engages your audience effectively. Let’s build your digital success story today!",
-    imageUrl: "/images/image3.jpg",
+    imageUrl: "/images/serviceImage/mock-1.jpg",
+    imageUrlTwo: "/images/serviceImage/mock-2.jpg",
   },
 ];

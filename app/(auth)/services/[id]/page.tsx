@@ -67,7 +67,9 @@ export default function Page() {
               {/* <div className="w-full bg-blue-400 max-h-max"> */}
               <Image
                 className="max-w-xl w-full max-h-[473px]"
-                src={mock}
+                src={selectedContent.imageUrl}
+                width={100}
+                height={100}
                 alt={selectedContent.title}
                 data-aos="slide-right"
                 data-aos-delay="10"
@@ -94,7 +96,9 @@ export default function Page() {
               {/* <div className="w-full bg-blue-400 max-h-max"> */}
               <Image
                 className="max-w-xl w-full max-h-[473px]"
-                src={mock_2}
+                src={selectedContent.imageUrlTwo}
+                width={100}
+                height={100}
                 alt={selectedContent.title}
                 data-aos="slide-left"
                 data-aos-delay="10"
