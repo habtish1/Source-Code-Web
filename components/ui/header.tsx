@@ -21,8 +21,17 @@ import { IoMdMail, IoLogoGoogleplus } from "react-icons/io";
 // import {  } from "react-icons/fa6";
 
 import { usePathname } from "next/navigation";
+import { useDropdown } from "../../context/DropdownContext";
+import { contentData } from "../data/data";
 
 export default function Header() {
+  const { selectedOption, setSelectedOption } = useDropdown();
+
+  const handleDropdownChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedOption(event.target.value);
+  };
   const pathname = usePathname();
   const [top, setTop] = useState<boolean>(true);
 
@@ -64,15 +73,6 @@ export default function Header() {
           </div>
 
           <div className="flex gap-3 text-gray-600">
-            {/* <a href="t.me/Silvaries" className="flex items-center">
-              <span className="text-primaryColor flex justify-center items-center mr-2">
-                <HiSupport />
-              </span>
-              <span className="font-normal text-nowrap max-md:hidden">
-                Talk to us
-              </span>
-            </a> */}
-
             <a
               href="https://t.me/sourcecodeet"
               target="_blank"
@@ -159,25 +159,38 @@ export default function Header() {
                   className="font-medium text-left text-gray-600  duration-150 ease-in-out"
                   href="/services"
                 >
-                  <Dropdown title="Services">
-                    <option
-                      className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                      value="option1"
-                    >
-                      Web Development
-                    </option>
-                    <option
-                      className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                      value="option2"
-                    >
-                      Telegram Bots
-                    </option>
-                    <option
-                      className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                      value="option3"
-                    >
-                      App Development
-                    </option>
+                  <Dropdown
+                    onChange={handleDropdownChange}
+                    value={selectedOption}
+                    title="Services"
+                  >
+                    {contentData.map((content) => (
+                      <option
+                        key={content.id}
+                        value={content.title}
+                        className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                      >
+                        {content.title}
+                      </option>
+                      // <option
+                      //   className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                      //   value="option2"
+                      // >
+                      //   Telegram Bots
+                      // </option>
+                      // <option
+                      //   className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                      //   value="option3"
+                      // >
+                      //   App Development
+                      // </option>
+                      // <option
+                      //   className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                      //   value="option3"
+                      // >
+                      //   Fintech
+                      // </option>
+                    ))}
                   </Dropdown>
                 </Link>
               </li>

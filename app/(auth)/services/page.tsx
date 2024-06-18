@@ -1,32 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import team_1 from "@/public/images/team-1.png";
 import team_2 from "@/public/images/team-2.png";
 import team_3 from "@/public/images/team-3.png";
 import author from "@/public/images/author.png";
-import icon_1 from "@/public/icons/Rocket_perspective_matte.png";
-import icon_2 from "@/public/icons/Code_perspective_matte-1.png";
-import icon_3 from "@/public/icons/Heart_rate_perspective_matte.png";
-import icon_4 from "@/public/icons/Shield_perspective_matte.png";
-import icon_5 from "@/public/icons/Success_perspective_matte.png";
-import icon_6 from "@/public/icons/Padlock_perspective_matte.png";
-import mode from "@/public/icons/NodeJS.png";
-import php from "@/public/icons/PHP.png";
-import database from "@/public/icons/database.png";
-import java from "@/public/icons/Java.png";
-import core from "@/public/icons/NETCore.png";
-import python from "@/public/icons/Python.png";
-import ruby from "@/public/icons/RubyOnRails.png";
-import go from "@/public/icons/Go.png";
-import mon from "@/public/icons/mon 1.png";
-import trophy from "@/public/icons/trophy.png";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { DropdownProvider, useDropdown } from "@/context/DropdownContext";
+import { contentData } from "@/components/data/data";
 
-export default function Services() {
+// export default function Services() {
+const Services: React.FC = () => {
+  const { selectedOption } = useDropdown();
+  const selectedContent = contentData.find(
+    (content) => content.id === selectedOption
+  );
+
+  console.log(`this is ${selectedContent}`);
+  console.log("contentData:", contentData);
+
+  console.log(`this is ${selectedOption}`);
+
   useEffect(() => {
     AOS.init({
       once: true,
@@ -36,505 +32,225 @@ export default function Services() {
     });
   });
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white sm:px-6">
-      <section className="max-w-6xl mx-auto px-4  pt-20  pb-20 md:pt-36 md:pb-20">
-        <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-16 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1
-            className="h3 font-normal pt-6"
-            data-aos="zoom-y-out"
-            data-aos-delay="100"
-          >
-            Way of building
-          </h1>
-          <h1 className="h3" data-aos="zoom-y-out" data-aos-delay="200">
-            Great Software
-          </h1>
-        </div>
-
-        <div className="flex flex-col justify-center items-center md:flex-row gap-x-24 gap-y-4 ">
-          <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full  h-auto">
-            <h1
-              className="h4 max-h-max"
-              data-aos="zoom-y-out"
-              data-aos-delay="200"
-            >
-              Build the right team to scale
-            </h1>
-            <p
-              className="w-full pb-2"
-              data-aos="zoom-y-out"
-              data-aos-delay="100"
-            >
-              Finding the right talent is not easy. We help you find the talent
-              that suits your needs, follows your processes, and sticks with you
-              long term (not the case with freelancers
-            </p>
-            <div className="w-full pb-2">
-              <p className="w-full pb-2 mb-5" data-aos="zoom-y-out">
-                Our delivery model helps you cut costs and deliver within
-                budget.
-              </p>
-              <q
-                className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4"
-                data-aos="fade-out"
-                data-aos-delay="100"
-              >
-                "Simform is quick to identify larger problem with the Software
-                so we decided to expand our scope to build new modules"
-              </q>
-            </div>
-            <div className="flex gap-2">
-              <Image
-                className="w-10 h-10 rounded-full"
-                src={author}
-                alt=""
-                data-aos="slide-up"
-                data-aos-delay="10"
-              />
-              <div
-                className="flex flex-col"
-                data-aos="slide-left"
-                data-aos-delay="10"
-              >
-                <p className="text-sm text-nowrap">Jordan Mirchev</p>
-                <p className="text-sm font-light text-nowrap uppercase">ceo</p>
+    <DropdownProvider>
+      <section className="bg-gradient-to-b from-gray-100 to-white sm:px-6">
+        <section className="max-w-6xl mx-auto px-4  pt-20  pb-20 md:pt-36 md:pb-20">
+          <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-16 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
+            {selectedContent && (
+              <div>
+                {/* <h2>{selectedOption.}</h2> */}
+                <p>{selectedContent.description}</p>
+                <img
+                  src={selectedContent.imageUrl}
+                  alt={selectedContent.title}
+                />
               </div>
-            </div>
-          </div>
-          {/* <div className="w-full bg-blue-400 max-h-max"> */}
-          <Image
-            className="max-w-xl w-full max-h-[473px]"
-            src={team_1}
-            alt=""
-            data-aos="slide-left"
-            data-aos-delay="2"
-          />
-          {/* </div> */}
-        </div>
-        {/* other team */}
-        <div className="flex flex-col justify-center items-center md:flex-row-reverse gap-x-24 gap-y-4 md:mt-24 ">
-          <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full  h-auto">
-            <h1
-              className="h4 max-h-max"
-              data-aos="zoom-y-out"
-              data-aos-delay="200"
-            >
-              Build the right team to scale
-            </h1>
-            <p
-              className="w-full pb-2"
+            )}
+            {/* <h1
+              className="h3 font-normal pt-6"
               data-aos="zoom-y-out"
               data-aos-delay="100"
             >
-              Finding the right talent is not easy. We help you find the talent
-              that suits your needs, follows your processes, and sticks with you
-              long term (not the case with freelancers
-            </p>
-            <div className="w-full pb-2">
-              <p className="w-full pb-2 mb-5" data-aos="zoom-y-out">
-                Our delivery model helps you cut costs and deliver within
-                budget.
-              </p>
-              <q
-                className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4"
-                data-aos="fade-out"
-                data-aos-delay="100"
-              >
-                "Simform is quick to identify larger problem with the Software
-                so we decided to expand our scope to build new modules"
-              </q>
-            </div>
-            <div className="flex gap-2">
-              <Image
-                className="w-10 h-10 rounded-full"
-                src={author}
-                alt=""
-                data-aos="slide-up"
-                data-aos-delay="10"
-              />
-              <div
-                className="flex flex-col"
-                data-aos="slide-left"
-                data-aos-delay="10"
-              >
-                <p className="text-sm text-nowrap">Jordan Mirchev</p>
-                <p className="text-sm font-light text-nowrap uppercase">ceo</p>
-              </div>
-            </div>
+              Way of building
+            </h1>
+            <h1 className="h3" data-aos="zoom-y-out" data-aos-delay="200">
+              Great Software
+            </h1> */}
           </div>
-          {/* <div className="w-full bg-blue-400 max-h-max"> */}
-          <Image
-            className="max-w-xl w-full max-h-[473px]"
-            src={team_2}
-            alt=""
-            data-aos="slide-right"
-            data-aos-delay="10"
-          />
-          {/* </div> */}
-        </div>
 
-        {/* other team */}
-        <div className="flex flex-col justify-center items-center md:flex-row gap-x-24 gap-y-4 md:mt-24">
-          <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full h-auto">
-            <h1
-              className="h4 max-h-max"
-              data-aos="zoom-y-out"
-              data-aos-delay="200"
-            >
-              Build the right team to scale
-            </h1>
-            <p
-              className="w-full pb-2"
-              data-aos="zoom-y-out"
-              data-aos-delay="100"
-            >
-              Finding the right talent is not easy. We help you find the talent
-              that suits your needs, follows your processes, and sticks with you
-              long term (not the case with freelancers
-            </p>
-            <div className="w-full pb-2" data-aos="zoom-y-out">
+          <div className="flex flex-col justify-center items-center md:flex-row gap-x-24 gap-y-4 ">
+            <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full  h-auto">
+              <h1
+                className="h4 max-h-max"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Build the right team to scale
+              </h1>
               <p
-                className="w-full pb-2 mb-5"
-                data-aos="fade-out"
+                className="w-full pb-2"
+                data-aos="zoom-y-out"
                 data-aos-delay="100"
               >
-                Our delivery model helps you cut costs and deliver within
-                budget.
+                Finding the right talent is not easy. We help you find the
+                talent that suits your needs, follows your processes, and sticks
+                with you long term (not the case with freelancers
               </p>
-              <q className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4">
-                Simform is quick to identify larger problem with the Software so
-                we decided to expand our scope to build new modules
-              </q>
+              <div className="w-full pb-2">
+                <p className="w-full pb-2 mb-5" data-aos="zoom-y-out">
+                  Our delivery model helps you cut costs and deliver within
+                  budget.
+                </p>
+                <q
+                  className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4"
+                  data-aos="fade-out"
+                  data-aos-delay="100"
+                >
+                  "Simform is quick to identify larger problem with the Software
+                  so we decided to expand our scope to build new modules"
+                </q>
+              </div>
+              <div className="flex gap-2">
+                <Image
+                  className="w-10 h-10 rounded-full"
+                  src={author}
+                  alt=""
+                  data-aos="slide-up"
+                  data-aos-delay="10"
+                />
+                <div
+                  className="flex flex-col"
+                  data-aos="slide-left"
+                  data-aos-delay="10"
+                >
+                  <p className="text-sm text-nowrap">Jordan Mirchev</p>
+                  <p className="text-sm font-light text-nowrap uppercase">
+                    ceo
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="flex gap-2">
-              <Image
-                className="w-10 h-10 rounded-full"
-                src={author}
-                alt=""
-                data-aos="slide-up"
-                data-aos-delay="10"
-              />
-              <div
-                className="flex flex-col"
-                data-aos="slide-left"
-                data-aos-delay="10"
+            {/* <div className="w-full bg-blue-400 max-h-max"> */}
+            <Image
+              className="max-w-xl w-full max-h-[473px]"
+              src={team_1}
+              alt=""
+              data-aos="slide-left"
+              data-aos-delay="2"
+            />
+            {/* </div> */}
+          </div>
+          {/* other team */}
+          <div className="flex flex-col justify-center items-center md:flex-row-reverse gap-x-24 gap-y-4 md:mt-24 ">
+            <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full  h-auto">
+              <h1
+                className="h4 max-h-max"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
               >
-                <p className="text-sm text-nowrap">Jordan Mirchev</p>
-                <p className="text-sm font-light text-nowrap uppercase">ceo</p>
+                Build the right team to scale
+              </h1>
+              <p
+                className="w-full pb-2"
+                data-aos="zoom-y-out"
+                data-aos-delay="100"
+              >
+                Finding the right talent is not easy. We help you find the
+                talent that suits your needs, follows your processes, and sticks
+                with you long term (not the case with freelancers
+              </p>
+              <div className="w-full pb-2">
+                <p className="w-full pb-2 mb-5" data-aos="zoom-y-out">
+                  Our delivery model helps you cut costs and deliver within
+                  budget.
+                </p>
+                <q
+                  className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4"
+                  data-aos="fade-out"
+                  data-aos-delay="100"
+                >
+                  "Simform is quick to identify larger problem with the Software
+                  so we decided to expand our scope to build new modules"
+                </q>
               </div>
-            </div>
-          </div>
-          {/* <div className="w-full bg-blue-400 max-h-max"> */}
-          <Image
-            className="max-w-xl w-full max-h-[473px]"
-            src={team_3}
-            alt=""
-            data-aos="slide-left"
-            data-aos-delay="2"
-          />
-          {/* </div> */}
-        </div>
-      </section>
-
-      <section className="max-w-6xl bg-gray-100 mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-20 md:mt-8 border-y-2 border-gray-300">
-        <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-20 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1
-            className="h3 font-normal pt-6"
-            data-aos="zoom-y-out"
-            data-aos-delay="100"
-          >
-            Our design and
-          </h1>
-          <h1 className="h3" data-aos="zoom-y-out" data-aos-delay="200">
-            development approach
-          </h1>
-        </div>
-        {/* design cards */}
-        <div className="w-full flex flex-wrap justify-center items-center h-auto  gap-6">
-          <DesignCards
-            image={icon_1}
-            color="cardBrown"
-            title="UX Driven Engineering"
-            desc="Unlike other companies, we are a UX first development company.
-                  Projects are driven by designers and they make sure design and
-                  experiences translate to code."
-          />
-          <DesignCards
-            image={icon_2}
-            color="cardLightBlue"
-            title="Developing Shared Understanding"
-            desc="Unlike other companies, we are a UX first development company.
-                  Projects are driven by designers and they make sure design and
-                  experiences translate to code."
-          />
-          <DesignCards
-            image={icon_3}
-            color="cardRed"
-            title="Proven Experience and Expertise"
-            desc="Unlike other companies, we are a UX first development company.
-                  Projects are driven by designers and they make sure design and
-                  experiences translate to code."
-          />
-          <DesignCards
-            image={icon_4}
-            color="cardBlue"
-            title="Security & Intellectual Property (IP)"
-            desc="Unlike other companies, we are a UX first development company.
-                  Projects are driven by designers and they make sure design and
-                  experiences translate to code."
-          />
-          <DesignCards
-            image={icon_5}
-            color="cardOrange"
-            title="Code Reviews"
-            desc="Unlike other companies, we are a UX first development company.
-                  Projects are driven by designers and they make sure design and
-                  experiences translate to code."
-          />
-          <DesignCards
-            image={icon_6}
-            color="cardOreo"
-            title="Quality Assurance & Testing"
-            desc="Unlike other companies, we are a UX first development company.
-                  Projects are driven by designers and they make sure design and
-                  experiences translate to code."
-          />
-        </div>
-      </section>
-
-      {/* tech stack */}
-      <section className="max-w-6xl h-auto mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-24 md:mt-8 border-b-2 border-gray-300">
-        <div className="relative max-w-md  mx-auto b text-center mb-8 md:mb-20 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1
-            className="h3 font-normal pt-6"
-            data-aos="zoom-out"
-            data-aos-delay="100"
-          >
-            Our
-          </h1>
-          <h1
-            className="h3 capitalize"
-            data-aos="zoom-out"
-            data-aos-delay="250"
-          >
-            tech stack
-          </h1>
-        </div>
-        <div
-          className="max-w-3xl mx-auto flex flex-wrap justify-center gap-x-14 gap-y-5"
-          data-aos="zoom-in"
-          data-aos-delay="250"
-        >
-          <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-            backend
-          </button>
-          <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-            Frontend
-          </button>
-          <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-            Databases
-          </button>
-          <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap uppercase  bg-gradient-to-r from-red-900 to-red-400">
-            BOT
-          </button>
-          <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-            DevOps
-          </button>
-          <button className="bg-clip-text hover:scale-105 text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-            Mobile
-          </button>
-        </div>
-
-        <div className="max-w-5xl  h-auto mx-auto flex flex-wrap justify-center gap-x-14 gap-y-5 mt-8 md:mt-16">
-          <div
-            className="w-full flex flex-wrap justify-center items-center  gap-x-14"
-            data-aos="slide-up"
-            data-aos-delay="50"
-          >
-            <Image className="w-[160px] h-[90px]" src={mode} alt="" />
-            <Image className="w-[160px] h-[90px]" src={php} alt="" />
-            <Image className="w-[160px] h-[90px]" src={database} alt="" />
-            <Image className="w-[160px] h-[90px]" src={java} alt="" />
-            <Image className="w-[160px] h-[90px]" src={core} alt="" />
-          </div>
-          <div
-            className="max-w-3xl w-full mx-auto flex  flex-wrap justify-center items-center mt-7 gap-1"
-            data-aos="slide-up"
-            data-aos-delay="10"
-          >
-            <Image className="w-[160px] h-[90px]" src={python} alt="" />
-            <Image className="w-[160px] h-[90px]" src={ruby} alt="" />
-            <Image className="w-[160px] h-[90px]" src={go} alt="" />
-            <Image className="w-[200px] h-[50px]" src={mon} alt="" />
-          </div>
-        </div>
-      </section>
-
-      {/* alkaline works */}
-      <section className="max-w-6xl bg-gray-100  h-auto mx-auto pt-8 md:pt-16 px-4 pb-10 md:pb-24 md:mt-8 ">
-        <div className="relative max-w-md  mx-auto text-center mb-8 md:mb-20 before:flex  before:mx-auto before:h-1 before:w-16 before:bg-blue-700 ">
-          <h1
-            className="h3 font-normal pt-6"
-            data-aos="zoom-out"
-            data-aos-delay="100"
-          >
-            How development{" "}
-          </h1>
-          <h1
-            className="h3 capitalize"
-            data-aos="zoom-out"
-            data-aos-delay="200"
-          >
-            through Alcaline works
-          </h1>
-        </div>
-
-        <div className="w-full flex h-auto justify-center items-center  gap-x-14">
-          <div className="flex flex-wrap max-[850px]:flex-col items-center justify-center p-8">
-            <div
-              className="flex max-md:flex-col mx-auto max-md:items-center justify-between items-end gap-16 gap-y-5"
-              data-aos="slide-up"
-              data-aos-delay="50"
-            >
-              <div className="max-w-96 after:flex after:relative after:mx-auto after:h-10 after:w-1 after:bg-red-500 after:top-5">
-                <div className="bg-white p-4 rounded-lg shadow ">
-                  <h2 className="text-lg font-semibold">
-                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-                      #1
-                    </span>{" "}
-                    Assemble the right team
-                  </h2>
-                  <p className="mt-2 text-zinc-600">
-                    We handle all aspects of vetting and choosing the right team
-                    that you don't have the time, expertise, or desire to do.
-                  </p>
-                </div>
-              </div>
-              <div className="max-w-96 after:flex after:relative after:mx-auto after:h-10 after:w-1 after:bg-red-500 after:top-5">
-                <div className="bg-white p-4 rounded-lg shadow">
-                  <h2 className="text-lg font-semibold">
-                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-                      #2
-                    </span>{" "}
-                    Sprint planning
-                  </h2>
-                  <p className="mt-2 text-zinc-600">
-                    Sprint roadmap is a collective planning effort. Team members
-                    collaborate to clarify items and ensure shared
-                    understanding.
-                  </p>
-                </div>
-              </div>
-
-              <div className="max-w-96 after:flex after:relative after:mx-auto after:h-10 after:w-1 after:bg-red-500 after:top-5  after:max-md:hidden">
-                <div className="bg-white p-4 rounded-lg shadow">
-                  <h2 className="text-lg font-semibold">
-                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-                      #3
-                    </span>{" "}
-                    Tech architecture
-                  </h2>
-                  <p className="mt-2 text-zinc-600">
-                    We break monolithic apps into microservices. Decoupling the
-                    code allows teams to move faster and more independently.
+              <div className="flex gap-2">
+                <Image
+                  className="w-10 h-10 rounded-full"
+                  src={author}
+                  alt=""
+                  data-aos="slide-up"
+                  data-aos-delay="10"
+                />
+                <div
+                  className="flex flex-col"
+                  data-aos="slide-left"
+                  data-aos-delay="10"
+                >
+                  <p className="text-sm text-nowrap">Jordan Mirchev</p>
+                  <p className="text-sm font-light text-nowrap uppercase">
+                    ceo
                   </p>
                 </div>
               </div>
             </div>
-            <div className=" flex w-full justify-center items-center">
-              <hr className=" w-full max-md:hidden h-1 bg-red-500 " />
-              <Image
-                className="relative max-md:invisible right-0"
-                src={trophy}
-                alt=""
-                data-aos="slide-left"
-                data-aos-delay="1"
-              />
-            </div>
-            {/* <hr className="h-full w-1 bg-red-500 z-10" /> */}
-            <div
-              className="flex max-md:flex-col justify-center items-start gap-x-16 gap-y-5 "
-              data-aos="slide-up"
-              data-aos-delay="50"
-            >
-              <div className="max-w-96 before:flex before:relative before:mx-auto before:h-10 before:w-1 before:bg-red-500 before:-top-5 before:max-md:top-0 ">
-                <div className="bg-white p-4 rounded-lg shadow">
-                  <h2 className="text-lg font-semibold">
-                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-                      #4
-                    </span>{" "}
-                    Standups & weekly demos
-                  </h2>
-                  <p className="mt-2 text-zinc-600">
-                    Standups, weekly demos, and weekly reviews make sure
-                    everyone is on the same page and can raise their concerns.
-                  </p>
-                </div>
-              </div>
-              <div className="max-w-96 before:flex before:relative before:mx-auto before:h-10 before:w-1 before:bg-red-500 before:-top-5 before:max-md:top-0">
-                <div className="bg-white p-4 rounded-lg shadow">
-                  <h2 className="text-lg font-semibold">
-                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-                      #5
-                    </span>{" "}
-                    Code reviews
-                  </h2>
-                  <p className="mt-2 text-zinc-600">
-                    Code reviews before release help detect issues like memory
-                    leaks, file leaks, performance signs, and general bad
-                    smells.
-                  </p>
-                </div>
-              </div>
-              <div className="max-w-96 before:flex before:relative before:mx-auto before:h-10 before:w-1 before:bg-red-500 before:-top-5 before:max-md:top-0">
-                <div className="bg-white p-4 rounded-lg shadow">
-                  <h2 className="text-lg font-semibold">
-                    <span className="bg-clip-text text-transparent text-nowrap capitalize  bg-gradient-to-r from-red-900 to-red-400">
-                      #6
-                    </span>{" "}
-                    Iterative delivery
-                  </h2>
-                  <p className="mt-2 text-zinc-600">
-                    We divide the implementation process into several
-                    checkpoints rather than a single deadline.
-                  </p>
-                </div>
-                <div className="mx-auto w-1 md:hidden h-5 bg-red-500"></div>
-                <Image className="mx-auto md:hidden mt-2" src={trophy} alt="" />
-              </div>
-            </div>
+            {/* <div className="w-full bg-blue-400 max-h-max"> */}
+            <Image
+              className="max-w-xl w-full max-h-[473px]"
+              src={team_2}
+              alt=""
+              data-aos="slide-right"
+              data-aos-delay="10"
+            />
+            {/* </div> */}
           </div>
-        </div>
+
+          {/* other team */}
+          <div className="flex flex-col justify-center items-center md:flex-row gap-x-24 gap-y-4 md:mt-24">
+            <div className="flex flex-col justify-center my-5 gap-y-7 max-w-lg w-full h-auto">
+              <h1
+                className="h4 max-h-max"
+                data-aos="zoom-y-out"
+                data-aos-delay="200"
+              >
+                Build the right team to scale
+              </h1>
+              <p
+                className="w-full pb-2"
+                data-aos="zoom-y-out"
+                data-aos-delay="100"
+              >
+                Finding the right talent is not easy. We help you find the
+                talent that suits your needs, follows your processes, and sticks
+                with you long term (not the case with freelancers
+              </p>
+              <div className="w-full pb-2" data-aos="zoom-y-out">
+                <p
+                  className="w-full pb-2 mb-5"
+                  data-aos="fade-out"
+                  data-aos-delay="100"
+                >
+                  Our delivery model helps you cut costs and deliver within
+                  budget.
+                </p>
+                <q className="relative inline-block mr-4 h-auto max-w-[400px] text-red-400 font-light left-4 before:h-full before:w-1 before:bg-blue-600 before:absolute before:mr-4 before:-left-4">
+                  Simform is quick to identify larger problem with the Software
+                  so we decided to expand our scope to build new modules
+                </q>
+              </div>
+              <div className="flex gap-2">
+                <Image
+                  className="w-10 h-10 rounded-full"
+                  src={author}
+                  alt=""
+                  data-aos="slide-up"
+                  data-aos-delay="10"
+                />
+                <div
+                  className="flex flex-col"
+                  data-aos="slide-left"
+                  data-aos-delay="10"
+                >
+                  <p className="text-sm text-nowrap">Jordan Mirchev</p>
+                  <p className="text-sm font-light text-nowrap uppercase">
+                    ceo
+                  </p>
+                </div>
+              </div>
+            </div>
+            {/* <div className="w-full bg-blue-400 max-h-max"> */}
+            <Image
+              className="max-w-xl w-full max-h-[473px]"
+              src={team_3}
+              alt=""
+              data-aos="slide-left"
+              data-aos-delay="2"
+            />
+            {/* </div> */}
+          </div>
+        </section>
       </section>
-    </section>
+    </DropdownProvider>
   );
-}
+};
 
-interface IProps {
-  image: any;
-  color: string;
-  title: string;
-  desc: string;
-}
-
-function DesignCards({ image, color, title, desc }: IProps) {
-  return (
-    <div
-      className="max-w-[540px] w-full min-h-[237px] hover:scale-[1.02] hover:shadow-xl ease-in-out duration-300 bg-white border border-gray-300 px-7 pt-12 pb-8"
-      data-aos="zoom-out"
-      data-aos-delay="300"
-    >
-      <div className="flex justify-center gap-x-6">
-        <div
-          className={`flex justify-center items-center max-w-[59px] w-full rounded-xl h-[56px] bg-${color}`}
-        >
-          <Image className="w-9 h-9" src={image} alt="" />
-        </div>
-        <div className="flex flex-col gap-3">
-          <h1 className="capitalize text-xl font-semibold">{title}</h1>
-          <p className="text-sm font-light">{desc}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+export default Services;

@@ -5,10 +5,17 @@ import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type DropdownProps = {
-  children: React.ReactNode;
+// type DropdownProps = {
+//   children: React.ReactNode;
+//   title: string;
+// };
+
+export interface DropdownProps {
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  value: string;
   title: string;
-};
+  children: React.ReactNode; // Add children to the props
+}
 
 export default function Dropdown({ children, title }: DropdownProps) {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
