@@ -45,10 +45,13 @@ export default function Contact() {
                 data-aos-delay="10"
               >
                 <button className="text-white text-center capitalize font-medium text-base bg-btnColor px-5 py-3 rounded-[64px]">
+                  Website Development
+                </button>
+                <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
                   telegram bot
                 </button>
                 <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
-                  Website Development
+                  WhatsApp bot
                 </button>
                 <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
                   Mobile Development
@@ -60,7 +63,7 @@ export default function Contact() {
                   IT consultation
                 </button>
                 <button className="text-btnColor capitalize font-medium text-base bg-transparent border border-btnColor px-5 py-2 rounded-[64px]">
-                  ISystem Architecture and Design
+                  System Architecture and Design
                 </button>
               </div>
             </div>

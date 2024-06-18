@@ -20,7 +20,7 @@ import { IoMdMail, IoLogoGoogleplus } from "react-icons/io";
 
 // import {  } from "react-icons/fa6";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useDropdown } from "../../context/DropdownContext";
 import { contentData } from "../data/data";
 
@@ -30,8 +30,10 @@ export default function Header() {
   const handleDropdownChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
+    console.log(event.target.value);
     setSelectedOption(event.target.value);
   };
+  const navigate = useRouter();
   const pathname = usePathname();
   const [top, setTop] = useState<boolean>(true);
 
@@ -155,10 +157,7 @@ export default function Header() {
               </li>
 
               <li>
-                <Link
-                  className="font-medium text-left text-gray-600  duration-150 ease-in-out"
-                  href="/services"
-                >
+                <div className="font-medium text-left text-gray-600  duration-150 ease-in-out">
                   <Dropdown
                     onChange={handleDropdownChange}
                     value={selectedOption}
@@ -166,33 +165,16 @@ export default function Header() {
                   >
                     {contentData.map((content) => (
                       <option
+                        onClick={() => navigate.push(`/services/${content.id}`)}
                         key={content.id}
                         value={content.title}
-                        className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
+                        className="cursor-pointer w-full font-medium py-2 px-5 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
                       >
                         {content.title}
                       </option>
-                      // <option
-                      //   className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                      //   value="option2"
-                      // >
-                      //   Telegram Bots
-                      // </option>
-                      // <option
-                      //   className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                      //   value="option3"
-                      // >
-                      //   App Development
-                      // </option>
-                      // <option
-                      //   className="font-medium py-2 px-6 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                      //   value="option3"
-                      // >
-                      //   Fintech
-                      // </option>
                     ))}
                   </Dropdown>
-                </Link>
+                </div>
               </li>
               <li>
                 <Link
