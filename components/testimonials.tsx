@@ -322,25 +322,27 @@ export default function Testimonials() {
                   data-aos="slide-left"
                   data-aos-delay="10"
                 >
-                  <div className="relative flex items-start border-2 border-gray-200 rounded bg-cyan-400">
+                  <div className="relative flex items-start border-2 border-gray-200 rounded">
                     {/* Testimonial */}
                     <div className="text-center px-12 py-8 pt-20 mx-4 md:mx-0">
-                      <div className="absolute top-0 -mt-8 left-1/2 transform -translate-x-1/2">
-                        <svg
+                      <div className="absolute bg-white shadow-inner drop-shadow-md  p-3 rounded-full -top-4 -mt-8 left-1/2 transform -translate-x-1/2">
+                        {/* <svg
                           className="absolute top-0 right-0 -mt-3 -mr-8 w-16 h-16 fill-current text-blue-500"
                           viewBox="0 0 64 64"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.203 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.203 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
-                        </svg>
-                        <Image
-                          className="relative rounded-full"
-                          src={TestimonialImage}
-                          width={96}
-                          height={96}
-                          alt="Testimonial 01"
-                        />
+                        </svg> */}
+                        <span className="w-40 h-40">
+                          <Image
+                            className="relative"
+                            src={mela}
+                            width={70}
+                            height={70}
+                            alt="Testimonial 01"
+                          />
+                        </span>
                       </div>
                       <blockquote className="text-xl font-medium mb-4">
                         “ I love this product and would recommend it to anyone.
@@ -377,25 +379,27 @@ export default function Testimonials() {
                   className="max-w-3xl mx-auto mt-20 mb-10"
                   data-aos="zoom-y-out"
                 >
-                  <div className="relative flex items-start border-2 border-gray-200 rounded bg-green-300">
+                  <div className="relative flex items-start border-2 border-gray-200 rounded ">
                     {/* Testimonial */}
                     <div className="text-center px-12 py-8 pt-20 mx-4 md:mx-0">
-                      <div className="absolute top-0 -mt-8 left-1/2 transform -translate-x-1/2">
-                        <svg
+                      <div className="absolute bg-white shadow-inner drop-shadow-md p-3 rounded-full -top-4 -mt-8 left-1/2 transform -translate-x-1/2">
+                        {/* <svg
                           className="absolute top-0 right-0 -mt-3 -mr-8 w-16 h-16 fill-current text-blue-500"
                           viewBox="0 0 64 64"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.203 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.203 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
-                        </svg>
-                        <Image
-                          className="relative rounded-full"
-                          src={TestimonialImage}
-                          width={96}
-                          height={96}
-                          alt="Testimonial 01"
-                        />
+                        </svg> */}
+                        <span className="w-40 h-40">
+                          <Image
+                            className="relative"
+                            src={kacha}
+                            width={70}
+                            height={70}
+                            alt="Testimonial 01"
+                          />
+                        </span>
                       </div>
                       <blockquote className="text-xl font-medium mb-4">
                         “ I love this product and would recommend it to anyone.
@@ -432,23 +436,15 @@ export default function Testimonials() {
                   className="max-w-3xl mx-auto mt-20 mb-10"
                   data-aos="zoom-y-out"
                 >
-                  <div className="relative flex items-start border-2 border-gray-200 rounded bg-sky-600">
+                  <div className="relative flex items-start border-2 border-gray-200 rounded">
                     {/* Testimonial */}
                     <div className="text-center px-12 py-8 pt-20 mx-4 md:mx-0">
-                      <div className="absolute top-0 -mt-8 left-1/2 transform -translate-x-1/2">
-                        <svg
-                          className="absolute top-0 right-0 -mt-3 -mr-8 w-16 h-16 fill-current text-blue-500"
-                          viewBox="0 0 64 64"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.203 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.203 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
-                        </svg>
+                      <div className="absolute bg-white shadow-inner drop-shadow-md p-3 rounded-full top-0 -mt-8 left-1/2 transform -translate-x-1/2">
                         <Image
-                          className="relative rounded-full"
-                          src={TestimonialImage}
-                          width={96}
-                          height={96}
+                          className="relative"
+                          src={chenet}
+                          width={110}
+                          height={110}
                           alt="Testimonial 01"
                         />
                       </div>
@@ -487,23 +483,15 @@ export default function Testimonials() {
                   className="max-w-3xl mx-auto mt-20 mb-10"
                   data-aos="zoom-y-out"
                 >
-                  <div className="relative flex items-start border-2 border-gray-200 rounded bg-violet-600">
+                  <div className="relative flex items-start border-2 border-gray-200 rounded">
                     {/* Testimonial */}
                     <div className="text-center px-12 py-8 pt-20 mx-4 md:mx-0">
-                      <div className="absolute top-0 -mt-8 left-1/2 transform -translate-x-1/2">
-                        <svg
-                          className="absolute top-0 right-0 -mt-3 -mr-8 w-16 h-16 fill-current text-blue-500"
-                          viewBox="0 0 64 64"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.203 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.203 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
-                        </svg>
+                      <div className="absolute bg-white shadow-inner drop-shadow-md p-4 rounded-full top-0 -mt-8 left-1/2 transform -translate-x-1/2">
                         <Image
-                          className="relative rounded-full"
-                          src={TestimonialImage}
-                          width={96}
-                          height={96}
+                          className="relative"
+                          src={capstone}
+                          width={110}
+                          height={110}
                           alt="Testimonial 01"
                         />
                       </div>
@@ -542,21 +530,13 @@ export default function Testimonials() {
                   className="max-w-3xl mx-auto mt-20 mb-10"
                   data-aos="zoom-y-out"
                 >
-                  <div className="relative flex items-start border-2 border-gray-200 rounded bg-fuchsia-700">
+                  <div className="relative flex items-start border-2 border-gray-200 rounded">
                     {/* Testimonial */}
                     <div className="text-center px-12 py-8 pt-20 mx-4 md:mx-0">
-                      <div className="absolute top-0 -mt-8 left-1/2 transform -translate-x-1/2">
-                        <svg
-                          className="absolute top-0 right-0 -mt-3 -mr-8 w-16 h-16 fill-current text-blue-500"
-                          viewBox="0 0 64 64"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.203 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.203 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
-                        </svg>
+                      <div className="absolute bg-white shadow-inner drop-shadow-md p-4 rounded-full top-0 -mt-8 left-1/2 transform -translate-x-1/2">
                         <Image
-                          className="relative rounded-full"
-                          src={TestimonialImage}
+                          className="relative"
+                          src={duruj}
                           width={96}
                           height={96}
                           alt="Testimonial 01"
@@ -597,21 +577,13 @@ export default function Testimonials() {
                   className="max-w-3xl mx-auto mt-20 mb-10"
                   data-aos="zoom-y-out"
                 >
-                  <div className="relative flex items-start border-2 border-gray-200 rounded bg-rose-600">
+                  <div className="relative flex items-start border-2 border-gray-200 rounded">
                     {/* Testimonial */}
                     <div className="text-center px-12 py-8 pt-20 mx-4 md:mx-0">
-                      <div className="absolute top-0 -mt-8 left-1/2 transform -translate-x-1/2">
-                        <svg
-                          className="absolute top-0 right-0 -mt-3 -mr-8 w-16 h-16 fill-current text-blue-500"
-                          viewBox="0 0 64 64"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.203 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.203 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
-                        </svg>
+                      <div className="absolute bg-white shadow-inner drop-shadow-md p-3 rounded-full top-0 -mt-8 left-1/2 transform -translate-x-1/2">
                         <Image
-                          className="relative rounded-full"
-                          src={TestimonialImage}
+                          className="relative"
+                          src={adopay}
                           width={96}
                           height={96}
                           alt="Testimonial 01"
