@@ -33,6 +33,19 @@ export default function Header() {
     console.log(event.target.value);
     setSelectedOption(event.target.value);
   };
+
+  const handleSharing = () => {
+    console.log("sharing");
+    if (navigator.share) {
+      const shareData = {
+        title: "Web url",
+        file: "source code url",
+      };
+      if (navigator.canShare(shareData)) navigator.share(shareData);
+      else console.log("con't share it ---1");
+    } else console.log("con't share it----2");
+  };
+
   const navigate = useRouter();
   const pathname = usePathname();
   const [top, setTop] = useState<boolean>(true);
@@ -57,7 +70,10 @@ export default function Header() {
       >
         <div className="flex justify-between items-center max-w-screen-2xl w-full mx-auto ">
           <div className="flex gap-2">
-            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+            <span
+              onClick={handleSharing}
+              className="text-primaryColor hover:bg-primaryColor cursor-pointer hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md"
+            >
               <FaShareAlt />
             </span>
             <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
