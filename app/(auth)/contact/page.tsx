@@ -69,7 +69,7 @@ export default function Contact() {
             </div>
 
             <form
-              className="w-96 h-96 mt-10 bg-white"
+              className="w-96 h-96 mt-16 bg-white"
               data-aos="fade"
               data-aos-delay="200"
             >
@@ -89,14 +89,14 @@ export default function Contact() {
                   required
                 />
               </div>
-              <div className="w-full flex flex-col">
+              {/* <div className="w-full flex flex-col">
                 <input
                   type="text"
                   className="w-full placeholder:capitalize mt-6 py-3 text-base border-y-0 border-x-0 border-b-2 border-gray-300 placeholder:text-gray-400 outline-none"
                   placeholder="your subject here"
                   required
                 />
-              </div>
+              </div> */}
               <div className="w-full flex flex-col ">
                 <textarea
                   rows={3}
@@ -124,7 +124,7 @@ export default function Contact() {
         {/* our office */}
         <div className="w-full flex flex-col justify-center items-center  mx-auto text-black max-h-max bg-white pt-10 md:pt-14 pb-6 md:pb-10">
           <h1
-            className=" max-w-max h5 text-center mb-4 "
+            className=" max-w-max h-5 text-center mb-4 "
             data-aos="zoom-out"
             data-aos-delay="200"
           >
@@ -176,10 +176,10 @@ export default function Contact() {
                 data-aos="fade-out"
                 data-aos-delay="200"
               >
-                info@gmail.com
+                support@sourcecodeet.com
               </p>
               <a href="tel:+1234567890" data-aos="fade-in" data-aos-delay="300">
-                Call us at (123) 456-7890
+                Call us at (+251) 974-017208
               </a>
             </div>
           </div>
@@ -188,7 +188,11 @@ export default function Contact() {
             data-aos="zoom-out"
             data-aos-delay="100"
           >
-            <Image className="object-contain" src={map} alt="" />
+            <Image
+              className="object-contain hover:scale-[1.011] transform ease-linear duration-75"
+              src={map}
+              alt=""
+            />
           </div>
         </div>
       </div>

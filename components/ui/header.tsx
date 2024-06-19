@@ -74,11 +74,11 @@ export default function Header() {
             </span>
           </div>
 
-          <div className="flex gap-3 text-gray-600">
+          <div className="flex gap-x-3 text-gray-600">
             <a
               href="https://t.me/sourcecodeet"
               target="_blank"
-              className="flex items-center hover:cursor-pointer"
+              className="flex items-center hover:cursor-pointer hover:bg-slate-100 py-2 px-1"
             >
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <FaTelegram />
@@ -89,7 +89,7 @@ export default function Header() {
             </a>
             <a
               href="mailto:support@sourcecodeet.com?subject=software development"
-              className="flex items-center cursor-pointer"
+              className="flex items-center cursor-pointer hover:bg-slate-100 py-2 px-1"
             >
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <IoMdMail />
@@ -101,7 +101,7 @@ export default function Header() {
             <a
               href="https://wa.me/251974017208"
               target="_blank"
-              className="flex items-center"
+              className="flex items-center hover:bg-slate-100 py-2 px-1"
             >
               <span className="text-primaryColor flex justify-center items-center mr-2">
                 <FaWhatsapp />
@@ -122,27 +122,9 @@ export default function Header() {
           <div className="shrink-0 mr-4">
             <Logo />
           </div>
-          {/* Desktop navigation */}
-          {/* <nav className="hidden md:flex md:grow"> */}
-          {/* Desktop sign in links */}
-          {/* <ul className="flex grow justify-end flex-wrap items-center">
-              <li>
-                <Link href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
-              </li>
-              <li>
-                <Link href="/signup" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                  <span>Sign up</span>
-                  <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                  </svg>
-                </Link>
-              </li>
-            </ul>
-
-          </nav> */}
 
           <nav className="hidden md:flex  md:grow justify-end">
-            <ul className="flex justify-center items-center gap-x-4 text-sm text-nowrap font-medium py-12">
+            <ul className="flex justify-center items-center gap-x-4 text-sm text-nowrap font-medium py-5">
               <li>
                 <Link
                   className={`link ${
