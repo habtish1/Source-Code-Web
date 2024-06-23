@@ -64,7 +64,11 @@ export default function About() {
               ideas to life.
             </p>
             <h1 className="text-2xl font-bold">Here's what sets us apart:</h1>
-            <ul className="list-disc ml-6 text-xl text-gray-600">
+            <ul
+              className="list-disc ml-6 text-xl text-gray-600"
+              data-aos="zoom-y-out"
+              data-aos-delay="200"
+            >
               <li>
                 <span className="font-bold mr-1 text-gray-800">
                   React.js Masters:{" "}

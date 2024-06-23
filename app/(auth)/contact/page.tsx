@@ -183,8 +183,10 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          <div
-            className="flex justify-center items-center max-w-[533px] mx-auto h-96 w-full max-h-max"
+          <a
+            href="https://maps.app.goo.gl/EDy3CgevZ8qvebfu6"
+            target="_blank"
+            className="flex justify-center items-center max-w-[533px] mx-auto h-96 w-full max-h-max cursor-pointer hover:drop-shadow-md"
             data-aos="zoom-out"
             data-aos-delay="100"
           >
@@ -193,7 +195,7 @@ export default function Contact() {
               src={map}
               alt=""
             />
-          </div>
+          </a>
         </div>
       </div>
     </section>
