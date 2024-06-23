@@ -24,7 +24,8 @@ export default function About() {
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h1 className="h1 mb-4" data-aos="zoom-y-out">
-              We enable developers to build amazing things
+              Source Code IT Solutions PLC: Building Innovative Apps for Your
+              Success
             </h1>
             <p
               className="text-xl text-gray-600"
@@ -56,26 +57,72 @@ export default function About() {
               data-aos="zoom-y-out"
               data-aos-delay="200"
             >
-              Aenean sed adipiscing diam donec adipiscing tristique risus nec
-              feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu
-              dictum varius duis at consectetur lorem donec massa sapien, sed
-              risus ultricies tristique nulla aliquet. Morbi tristique senectus
-              et netus et, nibh nisl condimentum id venenatis a condimentum
-              vitae sapien.
+              At Source Code IT Solutions PLC, we're passionate about crafting
+              exceptional software solutions that empower your business. Our
+              team of skilled developers boasts a diverse range of expertise,
+              allowing us to tackle your most complex projects and bring your
+              ideas to life.
             </p>
-            <p
-              className="text-xl text-gray-600 mb-8"
-              data-aos="zoom-y-out"
-              data-aos-delay="250"
-            >
-              Quam pellentesque nec nam aliquam sem et tortor consequat,
-              pellentesque adipiscing commodo elit at imperdiet. Semper auctor
-              neque vitae tempus quam pellentesque nec. Amet dictum sit amet
-              justo donec enim diam varius sit amet mattis vulputate enim nulla
-              aliquet porttitor.
-            </p>
+            <h1 className="text-2xl font-bold">Here's what sets us apart:</h1>
+            <ul className="list-disc ml-6 text-xl text-gray-600">
+              <li>
+                <span className="font-bold mr-1 text-gray-800">
+                  React.js Masters:{" "}
+                </span>
+                Our developers are fluent in React.js, a powerful JavaScript
+                library for building dynamic and user-friendly web interfaces.
+                This ensures your web applications are not only functional but
+                also visually stunning and performant.
+              </li>
+              <li>
+                <span className="font-bold mr-1 text-gray-800">
+                  Web Development Gurus:{" "}
+                </span>
+                We are veterans of web development, possessing a deep
+                understanding of front-end and back-end technologies. Whether
+                it's building a simple website or a complex e-commerce platform,
+                we have the expertise to deliver exceptional results.
+              </li>
+              <li>
+                <span className="font-bold mr-1 text-gray-800">
+                  Messaging Experts:{" "}
+                </span>
+                A We dive deep into the world of chatbots, crafting intelligent
+                and interactive bots for both Telegram and WhatsApp. These bots
+                can automate tasks, provide customer support, or even act as a
+                powerful marketing tool to engage your audience.
+              </li>
+              <li>
+                <span className="font-bold mr-1 text-gray-800">
+                  Mobile App Development Powerhouse:
+                </span>
+                Our team is well-versed in building high-performance mobile
+                applications for both iOS and Android platforms. Whether you
+                need a native app built with Flutter or a cross-platform
+                solution, we can deliver an app that seamlessly integrates with
+                your existing ecosystem.
+              </li>
+              <li>
+                <span className="font-bold mr-1 text-gray-800">
+                  Sports Betting Specialists:
+                </span>
+                We have a proven track record in developing robust and secure
+                sports betting platforms. Our solutions ensure a seamless user
+                experience for placing bets, managing funds, and tracking
+                results.
+              </li>
+              <li>
+                <span className="font-bold mr-1 text-gray-800">
+                  Wallet Telegram Bots -
+                </span>
+                Your Financial Concierge: Our team can create custom Telegram
+                bots that act as secure and convenient wallet extensions.
+                Imagine managing your finances, making payments, and receiving
+                updates directly through Telegram.
+              </li>
+            </ul>
           </div>
-          <div className="w-full flex flex-col md:flex-row gap-4">
+          <div className="w-full flex flex-col md:flex-row gap-4 mt-5 md:mt-10">
             <div
               className="max-w-[435px] mx-auto w-full h-80 flex justify-center items-center bg-gray-300 border border-gray-400"
               data-aos="zoom-out"
@@ -128,16 +175,17 @@ export default function About() {
         <div className="max-w-6xl mx-auto h-auto pt-12  pb-12 md:pt-20  md:pb-20">
           <div className="max-w-3xl  mx-auto text-center pb-12 md:pb-20">
             <h1 className="h1 mb-4" data-aos="fade" data-aos-delay="200">
-              Developing a global mindset{" "}
+              We don't just develop apps, we build experiences.
             </h1>
             <p
               className="text-xl text-gray-600"
               data-aos="zoom-y-out"
               data-aos-delay="150"
             >
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
-              cupidatat.
+              At Source Code IT Solutions PLC, we understand that your software
+              is a reflection of your brand. That's why we focus on creating
+              user-centric solutions that not only deliver functionality but
+              also captivate your users.
             </p>
           </div>
           {/* world illustration */}
@@ -370,7 +418,6 @@ export default function About() {
                 desc=" Duis aute irure dolor in reprehenderitin volupta velit esse
                   cillum sint occaecat cupidatat."
               />
-              {/* <div className="w-[260px] h-[179px] bg-white p-6 drop-shadow-2xl"></div> */}
               <ProcessCard
                 number={4}
                 title="Job Offers"
@@ -396,7 +443,7 @@ export default function About() {
               <div>
                 <a
                   href="#"
-                  className="px-8 py-3 text-base leading-6 text-nowrap capitalize bg-blue-600 rounded-md font-medium"
+                  className="px-8 py-3 text-lg text-nowrap capitalize bg-blue-600 rounded-md font-medium hover:bg-blue-800"
                 >
                   {" "}
                   join us today
