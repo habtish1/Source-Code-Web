@@ -60,10 +60,15 @@ export default function Header() {
         .then(() =>
           Toast.fire({
             icon: "success",
-            title: "shared in successfully!",
+            title: "sharing successfully!",
           })
         )
-        .catch((error) => console.log("Error sharing", error));
+        .catch((error) =>
+          Toast.fire({
+            icon: "error",
+            title: { error },
+          })
+        );
     } else {
       Toast.fire({
         icon: "error",
