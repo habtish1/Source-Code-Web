@@ -82,12 +82,20 @@ export default function Header() {
             <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
               <FaXTwitter />
             </span>
-            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+            <a
+              href="https://www.linkedin.com/company/source-code-it-solutions-plc/"
+              target="_blank"
+              className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md"
+            >
               <FaLinkedinIn />
-            </span>
-            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
+            </a>
+            <a
+              href="mailto:info@sourcecodeet.com"
+              target="_blank"
+              className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md"
+            >
               <IoLogoGoogleplus />
-            </span>
+            </a>
           </div>
 
           <div className="flex gap-x-3 text-gray-600">
