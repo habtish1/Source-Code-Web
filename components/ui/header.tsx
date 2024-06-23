@@ -39,7 +39,7 @@ export default function Header() {
     toast: true,
     position: "top-end",
     showConfirmButton: false,
-    timer: 3000,
+    timer: 4000,
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.onmouseenter = Swal.stopTimer;
@@ -60,14 +60,14 @@ export default function Header() {
         .then(() =>
           Toast.fire({
             icon: "success",
-            title: "shared in successfully",
+            title: "shared in successfully!",
           })
         )
         .catch((error) => console.log("Error sharing", error));
     } else {
       Toast.fire({
         icon: "error",
-        title: "not supported on your device",
+        title: "Not supported on your device!",
       });
     }
   };
