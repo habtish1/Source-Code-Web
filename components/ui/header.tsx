@@ -17,12 +17,13 @@ import {
 } from "react-icons/fa6";
 import { HiSupport } from "react-icons/hi";
 import { IoMdMail, IoLogoGoogleplus } from "react-icons/io";
-
-// import {  } from "react-icons/fa6";
+import Swal from "sweetalert2";
 
 import { usePathname, useRouter } from "next/navigation";
 import { useDropdown } from "../../context/DropdownContext";
 import { contentData } from "../data/data";
+import { text } from "stream/consumers";
+import { title } from "process";
 
 export default function Header() {
   const { selectedOption, setSelectedOption } = useDropdown();
@@ -34,16 +35,41 @@ export default function Header() {
     setSelectedOption(event.target.value);
   };
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+
   const handleSharing = () => {
-    console.log("sharing");
-    if (navigator.share) {
-      const shareData = {
-        title: "Web url",
-        file: "source code url",
-      };
-      if (navigator.canShare(shareData)) navigator.share(shareData);
-      else console.log("con't share it ---1");
-    } else console.log("con't share it----2");
+    const shareData = {
+      title: "https://www.sourcecodeet.com/",
+      text: "Check out the website of source code IT solutions",
+      url: "https://www.sourcecodeet.com/",
+    };
+
+    if (navigator.canShare && navigator.canShare(shareData)) {
+      navigator
+        .share(shareData)
+        .then(() =>
+          Toast.fire({
+            icon: "success",
+            title: "shared in successfully",
+          })
+        )
+        .catch((error) => console.log("Error sharing", error));
+    } else {
+      Toast.fire({
+        icon: "error",
+        title: "not supported on your device",
+      });
+    }
   };
 
   const navigate = useRouter();
