@@ -375,13 +375,15 @@ export default function Blog() {
             Here are some related articles you may find interesting:
           </p>
           <a href="#" className="flex max-sm:flex-col gap-x-9 gap-y-2 ">
-            <Image
-              className="w-[270px] h-[203px] mx-auto"
-              src={article}
-              alt=""
-              data-aos="zoom-out"
-              data-aos-delay="300"
-            />
+            <div className="h-[203px]">
+              <Image
+                className="relative w-[800px] h-[203px] object-cover mx-auto"
+                src={keyboardTyping}
+                alt=""
+                data-aos="zoom-out"
+                data-aos-delay="300"
+              />
+            </div>
             <div className="flex flex-col max-sm:items-center gap-x-2 justify-center">
               <div className="flex gap-2">
                 <p
@@ -389,7 +391,7 @@ export default function Blog() {
                   data-aos="zoom-y-out"
                   data-aos-delay="100"
                 >
-                  product
+                  blog post 1
                 </p>
                 <p
                   className="uppercase"
@@ -404,20 +406,24 @@ export default function Blog() {
                 data-aos="zoom-y-out"
                 data-aos-delay="200"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                How Mobile Apps Can Fuel Your Small Business Growth in 2024{" "}
               </h1>
               <p
                 className="text-base"
                 data-aos="zoom-y-out"
                 data-aos-delay="150"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
-                metus nec fringilla accumsan, risus sem{" "}
+                In today's mobile-first world, consumers are glued to their
+                smartphones. This presents a massive opportunity for small
+                businesses to connect with their target audience in a convenient
+                and personalized way...
               </p>
             </div>
           </a>
-          <a href="#" className="flex max-sm:flex-col gap-x-9 gap-y-2 ">
+          <a
+            href="/blogs/post"
+            className="flex max-sm:flex-col gap-x-9 gap-y-2 "
+          >
             <Image
               className="w-[270px] h-[203px] mx-auto"
               src={article}
@@ -447,16 +453,17 @@ export default function Blog() {
                 data-aos="zoom-y-out"
                 data-aos-delay="200"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                How Software Development is Igniting Ethiopian Entrepreneurship
               </h1>
               <p
                 className="text-base"
                 data-aos="zoom-y-out"
                 data-aos-delay="200"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
-                metus nec fringilla accumsan, risus sem{" "}
+                Ethiopian developers have a unique understanding of the local
+                context. They can create software solutions that address
+                specific challenges faced by Ethiopian businesses and
+                individuals.
               </p>
             </div>
           </a>

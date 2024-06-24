@@ -459,16 +459,17 @@ export default function Blog() {
                 data-aos="zoom-y-out"
                 data-aos-delay="200"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                How Software Development is Igniting Ethiopian Entrepreneurship
               </h1>
               <p
                 className="text-base"
                 data-aos="zoom-y-out"
                 data-aos-delay="200"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
-                metus nec fringilla accumsan, risus sem{" "}
+                Ethiopian developers have a unique understanding of the local
+                context. They can create software solutions that address
+                specific challenges faced by Ethiopian businesses and
+                individuals.
               </p>
             </div>
           </a>

@@ -55,20 +55,12 @@ export default function Header() {
     };
 
     if (navigator.canShare && navigator.canShare(shareData)) {
-      navigator
-        .share(shareData)
-        .then(() =>
-          Toast.fire({
-            icon: "success",
-            title: "sharing successfully!",
-          })
-        )
-        .catch((error) =>
-          Toast.fire({
-            icon: "error",
-            title: { error },
-          })
-        );
+      navigator.share(shareData).catch((error) =>
+        Toast.fire({
+          icon: "error",
+          title: { error },
+        })
+      );
     } else {
       Toast.fire({
         icon: "error",
