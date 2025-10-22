@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import { useEffect } from "react";
 import map from "@/public/images/map/googleMap.png";
+import companyLogo from "@/public/images/image.png";
 
 export default function Contact() {
   useEffect(() => {
@@ -114,11 +115,20 @@ export default function Contact() {
             </form>
           </div>
           <div
-            className=" max-w-[533px] flex items-center justify-center max-md:h-80 w-full mx-auto max-h-max bg-slate-400  "
+            className="max-w-[533px] flex items-center justify-center min-h-80 w-full mx-auto bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg shadow-lg border-2 border-blue-200"
             data-aos="slide-left"
             data-aos-delay="2"
           >
-            Image goes here
+            <Image
+              src={companyLogo}
+              alt="Source Code IT Solutions - Company Logo"
+              width={256}
+              height={256}
+              className="object-contain animate-bounce hover:animate-pulse transition-all duration-300 hover:scale-110"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+              priority
+            />
           </div>
         </div>
         {/* our office */}

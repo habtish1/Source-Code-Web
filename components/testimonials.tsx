@@ -353,10 +353,7 @@ export default function Testimonials() {
                         Darya Finger
                       </cite>
                       <div className="text-gray-600">
-                        <span>CEO & Co-Founder</span>{" "}
-                        <a className="text-blue-600 hover:underline" href="#0">
-                          @Dropbox
-                        </a>
+                        <span>CEO & Co-Founder</span>
                       </div>
                     </div>
                   </div>
@@ -410,10 +407,7 @@ export default function Testimonials() {
                         Darya Finger
                       </cite>
                       <div className="text-gray-600">
-                        <span>CEO & Co-Founder</span>{" "}
-                        <a className="text-blue-600 hover:underline" href="#0">
-                          @Dropbox
-                        </a>
+                        <span>CEO & Co-Founder</span>
                       </div>
                     </div>
                   </div>
@@ -457,10 +451,7 @@ export default function Testimonials() {
                         Darya Finger
                       </cite>
                       <div className="text-gray-600">
-                        <span>CEO & Co-Founder</span>{" "}
-                        <a className="text-blue-600 hover:underline" href="#0">
-                          @Dropbox
-                        </a>
+                        <span>CEO & Co-Founder</span>
                       </div>
                     </div>
                   </div>
@@ -504,10 +495,7 @@ export default function Testimonials() {
                         Darya Finger
                       </cite>
                       <div className="text-gray-600">
-                        <span>CEO & Co-Founder</span>{" "}
-                        <a className="text-blue-600 hover:underline" href="#0">
-                          @Dropbox
-                        </a>
+                        <span>CEO & Co-Founder</span>
                       </div>
                     </div>
                   </div>
@@ -551,10 +539,7 @@ export default function Testimonials() {
                         Darya Finger
                       </cite>
                       <div className="text-gray-600">
-                        <span>CEO & Co-Founder</span>{" "}
-                        <a className="text-blue-600 hover:underline" href="#0">
-                          @Dropbox
-                        </a>
+                        <span>CEO & Co-Founder</span>
                       </div>
                     </div>
                   </div>
@@ -598,10 +583,7 @@ export default function Testimonials() {
                         Darya Finger
                       </cite>
                       <div className="text-gray-600">
-                        <span>CEO & Co-Founder</span>{" "}
-                        <a className="text-blue-600 hover:underline" href="#0">
-                          @Dropbox
-                        </a>
+                        <span>CEO & Co-Founder</span>
                       </div>
                     </div>
                   </div>
