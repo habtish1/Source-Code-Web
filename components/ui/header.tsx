@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Transition } from "@headlessui/react";
 import { HiChevronDown, HiArrowRight, HiPhone } from "react-icons/hi2";
 
 import Logo from "./logo";
@@ -15,7 +14,9 @@ import { services } from "@/components/data/services";
 export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  // The menu remembers which path it was opened on, so a navigation closes it without an effect.
+  const [openedOn, setOpenedOn] = useState<string | null>(null);
+  const menuOpen = openedOn === pathname;
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -25,15 +26,12 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mega menu on navigation.
-  useEffect(() => setMenuOpen(false), [pathname]);
-
   const open = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    setMenuOpen(true);
+    setOpenedOn(pathname);
   };
   const scheduleClose = () => {
-    closeTimer.current = setTimeout(() => setMenuOpen(false), 120);
+    closeTimer.current = setTimeout(() => setOpenedOn(null), 120);
   };
 
   const isActive = (href: string) =>
@@ -87,20 +85,16 @@ export default function Header() {
                     />
                   </Link>
 
-                  <Transition
-                    show={menuOpen}
-                    enter="transition duration-200 ease-out"
-                    enterFrom="opacity-0 translate-y-2 scale-[.98]"
-                    enterTo="opacity-100 translate-y-0 scale-100"
-                    leave="transition duration-150 ease-in"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 translate-y-1"
-                  >
                     <div
-                      className="absolute left-1/2 top-full z-50 mt-3 w-[760px] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-200/80 bg-white/95 p-3 shadow-2xl backdrop-blur-xl"
+                      className={`absolute left-1/2 top-full z-50 mt-3 w-[760px] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-200/80 bg-white/95 p-3 shadow-2xl backdrop-blur-xl transition-all duration-200 ease-out ${
+                        menuOpen
+                          ? "visible translate-y-0 opacity-100"
+                          : "invisible -translate-y-2 opacity-0"
+                      }`}
                       onMouseEnter={open}
                       onMouseLeave={scheduleClose}
                       role="menu"
+                      aria-hidden={!menuOpen}
                     >
                       <div className="grid grid-cols-3 gap-1">
                         {services.map((s, i) => (
@@ -140,7 +134,6 @@ export default function Header() {
                         </Link>
                       </div>
                     </div>
-                  </Transition>
                 </div>
               ) : (
                 <Link

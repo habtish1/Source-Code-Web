@@ -1,9 +1,9 @@
 "use client";
 
-import { Fragment, useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { HiChevronDown, HiPhone } from "react-icons/hi2";
 import { FaTelegram, FaWhatsapp } from "react-icons/fa6";
 
@@ -13,11 +13,12 @@ import { nav, site } from "@/components/data/site";
 import { services } from "@/components/data/services";
 
 export default function MobileMenu({ dark = false }: { dark?: boolean }) {
-  const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => setOpen(false), [pathname]);
+  // Drawer remembers the path it was opened on; navigating closes it without an effect.
+  const [openedOn, setOpenedOn] = useState<string | null>(null);
+  const open = openedOn === pathname;
+  const setOpen = (v: boolean) => setOpenedOn(v ? pathname : null);
 
   return (
     <div className="flex lg:hidden">
@@ -35,30 +36,21 @@ export default function MobileMenu({ dark = false }: { dark?: boolean }) {
         </svg>
       </button>
 
-      <Transition show={open} as={Fragment}>
-        <Dialog onClose={setOpen} className="relative z-[70] lg:hidden" id="mobile-nav">
-          <Transition.Child
-            as={Fragment}
-            enter="transition-opacity duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-sm" aria-hidden="true" />
-          </Transition.Child>
-
-          <Transition.Child
-            as={Fragment}
-            enter="transition duration-300 ease-spring"
-            enterFrom="translate-x-full"
-            enterTo="translate-x-0"
-            leave="transition duration-200 ease-in"
-            leaveFrom="translate-x-0"
-            leaveTo="translate-x-full"
-          >
-            <Dialog.Panel className="fixed inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white shadow-2xl">
+      <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+        transition
+        className="relative z-[70] lg:hidden"
+        id="mobile-nav"
+      >
+        <DialogBackdrop
+          transition
+          className="fixed inset-0 bg-ink-900/40 backdrop-blur-sm transition-opacity duration-300 ease-out data-[closed]:opacity-0"
+        />
+        <DialogPanel
+          transition
+          className="fixed inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 ease-spring data-[closed]:translate-x-full"
+        >
               <div className="flex h-20 items-center justify-between border-b border-gray-200 px-5">
                 <Logo />
                 <button
@@ -151,10 +143,8 @@ export default function MobileMenu({ dark = false }: { dark?: boolean }) {
                   </a>
                 </div>
               </div>
-            </Dialog.Panel>
-          </Transition.Child>
-        </Dialog>
-      </Transition>
+        </DialogPanel>
+      </Dialog>
     </div>
   );
 }

@@ -9,14 +9,15 @@ import ProjectCard, { ProjectMark } from "@/components/ui/project-card";
 import CTA from "@/components/cta";
 import { projects, getProject } from "@/components/data/work";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const p = getProject(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const p = getProject(slug);
   if (!p) return { title: "Project not found" };
   return {
     title: `${p.name} · ${p.sector}`,
@@ -25,8 +26,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ProjectPage({ params }: Props) {
-  const p = getProject(params.slug);
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params;
+  const p = getProject(slug);
   if (!p) notFound();
 
   const idx = projects.findIndex((x) => x.slug === p.slug);

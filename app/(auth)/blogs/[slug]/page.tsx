@@ -10,14 +10,15 @@ import { posts, getPost, sortedPosts, type Block } from "@/components/data/posts
 import { site } from "@/components/data/site";
 import { formatDate } from "@/components/utils/format";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const p = getPost(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const p = getPost(slug);
   if (!p) return { title: "Article not found" };
   return {
     title: p.title,
@@ -76,8 +77,9 @@ function renderBlock(b: Block, i: number) {
   }
 }
 
-export default function PostPage({ params }: Props) {
-  const post = getPost(params.slug);
+export default async function PostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = getPost(slug);
   if (!post) notFound();
 
   const others = sortedPosts.filter((p) => p.slug !== post.slug).slice(0, 3);

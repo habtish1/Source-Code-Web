@@ -1,12 +1,11 @@
 "use client";
 
-import { Fragment, useRef, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { useState } from "react";
+import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { HiPlay } from "react-icons/hi2";
 
 export default function VideoModal({ video, label }: { video: string; label: string }) {
   const [open, setOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <>
@@ -22,39 +21,25 @@ export default function VideoModal({ video, label }: { video: string; label: str
         {label}
       </button>
 
-      <Transition show={open} as={Fragment} afterEnter={() => videoRef.current?.play()}>
-        <Dialog initialFocus={videoRef} onClose={() => setOpen(false)} className="relative z-[80]">
-          <Transition.Child
-            as={Fragment}
-            enter="transition-opacity duration-200"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity duration-150"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+      <Dialog open={open} onClose={() => setOpen(false)} transition className="relative z-[80]">
+        <DialogBackdrop
+          transition
+          className="fixed inset-0 bg-ink-900/85 backdrop-blur-sm transition-opacity duration-200 data-[closed]:opacity-0"
+        />
+        <div className="fixed inset-0 flex items-center justify-center p-4 sm:p-8">
+          <DialogPanel
+            transition
+            className="w-full max-w-5xl overflow-hidden rounded-2xl bg-black shadow-2xl transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0"
           >
-            <div className="fixed inset-0 bg-ink-900/85 backdrop-blur-sm" aria-hidden="true" />
-          </Transition.Child>
-          <Transition.Child
-            as={Fragment}
-            enter="transition duration-200 ease-out"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="transition duration-150 ease-in"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
-            <div className="fixed inset-0 flex items-center justify-center p-4 sm:p-8">
-              <Dialog.Panel className="w-full max-w-5xl overflow-hidden rounded-2xl bg-black shadow-2xl">
-                <video ref={videoRef} className="aspect-video w-full" controls playsInline preload="metadata">
-                  <source src={video} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Dialog.Panel>
-            </div>
-          </Transition.Child>
-        </Dialog>
-      </Transition>
+            {open && (
+              <video className="aspect-video w-full" controls autoPlay playsInline preload="metadata">
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+          </DialogPanel>
+        </div>
+      </Dialog>
     </>
   );
 }

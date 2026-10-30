@@ -11,14 +11,15 @@ import CTA from "@/components/cta";
 import { services, getService } from "@/components/data/services";
 import { projects } from "@/components/data/work";
 
-type Props = { params: { id: string } };
+type Props = { params: Promise<{ id: string }> };
 
 export function generateStaticParams() {
   return services.map((s) => ({ id: s.id }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const s = getService(params.id);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const s = getService(id);
   if (!s) return { title: "Service not found" };
   return {
     title: s.title,
@@ -41,8 +42,9 @@ const relatedWork: Record<string, string[]> = {
   "database-adminstration": ["adopay", "z-bingo", "emun-transport"],
 };
 
-export default function ServicePage({ params }: Props) {
-  const s = getService(params.id);
+export default async function ServicePage({ params }: Props) {
+  const { id } = await params;
+  const s = getService(id);
   if (!s) notFound();
 
   const related = (s.related.map(getService).filter(Boolean) as typeof services).slice(0, 3);

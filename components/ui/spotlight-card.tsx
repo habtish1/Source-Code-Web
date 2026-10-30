@@ -1,22 +1,21 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
+
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+  /** When set, the card renders as a Next.js link. */
+  href?: string;
+} & Record<string, any>;
 
 /**
  * Card that follows the pointer with a soft radial highlight.
  * Pure CSS variables; no re-render on mouse move.
  */
-export default function SpotlightCard({
-  children,
-  className = "",
-  as: Tag = "div",
-  ...rest
-}: {
-  children: React.ReactNode;
-  className?: string;
-  as?: any;
-} & Record<string, any>) {
-  const ref = useRef<HTMLElement>(null);
+export default function SpotlightCard({ children, className = "", href, ...rest }: Props) {
+  const ref = useRef<HTMLElement | null>(null);
 
   const onMove = (e: React.MouseEvent) => {
     const el = ref.current;
@@ -26,9 +25,24 @@ export default function SpotlightCard({
     el.style.setProperty("--y", `${e.clientY - r.top}px`);
   };
 
+  const cls = `spotlight ${className}`;
+
+  if (href) {
+    return (
+      <Link
+        ref={ref as React.Ref<HTMLAnchorElement>}
+        href={href}
+        onMouseMove={onMove}
+        className={cls}
+        {...rest}
+      >
+        {children}
+      </Link>
+    );
+  }
   return (
-    <Tag ref={ref} onMouseMove={onMove} className={`spotlight ${className}`} {...rest}>
+    <div ref={ref as React.Ref<HTMLDivElement>} onMouseMove={onMove} className={cls} {...rest}>
       {children}
-    </Tag>
+    </div>
   );
 }

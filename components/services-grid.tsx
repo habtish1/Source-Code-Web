@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 import SectionHeading from "@/components/ui/section-heading";
 import SpotlightCard from "@/components/ui/spotlight-card";
@@ -25,7 +24,6 @@ export default function ServicesGrid({ compact = false }: { compact?: boolean })
           {services.map((s, i) => (
             <SpotlightCard
               key={s.id}
-              as={Link}
               href={`/services/${s.id}`}
               className="card card-hover gradient-border group flex flex-col p-6"
               data-aos="fade-up"
