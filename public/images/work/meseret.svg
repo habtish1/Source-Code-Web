@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="20" fill="#A84C25"/>
+  <rect x="12" y="12" width="104" height="104" rx="12" fill="none" stroke="#FFFFFF" stroke-opacity=".85" stroke-width="4.5"/>
+  <text x="64" y="86" text-anchor="middle" font-family="'Noto Serif Ethiopic','Abyssinica SIL','Nyala',serif" font-weight="700" font-size="64" fill="#FFFFFF">መ</text>
+</svg>

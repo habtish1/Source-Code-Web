@@ -21,8 +21,8 @@ export default function LogoMarquee() {
                   alt={l.name}
                   width={l.w}
                   height={48}
-                  className="h-auto max-h-11 w-auto object-contain"
-                  style={{ maxWidth: l.w }}
+                  className="max-h-11 object-contain"
+                  style={{ maxWidth: l.w, width: "auto", height: "auto" }}
                 />
                 {l.label && (
                   <span className="text-sm font-bold uppercase tracking-widest text-ink-900">{l.label}</span>

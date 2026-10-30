@@ -9,20 +9,38 @@ const statusTone: Record<Project["status"], string> = {
   "In development": "bg-accent-500/15 text-accent-600 ring-accent-500/30",
 };
 
-export function ProjectMark({ p, size = "md" }: { p: Project; size?: "sm" | "md" | "lg" }) {
-  const dims = size === "lg" ? "h-20 w-20 text-2xl" : size === "sm" ? "h-10 w-10 text-sm" : "h-14 w-14 text-lg";
+const dims = {
+  sm: "h-10 w-10 text-sm",
+  md: "h-14 w-14 text-lg",
+  lg: "h-20 w-20 text-2xl",
+} as const;
+
+/**
+ * Product mark. Square app icons fill the tile ("cover"); wordmarks and
+ * transparent logos sit on a white tile with padding ("contain").
+ */
+export function ProjectMark({ p, size = "md" }: { p: Project; size?: keyof typeof dims }) {
   if (p.logo) {
+    const cover = p.logoFit === "cover";
     return (
       <span
-        className={`flex ${dims} items-center justify-center overflow-hidden rounded-2xl bg-white p-2 ring-1 ring-gray-200`}
+        className={`flex ${dims[size]} shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white ring-1 ring-gray-200 ${
+          cover ? "" : "p-2"
+        }`}
       >
-        <Image src={p.logo} alt={`${p.name} logo`} width={96} height={96} className="h-full w-full object-contain" />
+        <Image
+          src={p.logo}
+          alt={`${p.name} logo`}
+          width={160}
+          height={160}
+          className={`h-full w-full ${cover ? "object-cover" : "object-contain"}`}
+        />
       </span>
     );
   }
   return (
     <span
-      className={`flex ${dims} items-center justify-center rounded-2xl bg-gradient-to-br ${p.accent} font-bold text-white shadow-md`}
+      className={`flex ${dims[size]} shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${p.accent} font-bold text-white shadow-md`}
     >
       {p.monogram}
     </span>
