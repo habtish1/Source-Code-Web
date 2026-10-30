@@ -1,277 +1,181 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Tooltip from "../utils/Tooltips";
-import Logo from "./logo";
-import Dropdown from "@/components/utils/dropdown";
-import MobileMenu from "./mobile-menu";
-import { FaShareAlt } from "react-icons/fa";
-import {
-  FaFacebookF,
-  FaXTwitter,
-  FaLinkedinIn,
-  FaTelegram,
-  FaWhatsapp,
-} from "react-icons/fa6";
-import { HiSupport } from "react-icons/hi";
-import { IoMdMail, IoLogoGoogleplus } from "react-icons/io";
-import Swal from "sweetalert2";
+import { usePathname } from "next/navigation";
+import { Transition } from "@headlessui/react";
+import { HiChevronDown, HiArrowRight, HiPhone } from "react-icons/hi2";
 
-import { usePathname, useRouter } from "next/navigation";
-import { useDropdown } from "../../context/DropdownContext";
-import { contentData } from "../data/data";
-import { text } from "stream/consumers";
-import { title } from "process";
+import Logo from "./logo";
+import MobileMenu from "./mobile-menu";
+import ServiceIcon from "@/components/ui/service-icon";
+import { nav, site } from "@/components/data/site";
+import { services } from "@/components/data/services";
 
 export default function Header() {
-  const { selectedOption, setSelectedOption } = useDropdown();
-
-  const handleDropdownChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    console.log(event.target.value);
-    setSelectedOption(event.target.value);
-  };
-
-  const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 4000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.onmouseenter = Swal.stopTimer;
-      toast.onmouseleave = Swal.resumeTimer;
-    },
-  });
-
-  const handleSharing = () => {
-    const shareData = {
-      title: "https://www.sourcecodeet.com/",
-      text: "Check out the website of source code IT solutions",
-      url: "https://www.sourcecodeet.com/",
-    };
-
-    if (navigator.canShare && navigator.canShare(shareData)) {
-      navigator.share(shareData).catch((error) =>
-        Toast.fire({
-          icon: "error",
-          title: { error },
-        })
-      );
-    } else {
-      Toast.fire({
-        icon: "error",
-        title: "Not supported on your device!",
-      });
-    }
-  };
-
-  const navigate = useRouter();
   const pathname = usePathname();
-  const [top, setTop] = useState<boolean>(true);
-
-  // detect whether user has solled the page down by 10px
-  const scrollHandler = () => {
-    window.pageYOffset > 10 ? setTop(false) : setTop(true);
-  };
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    scrollHandler();
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, [top]);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close the mega menu on navigation.
+  useEffect(() => setMenuOpen(false), [pathname]);
+
+  const open = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setMenuOpen(true);
+  };
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setMenuOpen(false), 120);
+  };
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  // Pages whose hero is dark need light header text until the glass bar appears.
+  const onDark = !scrolled && !menuOpen && pathname.startsWith("/work");
+  const linkBase = onDark ? "text-white/80 hover:text-white" : "text-gray-700 hover:text-brand-700";
+  const linkActive = onDark ? "text-white" : "text-brand-700";
 
   return (
-    <>
-      <div
-        className={`fixed  flex items-center w-full mx-auto h-11 z-10 max-sm:px-5 sm:px-10 md:px-20 lg:px-32 border-b border-gray-300  duration-500 ease-in-out ${
-          !top ? "hidden" : "bg-gray-100"
-        }`}
-      >
-        <div className="flex justify-between items-center max-w-screen-2xl w-full mx-auto ">
-          <div className="flex gap-2">
-            <span
-              onClick={handleSharing}
-              className="text-primaryColor hover:bg-primaryColor cursor-pointer hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md"
-            >
-              <FaShareAlt />
-            </span>
-            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
-              <FaFacebookF />
-            </span>
-            <span className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md">
-              <FaXTwitter />
-            </span>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-spring ${
+        scrolled
+          ? "border-b border-gray-200/70 bg-white/80 shadow-soft backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container-x">
+        <div
+          className={`flex items-center justify-between transition-all duration-500 ${
+            scrolled ? "h-16" : "h-20"
+          }`}
+        >
+          <Logo dark={onDark} />
+
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+            {nav.map((item) =>
+              "hasMenu" in item && item.hasMenu ? (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={open}
+                  onMouseLeave={scheduleClose}
+                >
+                  <Link
+                    href={item.href}
+                    aria-expanded={menuOpen}
+                    aria-haspopup="true"
+                    onFocus={open}
+                    className={`group inline-flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+                      isActive(item.href) || menuOpen ? linkActive : linkBase
+                    }`}
+                  >
+                    {item.label}
+                    <HiChevronDown
+                      className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                        menuOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </Link>
+
+                  <Transition
+                    show={menuOpen}
+                    enter="transition duration-200 ease-out"
+                    enterFrom="opacity-0 translate-y-2 scale-[.98]"
+                    enterTo="opacity-100 translate-y-0 scale-100"
+                    leave="transition duration-150 ease-in"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <div
+                      className="absolute left-1/2 top-full z-50 mt-3 w-[760px] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-200/80 bg-white/95 p-3 shadow-2xl backdrop-blur-xl"
+                      onMouseEnter={open}
+                      onMouseLeave={scheduleClose}
+                      role="menu"
+                    >
+                      <div className="grid grid-cols-3 gap-1">
+                        {services.map((s, i) => (
+                          <Link
+                            key={s.id}
+                            href={`/services/${s.id}`}
+                            role="menuitem"
+                            className="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-brand-50"
+                            style={{ animationDelay: `${i * 30}ms` }}
+                          >
+                            <span
+                              className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${s.accent} text-white shadow-sm transition-transform duration-300 group-hover/item:scale-110`}
+                            >
+                              <ServiceIcon name={s.icon} className="h-4.5 w-4.5" />
+                            </span>
+                            <span>
+                              <span className="block text-sm font-semibold text-ink-900">
+                                {s.title}
+                              </span>
+                              <span className="block text-xs leading-snug text-gray-500">
+                                {s.short}
+                              </span>
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="mt-2 flex items-center justify-between rounded-xl bg-ink-900 px-4 py-3 text-white">
+                        <p className="text-sm">
+                          Not sure where to start?{" "}
+                          <span className="text-white/70">Tell us about the problem.</span>
+                        </p>
+                        <Link
+                          href="/contact"
+                          className="inline-flex items-center gap-1 text-sm font-semibold text-accent-400 hover:text-accent-500"
+                        >
+                          Book a free consultation <HiArrowRight className="h-4 w-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </Transition>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+                    isActive(item.href) ? linkActive : linkBase
+                  }`}
+                >
+                  {item.label}
+                  {isActive(item.href) && (
+                    <span className={`absolute inset-x-3.5 -bottom-0.5 h-0.5 rounded-full ${onDark ? "bg-accent-400" : "bg-brand-600"}`} />
+                  )}
+                </Link>
+              )
+            )}
+          </nav>
+
+          {/* Right actions */}
+          <div className="hidden items-center gap-2 lg:flex">
             <a
-              href="https://www.linkedin.com/company/source-code-it-solutions-plc/"
-              target="_blank"
-              className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md"
+              href={`tel:${site.phone}`}
+              className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium transition ${linkBase}`}
             >
-              <FaLinkedinIn />
+              <HiPhone className={`h-4 w-4 ${onDark ? "text-accent-400" : "text-brand-600"}`} />
+              {site.phoneDisplay}
             </a>
-            <a
-              href="mailto:info@sourcecodeet.com"
-              target="_blank"
-              className="text-primaryColor hover:bg-primaryColor hover:text-white duration-300 ease-in-out w-7 h-7 flex justify-center items-center rounded-full bg-white shadow-md"
-            >
-              <IoLogoGoogleplus />
-            </a>
+            <Link href="/contact" className="btn-sm btn-primary">
+              Start a project
+            </Link>
           </div>
 
-          <div className="flex gap-x-3 text-gray-600">
-            <a
-              href="https://t.me/sourcecodeet"
-              target="_blank"
-              className="flex items-center hover:cursor-pointer hover:bg-slate-100 py-2 px-1"
-            >
-              <span className="text-primaryColor flex justify-center items-center mr-2">
-                <FaTelegram />
-              </span>
-              <p className="inline-block font-normal text-nowrap max-md:hidden">
-                Talk to us
-              </p>
-            </a>
-            <a
-              href="mailto:support@sourcecodeet.com?subject=software development"
-              className="flex items-center cursor-pointer hover:bg-slate-100 py-2 px-1"
-            >
-              <span className="text-primaryColor flex justify-center items-center mr-2">
-                <IoMdMail />
-              </span>
-              <span className="font-normal max-md:hidden">
-                support@sourcecodeet.com
-              </span>
-            </a>
-            <a
-              href="https://wa.me/251974017208"
-              target="_blank"
-              className="flex items-center hover:bg-slate-100 py-2 px-1"
-            >
-              <span className="text-primaryColor flex justify-center items-center mr-2">
-                <FaWhatsapp />
-              </span>
-              <p className="font-normal max-md:hidden">+251 974-017208</p>
-            </a>
-          </div>
+          <MobileMenu dark={onDark} />
         </div>
       </div>
-      <header
-        className={`fixed w-full z-30 md:bg-opacity-90 transition duration-150 ease-linear ${
-          !top ? "bg-white backdrop-blur-sm shadow-lg" : "top-12 "
-        }`}
-      >
-        {/* <div className="max-w-6xl mx-auto px-5 sm:px-6"> */}
-        <div className="flex max-w-6xl mx-auto px-5 sm:px-6   items-center justify-between w-full h-16 md:h-20">
-          {/* Site branding */}
-          <div className="shrink-0 mr-4">
-            <Logo />
-          </div>
-
-          <nav className="hidden md:flex  md:grow justify-end">
-            <ul className="flex justify-center items-center gap-x-4 text-sm text-nowrap font-medium py-5">
-              <li>
-                <Link
-                  className={`link ${
-                    pathname === "/"
-                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3   duration-500 ease-in"
-                  }`}
-                  href="/"
-                >
-                  Home
-                </Link>
-              </li>
-
-              <li>
-                <div className="font-medium text-left text-gray-600  duration-150 ease-in-out">
-                  <Dropdown
-                    onChange={handleDropdownChange}
-                    value={selectedOption}
-                    title="Services"
-                  >
-                    {contentData.map((content) => (
-                      <option
-                        onClick={() => navigate.push(`/services/${content.id}`)}
-                        key={content.id}
-                        value={content.title}
-                        className="cursor-pointer w-full font-medium py-2 px-5 border-b border-b-gray-100 text-left text-gray-600 hover:text-gray-900 hover:bg-gray-200  transition duration-150 ease-in-out"
-                      >
-                        {content.title}
-                      </option>
-                    ))}
-                  </Dropdown>
-                </div>
-              </li>
-              <li>
-                <Link
-                  className={`link ${
-                    pathname === "/choose"
-                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center capitalize  duration-500 ease-in-out"
-                  }`}
-                  href="/choose"
-                >
-                  why choose us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`link ${
-                    pathname === "/blogs"
-                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
-                  }`}
-                  href="/blogs"
-                >
-                  Blogs
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  className={`link ${
-                    pathname === "/about"
-                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
-                  }`}
-                  href="/about"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`link ${
-                    pathname === "/contact"
-                      ? "text-base px-2 py-3 ease-in-out duration-500 text-navHoverColor"
-                      : " text-gray-600 hover:text-navHoverColor hover:scale-[1.02] px-2 py-3 flex items-center  duration-500 ease-in-out"
-                  }`}
-                  href="/contact"
-                >
-                  Contact us
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="flex w-auto items-center justify-center gap-1 ml-2 md:ml-16 max-md:hidden  font-medium text-primaryColor">
-            <div>
-              <Tooltip text="call us">
-                <a
-                  className="animate-smallBounce hover:animate-none block py-2 px-6 text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear rounded-full duration-300"
-                  href="tel:+251974017208"
-                >
-                  +251 974-017208
-                </a>
-              </Tooltip>
-            </div>
-          </div>
-          <MobileMenu />
-        </div>
-        {/* </div> */}
-      </header>
-    </>
+    </header>
   );
 }

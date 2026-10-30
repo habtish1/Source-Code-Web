@@ -1,139 +1,160 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Transition } from "@headlessui/react";
+import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
-import { FaPhone } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
+import { Dialog, Transition } from "@headlessui/react";
+import { HiChevronDown, HiPhone } from "react-icons/hi2";
+import { FaTelegram, FaWhatsapp } from "react-icons/fa6";
 
-export default function MobileMenu() {
-  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
+import Logo from "./logo";
+import ServiceIcon from "@/components/ui/service-icon";
+import { nav, site } from "@/components/data/site";
+import { services } from "@/components/data/services";
 
-  const trigger = useRef<HTMLButtonElement>(null);
-  const mobileNav = useRef<HTMLDivElement>(null);
+export default function MobileMenu({ dark = false }: { dark?: boolean }) {
+  const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const pathname = usePathname();
 
-  // close the mobile menu on click outside
-  useEffect(() => {
-    const clickHandler = ({ target }: { target: EventTarget | null }): void => {
-      if (!mobileNav.current || !trigger.current) return;
-      if (
-        !mobileNavOpen ||
-        mobileNav.current.contains(target as Node) ||
-        trigger.current.contains(target as Node)
-      )
-        return;
-      setMobileNavOpen(false);
-    };
-    document.addEventListener("click", clickHandler);
-    return () => document.removeEventListener("click", clickHandler);
-  });
-
-  // close the mobile menu if the esc key is pressed
-  useEffect(() => {
-    const keyHandler = ({ keyCode }: { keyCode: number }): void => {
-      if (!mobileNavOpen || keyCode !== 27) return;
-      setMobileNavOpen(false);
-    };
-    document.addEventListener("keydown", keyHandler);
-    return () => document.removeEventListener("keydown", keyHandler);
-  });
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
-    <div className="flex md:hidden">
-      {/* Hamburger button */}
+    <div className="flex lg:hidden">
       <button
-        ref={trigger}
-        className={`hamburger ${mobileNavOpen && "active"}`}
+        className={`hamburger ${open ? "active" : ""} -mr-2 rounded-lg p-2 ${dark ? "text-white" : "text-ink-900"}`}
         aria-controls="mobile-nav"
-        aria-expanded={mobileNavOpen}
-        onClick={() => setMobileNavOpen(!mobileNavOpen)}
+        aria-expanded={open}
+        onClick={() => setOpen(true)}
       >
-        <span className="sr-only">Menu</span>
-        <svg
-          className="w-6 h-6 fill-current text-gray-900"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect y="4" width="24" height="2" />
-          <rect y="11" width="24" height="2" />
-          <rect y="18" width="24" height="2" />
+        <span className="sr-only">Open menu</span>
+        <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect y="4" width="24" height="2" rx="1" />
+          <rect y="11" width="24" height="2" rx="1" />
+          <rect y="18" width="24" height="2" rx="1" />
         </svg>
       </button>
 
-      {/*Mobile navigation */}
-      <div ref={mobileNav}>
-        <Transition
-          show={mobileNavOpen}
-          as="nav"
-          id="mobile-nav"
-          className="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white"
-          enter="transition ease-out duration-200 transform"
-          enterFrom="opacity-0 -translate-y-2"
-          enterTo="opacity-100 translate-y-0"
-          leave="transition ease-out duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <ul className="flex flex-col w-full gap-3 px-5 py-2 ">
-            {/* <li>
-              <Link href="/signin" className="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>Sign in</Link>
-            </li> */}
-            <li>
-              <Link
-                href="/"
-                className="flex font-medium w-full hover:bg-gray-200 text-gray-600 hover:text-gray-900 py-4 text-left"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                <span className="pl-2">Home</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services"
-                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 py-4 text-left border-t border-gray-200"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                <span className="pl-2">Service</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blogs"
-                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 py-4 text-left"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                <span className="pl-2">Blogs</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 py-4 text-left"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                <span className="pl-2">About us</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="flex font-medium w-full text-gray-600 hover:bg-gray-200 hover:text-gray-900  text-left border-b border-gray-400 py-4"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                <span className="pl-2">Contact us</span>
-              </Link>
-            </li>
-          </ul>
-          <div className="flex px-4 mt-10">
-            <a
-              className=" flex gap-10 justify-center items-center font-medium text-xl w-full py-4 px-6 rounded-md text-center text-nowrap text-white bg-blue-600 hover:bg-white hover:text-blue-600 border-2 border-blue-600 ease-linear duration-300"
-              href="tel:+1234567890"
-            >
-              <FaPhone className=" " />
-              <span>+251 974-017208</span>
-            </a>
-          </div>
-        </Transition>
-      </div>
+      <Transition show={open} as={Fragment}>
+        <Dialog onClose={setOpen} className="relative z-[70] lg:hidden" id="mobile-nav">
+          <Transition.Child
+            as={Fragment}
+            enter="transition-opacity duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="transition-opacity duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-ink-900/40 backdrop-blur-sm" aria-hidden="true" />
+          </Transition.Child>
+
+          <Transition.Child
+            as={Fragment}
+            enter="transition duration-300 ease-spring"
+            enterFrom="translate-x-full"
+            enterTo="translate-x-0"
+            leave="transition duration-200 ease-in"
+            leaveFrom="translate-x-0"
+            leaveTo="translate-x-full"
+          >
+            <Dialog.Panel className="fixed inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white shadow-2xl">
+              <div className="flex h-20 items-center justify-between border-b border-gray-200 px-5">
+                <Logo />
+                <button
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg p-2 text-gray-600 hover:bg-gray-100"
+                  aria-label="Close menu"
+                >
+                  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+                  </svg>
+                </button>
+              </div>
+
+              <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
+                <ul className="space-y-1">
+                  {nav.map((item, i) =>
+                    "hasMenu" in item && item.hasMenu ? (
+                      <li key={item.href} className="animate-fade-up" style={{ animationDelay: `${i * 40}ms` }}>
+                        <button
+                          onClick={() => setServicesOpen((v) => !v)}
+                          aria-expanded={servicesOpen}
+                          className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-base font-medium text-ink-900 hover:bg-gray-100"
+                        >
+                          {item.label}
+                          <HiChevronDown
+                            className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                          />
+                        </button>
+                        <div
+                          className={`grid transition-all duration-300 ${
+                            servicesOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                          }`}
+                        >
+                          <ul className="overflow-hidden pl-2">
+                            <li>
+                              <Link
+                                href="/services"
+                                className="block rounded-lg px-3 py-2 text-sm font-semibold text-brand-700"
+                              >
+                                All services
+                              </Link>
+                            </li>
+                            {services.map((s) => (
+                              <li key={s.id}>
+                                <Link
+                                  href={`/services/${s.id}`}
+                                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                >
+                                  <span
+                                    className={`flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br ${s.accent} text-white`}
+                                  >
+                                    <ServiceIcon name={s.icon} className="h-3.5 w-3.5" />
+                                  </span>
+                                  {s.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </li>
+                    ) : (
+                      <li key={item.href} className="animate-fade-up" style={{ animationDelay: `${i * 40}ms` }}>
+                        <Link
+                          href={item.href}
+                          className={`block rounded-xl px-3 py-3 text-base font-medium hover:bg-gray-100 ${
+                            pathname === item.href ? "bg-brand-50 text-brand-700" : "text-ink-900"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </nav>
+
+              <div className="space-y-3 border-t border-gray-200 p-5">
+                <Link href="/contact" className="btn btn-primary w-full">
+                  Start a project
+                </Link>
+                <div className="grid grid-cols-3 gap-2 text-sm">
+                  <a href={`tel:${site.phone}`} className="btn-sm btn-ghost">
+                    <HiPhone className="h-4 w-4" /> Call
+                  </a>
+                  <a href={site.social.telegram} target="_blank" rel="noreferrer" className="btn-sm btn-ghost">
+                    <FaTelegram className="h-4 w-4" /> Telegram
+                  </a>
+                  <a href={site.social.whatsapp} target="_blank" rel="noreferrer" className="btn-sm btn-ghost">
+                    <FaWhatsapp className="h-4 w-4" /> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </Dialog.Panel>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
     </div>
   );
 }

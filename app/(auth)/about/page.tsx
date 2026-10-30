@@ -1,533 +1,199 @@
-"use client";
-
-import Link from "next/link";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import type { Metadata } from "next";
 import Image from "next/image";
-import avatar from "@/public/images/avatar.png";
+import Link from "next/link";
+import { HiArrowRight, HiOutlineHeart, HiOutlineEye, HiOutlineScale, HiOutlineRocketLaunch } from "react-icons/hi2";
+
+import PageHero from "@/components/ui/page-hero";
+import SectionHeading from "@/components/ui/section-heading";
+import Impact from "@/components/impact";
+import LogoMarquee from "@/components/logo-marquee";
+import CTA from "@/components/cta";
+import { site } from "@/components/data/site";
+import team2 from "@/public/images/team-2.png";
+import team3 from "@/public/images/team-3.png";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Source Code IT Solutions PLC is an Addis Ababa engineering company. We build and operate the software behind ride-hailing, fintech, logistics and gaming platforms in Ethiopia.",
+  alternates: { canonical: "/about" },
+};
+
+const values = [
+  {
+    Icon: HiOutlineScale,
+    title: "Correct before clever",
+    text: "Money, trips and parcels must balance. We favour boring, verifiable designs over fashionable ones.",
+  },
+  {
+    Icon: HiOutlineEye,
+    title: "Nothing hidden",
+    text: "Clients see the backlog, the demos and the invoices. Bad news travels first, with a plan attached.",
+  },
+  {
+    Icon: HiOutlineRocketLaunch,
+    title: "Ship, then improve",
+    text: "A working release in users' hands beats a perfect plan. We launch early and iterate on evidence.",
+  },
+  {
+    Icon: HiOutlineHeart,
+    title: "Built for here",
+    text: "We build for Ethiopian users, networks, payments and regulations because we live with them too.",
+  },
+];
+
+const timeline = [
+  {
+    phase: "Foundations",
+    title: "Web, bots and bookkeeping",
+    text: "We started with websites, Telegram bots and Melabooks, a mobile bookkeeping app for small businesses, learning what it takes to keep consumer software alive.",
+  },
+  {
+    phase: "Fintech",
+    title: "Money in motion",
+    text: "Remittance for Kacha and Duruj, then a full digital lending and payments stack for a microfinance institution. Ledgers, USSD, telebirr and switch integrations became core skills.",
+  },
+  {
+    phase: "Platforms",
+    title: "Mobility and logistics at scale",
+    text: "Emun Transport grew into a full ride-hailing platform with dispatch, wallets and carpooling. CHENET brought freight fleets and GPS tracking. Emun Express added intercity parcels.",
+  },
+  {
+    phase: "Today",
+    title: "Operating, not just building",
+    text: "We run production systems around the clock, design architectures for gaming and escrow platforms, and advise companies on where technology budgets should go.",
+  },
+];
 
 export default function About() {
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      disable: "phone",
-      duration: 700,
-      easing: "ease-out-cubic",
-    });
-  });
-
   return (
-    <section className="bg-gradient-to-b from-gray-100 to-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-24  pb-12 md:pt-36 md:pb-20">
-          {/* Page header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h1 mb-4" data-aos="zoom-y-out">
-              Source Code IT Solutions PLC: Building Innovative Apps for Your
-              Success
-            </h1>
-            <p
-              className="text-xl text-gray-600"
-              data-aos="zoom-y-out"
-              data-aos-delay="200"
-            >
-              We have transformed product development, making it faster,
-              simpler... better! That's why in just three years we now help more
-              developers build projects than anyone else.
-            </p>
-          </div>
-          {/* image goes here */}
-          <div
-            className="mx-auto max-w-3xl h-[432px]  flex justify-center items-center bg-gray-300 border border-gray-400"
-            data-aos="zoom-out"
-          >
-            image place
-          </div>
+    <>
+      <PageHero
+        eyebrow="About us"
+        crumbs={[{ href: "/about", label: "About" }]}
+        title={
+          <>
+            An engineering company that <span className="text-gradient">runs what it builds</span>
+          </>
+        }
+        text={`${site.name} designs, builds and operates software for businesses in Ethiopia and the diaspora. We are engineers first: our own platforms carry real passengers, parcels and payments every day, and that discipline shapes every client project.`}
+      >
+        <div className="flex flex-wrap gap-3">
+          <Link href="/work" className="btn btn-primary">
+            See what we have built <HiArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/contact" className="btn btn-ghost">
+            Work with us
+          </Link>
         </div>
+      </PageHero>
 
-        {/* story goes here */}
-        <section className="max-w-5xl mx-auto h-auto pb-12  md:pb-20">
-          <div className="max-w-3xl w-full mx-auto">
-            <h1 className="h3 mb-3" data-aos="zoom-y-out">
-              our story
-            </h1>
-            <p
-              className="text-xl text-gray-600 mb-8"
-              data-aos="zoom-y-out"
-              data-aos-delay="200"
-            >
-              At Source Code IT Solutions PLC, we're passionate about crafting
-              exceptional software solutions that empower your business. Our
-              team of skilled developers boasts a diverse range of expertise,
-              allowing us to tackle your most complex projects and bring your
-              ideas to life.
+      <LogoMarquee />
+
+      {/* Story */}
+      <section className="section">
+        <div className="container-x grid items-center gap-14 lg:grid-cols-2">
+          <div data-aos="fade-right">
+            <SectionHeading
+              align="left"
+              eyebrow="Our story"
+              title="From a small web shop to platform engineering"
+              text="We began building websites and Telegram bots for local businesses. Each project taught us something about Ethiopian users, and we kept the ones that mattered."
+            />
+            <p className="mt-6 text-gray-600">
+              Today the same team ships ride-hailing apps, freight systems, lending platforms and gaming
+              backends, and still answers the phone when something breaks at two in the morning. We stay
+              small on purpose: senior engineers, direct access, no account-manager layer.
             </p>
-            <h1 className="text-2xl font-bold">Here's what sets us apart:</h1>
-            <ul
-              className="list-disc ml-6 text-xl text-gray-600"
-              data-aos="zoom-y-out"
-              data-aos-delay="200"
-            >
-              <li>
-                <span className="font-bold mr-1 text-gray-800">
-                  React.js Masters:{" "}
-                </span>
-                Our developers are fluent in React.js, a powerful JavaScript
-                library for building dynamic and user-friendly web interfaces.
-                This ensures your web applications are not only functional but
-                also visually stunning and performant.
-              </li>
-              <li>
-                <span className="font-bold mr-1 text-gray-800">
-                  Web Development Gurus:{" "}
-                </span>
-                We are veterans of web development, possessing a deep
-                understanding of front-end and back-end technologies. Whether
-                it's building a simple website or a complex e-commerce platform,
-                we have the expertise to deliver exceptional results.
-              </li>
-              <li>
-                <span className="font-bold mr-1 text-gray-800">
-                  Messaging Experts:{" "}
-                </span>
-                A We dive deep into the world of chatbots, crafting intelligent
-                and interactive bots for both Telegram and WhatsApp. These bots
-                can automate tasks, provide customer support, or even act as a
-                powerful marketing tool to engage your audience.
-              </li>
-              <li>
-                <span className="font-bold mr-1 text-gray-800">
-                  Mobile App Development Powerhouse:
-                </span>
-                Our team is well-versed in building high-performance mobile
-                applications for both iOS and Android platforms. Whether you
-                need a native app built with Flutter or a cross-platform
-                solution, we can deliver an app that seamlessly integrates with
-                your existing ecosystem.
-              </li>
-              <li>
-                <span className="font-bold mr-1 text-gray-800">
-                  Sports Betting Specialists:
-                </span>
-                We have a proven track record in developing robust and secure
-                sports betting platforms. Our solutions ensure a seamless user
-                experience for placing bets, managing funds, and tracking
-                results.
-              </li>
-              <li>
-                <span className="font-bold mr-1 text-gray-800">
-                  Wallet Telegram Bots -
-                </span>
-                Your Financial Concierge: Our team can create custom Telegram
-                bots that act as secure and convenient wallet extensions.
-                Imagine managing your finances, making payments, and receiving
-                updates directly through Telegram.
-              </li>
-            </ul>
-          </div>
-          <div className="w-full flex flex-col md:flex-row gap-4 mt-5 md:mt-10">
-            <div
-              className="max-w-[435px] mx-auto w-full h-80 flex justify-center items-center bg-gray-300 border border-gray-400"
-              data-aos="zoom-out"
-              data-aos-delay="200"
-            >
-              image goes here
-            </div>
-            <div className="flex flex-col w-full md:ml-16">
-              <h1 className="h3 mb-3" data-aos="fade" data-aos-delay="200">
-                2017-2024
-              </h1>
-              <p
-                className="text-xl text-gray-600 mb-8"
-                data-aos="zoom-y-out"
-                data-aos-delay="200"
-              >
-                Quam pellentesque nec nam aliquam sem et tortor consequat,
-                pellentesque adipiscing commodo elit at imperdiet. Semper auctor
-                neque vitae tempus quam pellentesque nec. Amet dictum sit amet
-                justo donec enim diam varius sit amet mattis vulputate enim
-                nulla aliquet porttitor.
-              </p>
-              <div className="flex">
-                <div className="flex items-center pr-4">
-                  <svg
-                    className="w-8 h-8 fill-current"
-                    data-aos="flip-left"
-                    data-aos-delay="300"
-                    viewBox="0 0 12 12"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z"
-                      fillRule="nonzero"
-                    />
-                  </svg>
-                </div>
-                <q data-aos="zoom-in" data-aos-delay="200">
-                  love this product and would recommend it to anyone. Could be
-                  not easier to use, and our multiple websites are wonderful. We
-                  get nice comments all the time.
-                </q>
+            <div className="mt-8 grid grid-cols-2 gap-4 text-sm">
+              <div className="rounded-2xl border border-gray-200 p-4">
+                <p className="text-xs uppercase tracking-widest text-gray-500">Based in</p>
+                <p className="mt-1 font-semibold text-ink-900">{site.address.city}, {site.address.country}</p>
+              </div>
+              <div className="rounded-2xl border border-gray-200 p-4">
+                <p className="text-xs uppercase tracking-widest text-gray-500">We work with</p>
+                <p className="mt-1 font-semibold text-ink-900">Startups, MFIs, banks, operators</p>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* developing mind-set */}
-
-        <div className="max-w-6xl mx-auto h-auto pt-12  pb-12 md:pt-20  md:pb-20">
-          <div className="max-w-3xl  mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h1 mb-4" data-aos="fade" data-aos-delay="200">
-              We don't just develop apps, we build experiences.
-            </h1>
-            <p
-              className="text-xl text-gray-600"
-              data-aos="zoom-y-out"
-              data-aos-delay="150"
-            >
-              At Source Code IT Solutions PLC, we understand that your software
-              is a reflection of your brand. That's why we focus on creating
-              user-centric solutions that not only deliver functionality but
-              also captivate your users.
-            </p>
-          </div>
-          {/* world illustration */}
-          <div
-            className="w-full min-h-[400px] mx-auto text-center flex justify-center items-center bg-gray-300 border border-gray-400  pt-16 pb-12 md:pt-20 md:pb-16"
-            data-aos="zoom-out"
-          >
-            world illustration goes here which could be replaced by other images
-          </div>
-          <div className="w-auto flex flex-wrap justify-center gap-12 min-h-[400px] text-center mx-10  pt-8 md:pt-12">
-            <AchievementCard
-              title="2012"
-              subtitle="Lorem ipsum is placeholder text commonly used tristique senectus
-                et netus"
-            />
-            <AchievementCard
-              title="$20M"
-              subtitle="Lorem ipsum is placeholder text commonly used tristique senectus
-                et netus"
-            />
-            <AchievementCard
-              title="250M+"
-              subtitle="Lorem ipsum is placeholder text commonly used tristique senectus
-                et netus"
-            />
-            <AchievementCard
-              title="2700+"
-              subtitle="Lorem ipsum is placeholder text commonly used tristique senectus
-                et netus"
-            />
-            <AchievementCard
-              title="400K"
-              subtitle="Lorem ipsum is placeholder text commonly used tristique senectus
-                et netus"
-            />
-            <AchievementCard
-              title="Millions"
-              subtitle="Lorem ipsum is placeholder text commonly used tristique senectus
-                et netus"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* developers team */}
-      <section className="w-full bg-gray-200 min-h-[1000px] border border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto h-auto   pt-12  pb-12 md:pt-20  md:pb-20">
-            <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h1 className="h2 mb-4" data-aos="zoom-out" data-aos-delay="200">
-                The humans behind the product
-              </h1>
+          <div className="relative" data-aos="fade-left">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="overflow-hidden rounded-3xl shadow-lift">
+                <Image src={team2} alt="Engineers collaborating" className="h-full w-full object-cover" placeholder="blur" />
+              </div>
+              <div className="mt-10 overflow-hidden rounded-3xl shadow-lift">
+                <Image src={team3} alt="Team reviewing a design" className="h-full w-full object-cover" placeholder="blur" />
+              </div>
             </div>
-            <div className="max-w-6xl flex flex-wrap  gap-8 items-center justify-center">
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <TeamCard
-                name="Mark Lamprecht"
-                position="CEO & Co-founder"
-                desc=" Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum sint occaecat cupidatat."
-              />
+            <div className="glass absolute -bottom-6 left-6 rounded-2xl px-5 py-4 animate-float">
+              <p className="text-xs uppercase tracking-widest text-brand-600">Promise</p>
+              <p className="mt-1 text-sm font-semibold text-ink-900">We reply within one business day.</p>
             </div>
           </div>
         </div>
       </section>
-      {/* simple is growing */}
-      <section className="w-full bg-gray-200 h-auto border-t border-gray-300">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto pt-12  pb-12 md:pt-20  md:pb-20">
-            <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-              <h1 className="h2 mb-4" data-aos="zoom-out" data-aos-delay="200">
-                Simple is growing. Grow with us.
-              </h1>
-              <p
-                className="text-xl text-gray-600"
-                data-aos="zoom-y-out"
-                data-aos-delay="150"
-              >
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
-                cupidatat.
+
+      <Impact />
+
+      {/* Values */}
+      <section className="section bg-gray-50">
+        <div className="container-x">
+          <SectionHeading eyebrow="Values" title="What we optimise for" />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map(({ Icon, title, text }, i) => (
+              <div key={title} className="card card-hover gradient-border p-6" data-aos="fade-up" data-aos-delay={i * 70}>
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 ring-1 ring-brand-100">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-5 font-bold text-ink-900">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="section">
+        <div className="container-x">
+          <SectionHeading eyebrow="Journey" title="How the practice grew" />
+          <ol className="relative mx-auto mt-14 max-w-3xl border-l border-gray-200 pl-8">
+            {timeline.map((t, i) => (
+              <li key={t.phase} className="relative pb-12 last:pb-0" data-aos="fade-up" data-aos-delay={i * 80}>
+                <span className="absolute -left-[41px] top-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-brand-600 shadow-glow">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                </span>
+                <p className="text-xs font-semibold uppercase tracking-widest text-brand-600">{t.phase}</p>
+                <h3 className="mt-1 text-xl font-bold text-ink-900">{t.title}</h3>
+                <p className="mt-2 text-gray-600">{t.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Careers */}
+      <section className="section pt-0">
+        <div className="container-x">
+          <div className="grid items-center gap-8 rounded-3xl border border-gray-200 bg-gradient-to-br from-brand-50 to-white p-8 md:grid-cols-3 md:p-12" data-aos="zoom-y-out">
+            <div className="md:col-span-2">
+              <p className="eyebrow">Careers</p>
+              <h2 className="h3 mt-3 text-ink-900">Engineers who like hard, real problems</h2>
+              <p className="mt-3 text-gray-600">
+                We hire backend, mobile and full-stack engineers who want to own systems in production.
+                Send a short note and links to what you have built.
               </p>
             </div>
-            {/* image below */}
-            <div
-              className="max-w-3xl mx-auto h-[596px]  text-center flex justify-center items-center bg-gray-300 border border-gray-400  pb-12 md:pb-20"
-              data-aos="zoom-out"
-            >
-              image goes here
-            </div>
-            <div className="max-w-3xl mx-auto h-auto bg-inherit">
-              <h1 className="h3 mb-8" data-aos="zoom-out" data-aos-delay="100">
-                Current open positions
-              </h1>
-              <div
-                className="w-full "
-                data-aos="fade-down"
-                data-aos-delay="300"
-              >
-                <a
-                  href="#"
-                  className="w-full  p-4 mb-3 flex justify-between items-center rounded-md border border-gray-300 bg-gray-200 shadow-lg"
-                >
-                  <div className="w-max"> Software engineering </div>
-                  <svg
-                    className="w-4 h-4 text-blue-400"
-                    viewBox="0 0 16 16"
-                    style={{ fill: "blue" }}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M13.707 1h-8v2h5.586L1 13.293l1.414 1.414L12.707 4.414V10h2V2a1 1 0 00-1-1z"></path>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="w-full p-4 mb-3 flex justify-between items-center rounded-md border border-gray-300 bg-gray-200 shadow-lg"
-                >
-                  <div className="w-max"> Software engineering </div>
-                  <svg
-                    className="cw-4 h-4 text-blue-400"
-                    viewBox="0 0 16 16"
-                    style={{ fill: "blue" }}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M13.707 1h-8v2h5.586L1 13.293l1.414 1.414L12.707 4.414V10h2V2a1 1 0 00-1-1z"></path>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="w-full p-4 mb-3 flex justify-between items-center rounded-md border border-gray-300 bg-gray-200 shadow-lg"
-                >
-                  <div className="w-max"> Software engineering </div>
-                  <svg
-                    className="w-4 h-4 text-blue-400 ce0fo chxnn cy8j5"
-                    viewBox="0 0 16 16"
-                    style={{ fill: "blue" }}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M13.707 1h-8v2h5.586L1 13.293l1.414 1.414L12.707 4.414V10h2V2a1 1 0 00-1-1z"></path>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="w-full p-4 mb-3 flex justify-between items-center rounded-md border border-gray-300 bg-gray-200 shadow-lg"
-                >
-                  <div className="w-max"> Software engineering </div>
-                  <svg
-                    className="w-4 h-4 "
-                    viewBox="0 0 16 16"
-                    style={{ fill: "blue" }}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M13.707 1h-8v2h5.586L1 13.293l1.414 1.414L12.707 4.414V10h2V2a1 1 0 00-1-1z"></path>
-                  </svg>
-                </a>
-              </div>
+            <div className="md:text-right">
+              <a href={`mailto:${site.email}?subject=Engineering%20role%20at%20Source%20Code`} className="btn btn-dark">
+                Introduce yourself <HiArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
       </section>
-      {/* process card */}
-      <section className="w-full bg-gray-200 h-auto md:pb-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto  bg-gray-200 py-12 md:py-16">
-            <div className="w-full flex flex-col justify-center items-center gap-6 md:flex-row">
-              <ProcessCard
-                number={1}
-                title="Apply"
-                desc=" Duis aute irure dolor in reprehenderitin volupta velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              {/* <div className="w-[260px] h-[179px] bg-white p-6 drop-shadow-2xl"></div> */}
-              <ProcessCard
-                number={2}
-                title="Screening"
-                desc=" Duis aute irure dolor in reprehenderitin volupta velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              {/* <div className="w-[260px] h-[179px] bg-white p-6 drop-shadow-2xl"></div> */}
-              <ProcessCard
-                number={3}
-                title="Interview"
-                desc=" Duis aute irure dolor in reprehenderitin volupta velit esse
-                  cillum sint occaecat cupidatat."
-              />
-              <ProcessCard
-                number={4}
-                title="Job Offers"
-                desc=" Duis aute irure dolor in reprehenderitin volupta velit esse
-                  cillum sint occaecat cupidatat."
-              />
-            </div>
-          </div>
-          <div
-            className="max-w-6xl min-h-20 mx-auto  bg-blue-950 px-8 py-12 md:px-12 md:py-16 mb-16 md:mb-16"
-            data-aos="fade-up"
-          >
-            <div className="w-full min-h-20 text-white flex flex-col md:flex-row justify-between items-center gap-10 ">
-              <div className="text-center md:text-left max-w-lg">
-                <h1
-                  className="w-full md:mr-6 h3"
-                  data-aos="zoom-y-out"
-                  data-aos-delay="200"
-                >
-                  Sounds like we are building something cool?
-                </h1>
-              </div>
-              <div>
-                <a
-                  href="#"
-                  className="px-8 py-3 text-lg text-nowrap capitalize bg-blue-600 rounded-md font-medium hover:bg-blue-800"
-                >
-                  {" "}
-                  join us today
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-  );
-}
 
-interface IProps {
-  title: string;
-  subtitle: string;
-}
-
-function AchievementCard({ title, subtitle }: IProps) {
-  return (
-    <div
-      className="w-[300px] h-max bg-white"
-      data-aos="fade-up"
-      data-aos-delay="250"
-    >
-      <h1 className="h3 mb-2">{title}</h1>
-      <p className="text-base text-gray-600 ">{subtitle}</p>
-    </div>
-  );
-}
-
-interface TProps {
-  name: string;
-  position: string;
-  desc: string;
-}
-
-function TeamCard({ name, position, desc }: TProps) {
-  return (
-    <div
-      className="w-[320px] h-[307px] flex flex-col justify-center items-center bg-inherit"
-      data-aos="fade-up"
-      data-aos-delay="200"
-    >
-      <Image
-        className="w-[120px] h-[120px] rounded-full mb-4"
-        src={avatar}
-        alt="dev"
-      />
-
-      <h1 className="h4 mb-1">{name}</h1>
-      <h1 className="h5 text-blue-600 mb-2">{position}</h1>
-      <p className="text-base text-center text-gray-600 mb-3">{desc}</p>
-      <div className="flex gap-2">
-        <p>Twitter -</p>
-        <p>github</p>
-        <p>- LinkedIn</p>
-      </div>
-    </div>
-  );
-}
-
-interface PProps {
-  number: number;
-  title: string;
-  desc: string;
-}
-
-function ProcessCard({ number, title, desc }: PProps) {
-  return (
-    <div
-      className="w-[260px] flex flex-col items-center h-max bg-white p-6 shadow-xl drop-shadow-xl"
-      data-aos="fade-right"
-      data-aos-delay="100"
-    >
-      <div className="w-12 h-12 mb-3 flex justify-center items-center rounded-full bg-blue-700 text-white">
-        <h1 className="h5">{number}</h1>
-      </div>
-      <h1 className="h4">{title}</h1>
-      <p className="text-center">{desc}</p>
-    </div>
+      <CTA />
+    </>
   );
 }

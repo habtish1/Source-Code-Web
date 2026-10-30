@@ -1,79 +1,76 @@
 /* Typography */
 .h1 {
-    @apply text-4xl font-extrabold leading-tight tracking-tighter;
+  @apply text-4xl font-bold leading-[1.1] tracking-tighter md:text-5xl lg:text-6xl;
 }
-
 .h2 {
-    @apply text-3xl font-extrabold leading-tight tracking-tighter;
+  @apply text-3xl font-bold leading-tight tracking-tight md:text-4xl;
 }
-
 .h3 {
-    @apply text-3xl font-bold leading-tight;
+  @apply text-2xl font-bold leading-tight tracking-tight md:text-3xl;
 }
-
 .h4 {
-    @apply text-2xl font-bold leading-snug tracking-tight;
+  @apply text-xl font-bold leading-snug tracking-tight;
+}
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-600;
+}
+.eyebrow::before {
+  content: "";
+  @apply h-px w-6 bg-brand-500;
+}
+.lead {
+  @apply text-lg text-gray-600 md:text-xl;
 }
 
-@screen md {
-    .h1 {
-        @apply text-5xl;
-    }
-
-    .h2 {
-        @apply text-4xl;
-    }
+/* Layout */
+.container-x {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+.section {
+  @apply py-16 md:py-24;
 }
 
 /* Buttons */
 .btn,
 .btn-sm {
-    @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out;
+  @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold leading-snug transition-all duration-300 ease-spring focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
 }
-
 .btn {
-    @apply px-8 py-3 shadow-lg;
+  @apply px-6 py-3 text-base;
 }
-
 .btn-sm {
-    @apply px-4 py-2 shadow;
+  @apply px-4 py-2 text-sm;
+}
+.btn-primary {
+  @apply bg-brand-600 text-white shadow-lift hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0;
+}
+.btn-dark {
+  @apply bg-ink-900 text-white hover:bg-ink-800 hover:-translate-y-0.5;
+}
+.btn-light {
+  @apply bg-white text-ink-900 shadow-soft hover:bg-gray-50 hover:-translate-y-0.5;
+}
+.btn-ghost {
+  @apply border border-gray-300 bg-white/60 text-gray-800 backdrop-blur hover:border-brand-400 hover:text-brand-700 hover:-translate-y-0.5;
+}
+.btn-ghost-dark {
+  @apply border border-white/20 text-white hover:bg-white/10 hover:-translate-y-0.5;
 }
 
 /* Forms */
 .form-input,
 .form-textarea,
-.form-multiselect,
-.form-select,
-.form-checkbox,
-.form-radio {
-    @apply bg-white border border-gray-300 focus:border-gray-500;
-}
-
-.form-input,
-.form-textarea,
-.form-multiselect,
-.form-select,
-.form-checkbox {
-    @apply rounded;
-}
-
-.form-input,
-.form-textarea,
-.form-multiselect,
 .form-select {
-    @apply py-3 px-4;
+  @apply w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder-gray-400 shadow-sm transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15;
+}
+.form-label {
+  @apply mb-1.5 block text-sm font-medium text-gray-700;
 }
 
-.form-input,
-.form-textarea {
-    @apply placeholder-gray-500;
+/* Cards */
+.card {
+  @apply rounded-2xl border border-gray-200 bg-white shadow-soft transition-all duration-300 ease-spring;
 }
-
-.form-select {
-    @apply pr-10;
-}
-
-.form-checkbox,
-.form-radio {
-    @apply text-gray-800 rounded-sm;
+.card-hover {
+  @apply hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift;
 }

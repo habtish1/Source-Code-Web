@@ -1,257 +1,120 @@
+import Link from "next/link";
+import { FaLinkedinIn, FaTelegram, FaWhatsapp, FaGithub } from "react-icons/fa6";
+import { HiOutlineEnvelope, HiOutlinePhone, HiOutlineMapPin, HiOutlineClock } from "react-icons/hi2";
+
 import Logo from "./logo";
+import { site } from "@/components/data/site";
+import { services } from "@/components/data/services";
+
+const company = [
+  { href: "/about", label: "About us" },
+  { href: "/work", label: "Our work" },
+  { href: "/choose", label: "Why choose us" },
+  { href: "/blogs", label: "Insights" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Top area: Blocks */}
-        <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12 border-t border-gray-200">
-          {/* 1st block */}
-          <div className="sm:col-span-12 lg:col-span-3">
-            <div className="mb-2">
-              <Logo />
+    <footer className="relative overflow-hidden bg-ink-900 text-white">
+      <div className="pointer-events-none absolute inset-0 bg-grid-dark opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[48rem] -translate-x-1/2 rounded-full bg-brand-600/30 blur-3xl" />
+
+      <div className="container-x relative">
+        <div className="grid gap-12 py-16 md:grid-cols-12 md:py-20">
+          <div className="md:col-span-4">
+            <Logo dark />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
+              {site.tagline} We design, build and operate the platforms behind ride-hailing, fintech,
+              logistics, gaming and enterprise businesses, from Addis Ababa.
+            </p>
+            <div className="mt-6 flex gap-2">
+              {[
+                { href: site.social.linkedin, icon: FaLinkedinIn, label: "LinkedIn" },
+                { href: site.social.telegram, icon: FaTelegram, label: "Telegram" },
+                { href: site.social.whatsapp, icon: FaWhatsapp, label: "WhatsApp" },
+                { href: site.social.github, icon: FaGithub, label: "GitHub" },
+              ].map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all duration-300 hover:-translate-y-1 hover:border-brand-400 hover:bg-brand-600 hover:text-white"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* 2nd block */}
-          {/* <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-gray-800 font-medium mb-2">Products</h6>
-            <ul className="text-sm">
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Web Studio
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  DynamicBox Flex
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Programming Forms
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Integrations
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Command-line
-                </a>
-              </li>
-            </ul>
-          </div> */}
-
-          {/* 3rd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-gray-800 font-medium mb-2">Resources</h6>
-            <ul className="text-sm">
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Tutorials & Guides
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="/blogs"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="mailto:info@sourcecodeet.com"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Support Center
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Partners
-                </a>
-              </li>
+          <div className="md:col-span-3">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/50">Services</h3>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {services.map((s) => (
+                <li key={s.id}>
+                  <Link
+                    href={`/services/${s.id}`}
+                    className="text-white/75 transition hover:text-accent-400"
+                  >
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* 4th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-gray-800 font-medium mb-2">Company</h6>
-            <ul className="text-sm">
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Home
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="#0"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  About us
-                </a>
-              </li>
-              <li className="mb-2">
-                <a
-                  href="choose"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Why choose us
-                </a>
-              </li>
-
-              <li className="mb-2">
-                <a
-                  href="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  Contact us
-                </a>
-              </li>
+          <div className="md:col-span-2">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/50">Company</h3>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {company.map((c) => (
+                <li key={c.href}>
+                  <Link href={c.href} className="text-white/75 transition hover:text-accent-400">
+                    {c.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* 5th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-3">
-            <h6 className="text-gray-800 font-medium mb-2">Subscribe</h6>
-            <p className="text-sm text-gray-600 mb-4">
-              Get the latest news and articles to your inbox every month.
-            </p>
-            <form>
-              <div className="flex flex-wrap mb-4">
-                <div className="w-full">
-                  <label className="block text-sm sr-only" htmlFor="newsletter">
-                    Email
-                  </label>
-                  <div className="relative flex items-center max-w-xs">
-                    <input
-                      id="newsletter"
-                      type="email"
-                      className="form-input w-full text-gray-800 px-3 py-2 pr-12 text-sm"
-                      placeholder="Your email"
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="absolute inset-0 left-auto"
-                      aria-label="Subscribe"
-                    >
-                      <span
-                        className="absolute inset-0 right-auto w-px -ml-px my-2 bg-gray-300"
-                        aria-hidden="true"
-                      ></span>
-                      <svg
-                        className="w-3 h-3 fill-current text-blue-600 mx-3 shrink-0"
-                        viewBox="0 0 12 12"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                          fillRule="nonzero"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  {/* Success message */}
-                  {/* <p className="mt-2 text-green-600 text-sm">Thanks for subscribing!</p> */}
-                </div>
-              </div>
-            </form>
+          <div className="md:col-span-3">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-white/50">Contact</h3>
+            <ul className="mt-4 space-y-3 text-sm text-white/75">
+              <li className="flex gap-3">
+                <HiOutlineMapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                <a href={site.address.mapUrl} target="_blank" rel="noreferrer" className="hover:text-white">
+                  {site.address.line1}
+                  <br />
+                  {site.address.line2}, {site.address.city}
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <HiOutlinePhone className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                <a href={`tel:${site.phone}`} className="hover:text-white">
+                  {site.phoneDisplay}
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <HiOutlineEnvelope className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                <a href={`mailto:${site.email}`} className="hover:text-white">
+                  {site.email}
+                </a>
+              </li>
+              <li className="flex gap-3">
+                <HiOutlineClock className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
+                <span>{site.hours}</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Bottom area */}
-        <div className="md:flex md:items-center md:justify-between py-4 md:py-8 border-t border-gray-200">
-          {/* Social as */}
-          <ul className="flex mb-4 md:order-1 md:ml-4 md:mb-0">
-            <li>
-              <a
-                href="#0"
-                className="flex justify-center items-center text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
-                aria-label="Twitter"
-              >
-                <svg
-                  className="w-8 h-8 fill-current"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z" />
-                </svg>
-              </a>
-            </li>
-            <li className="ml-4">
-              <a
-                href="https://github.com/Source-Code-IT-Solutions-PLC"
-                target="_blank"
-                className="flex justify-center items-center text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
-                aria-label="Github"
-              >
-                <svg
-                  className="w-8 h-8 fill-current"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
-                </svg>
-              </a>
-            </li>
-            <li className="ml-4">
-              <a
-                href="#0"
-                className="flex justify-center items-center text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
-                aria-label="Facebook"
-              >
-                <svg
-                  className="w-8 h-8 fill-current"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z" />
-                </svg>
-              </a>
-            </li>
-          </ul>
-
-          {/* Copyrights note */}
-          <div className="text-sm text-gray-600 mr-4">
-            &copy; SourceCode.com All rights reserved.
-          </div>
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-6 text-xs text-white/50 md:flex-row">
+          <p>
+            &copy; {year} {site.name}. All rights reserved.
+          </p>
+          <p>Built in Addis Ababa · Next.js on Vercel</p>
         </div>
       </div>
     </footer>

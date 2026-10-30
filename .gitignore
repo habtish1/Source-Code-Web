@@ -46,3 +46,5 @@ next-env.d.ts
 yarn.lock
 package-lock.json
 Projects.pptx
+# local tooling
+.claude/

@@ -1,41 +1,126 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
-/* Additional styles */
 @import "additional-styles/utility-patterns.css";
-@import "additional-styles/range-slider.css";
-@import "additional-styles/toggle-switch.css";
 @import "additional-styles/theme.css";
 
 @import "tailwindcss/utilities";
-/* @import url("../../font/stylesheet.css"); */
 
-/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
-@layer utilities {
-  .custom-scroll {
-    overflow: scroll;
-    scrollbar-width: none;
+@layer base {
+  :root {
+    --ring: 51 102 255;
   }
-  .scroll-direction {
-    position: relative;
-    direction: rtl;
-    left: 0;
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
-  /* .scroll-direction ::-webkit-scrollbar {
-    position: relative;
-    left: 0;
-    direction: rtl;
-  } */
+  body {
+    @apply bg-white text-gray-800 antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+  /* Reduced motion: keep the site usable, drop decorative movement. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-brand-500 to-cyan-500;
   }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  .text-gradient-warm {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-500 to-rose-500;
+  }
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-soft;
+  }
+  .glass-dark {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .bg-grid {
+    background-image: theme("backgroundImage.grid-light");
+    background-size: 40px 40px;
+  }
+  .bg-grid-dark {
+    background-image: theme("backgroundImage.grid-dark");
+    background-size: 40px 40px;
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+  .pause-on-hover:hover > * {
+    animation-play-state: paused;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* Animated gradient border card */
+  .gradient-border {
+    position: relative;
+    background: white;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(51, 102, 255, 0.5), rgba(247, 147, 30, 0.35), rgba(51, 102, 255, 0.1));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+  /* Spotlight card driven by --x/--y CSS vars from JS */
+  .spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      420px circle at var(--x, 50%) var(--y, 50%),
+      rgba(51, 102, 255, 0.12),
+      transparent 45%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+  .word-reveal > span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.6em);
+    animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 }
