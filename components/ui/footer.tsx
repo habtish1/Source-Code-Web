@@ -12,6 +12,7 @@ const company = [
   { href: "/choose", label: "Why choose us" },
   { href: "/blogs", label: "Insights" },
   { href: "/contact", label: "Contact" },
+  { href: "/downloads/Source-Code-IT-Solutions-Company-Profile.pdf", label: "Company profile (PDF)" },
 ];
 
 export default function Footer() {

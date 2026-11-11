@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { HiArrowRight, HiOutlineHeart, HiOutlineEye, HiOutlineScale, HiOutlineRocketLaunch } from "react-icons/hi2";
+import { HiArrowRight, HiArrowDownTray, HiOutlineHeart, HiOutlineEye, HiOutlineScale, HiOutlineRocketLaunch } from "react-icons/hi2";
 
 import PageHero from "@/components/ui/page-hero";
 import SectionHeading from "@/components/ui/section-heading";
@@ -85,6 +85,14 @@ export default function About() {
           <Link href="/contact" className="btn btn-ghost">
             Work with us
           </Link>
+          <a
+            href="/downloads/Source-Code-IT-Solutions-Company-Profile.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-ghost"
+          >
+            <HiArrowDownTray className="h-4 w-4" /> Company profile (PDF)
+          </a>
         </div>
       </PageHero>
 

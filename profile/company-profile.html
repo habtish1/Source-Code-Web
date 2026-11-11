@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Source Code IT Solutions PLC — Company Profile 2026</title>
+<style>
+@font-face{font-family:Ample;src:url(../public/fonts/AmpleSoftPro-Regular.ttf);font-weight:400}
+@font-face{font-family:Ample;src:url(../public/fonts/AmpleSoftPro-Light.ttf);font-weight:300}
+@font-face{font-family:Ample;src:url(../public/fonts/AmpleSoftPro-Medium.ttf);font-weight:500}
+@font-face{font-family:Ample;src:url(../public/fonts/AmpleSoftPro-Bold.ttf);font-weight:700}
+:root{--brand:#1554d1;--brand2:#3366ff;--cyan:#22d3ee;--accent:#f7931e;--navy:#0b1f45;--ink:#0b1120;--ink2:#1c2740;--mute:#5b6475;--line:#e3e7ee;--soft:#f3f6fb}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:0}
+html,body{background:#fff;font-family:Ample,Inter,system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;padding:16mm 16mm 18mm;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto}
+svg{width:100%;height:100%}
+h1,h2,h3,h4{letter-spacing:-.02em;line-height:1.1}
+h2{font-size:26pt;font-weight:700;color:var(--ink)}
+h3{font-size:13pt;font-weight:700}
+p{line-height:1.5}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:8pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brand)}
+.eyebrow:before{content:"";width:22px;height:1.5px;background:var(--brand)}
+.lead{font-size:11pt;color:var(--mute);line-height:1.55}
+.grad{background:linear-gradient(90deg,var(--brand),var(--brand2) 50%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.foot{position:absolute;left:16mm;right:16mm;bottom:9mm;display:flex;justify-content:space-between;align-items:center;font-size:7.5pt;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+.foot b{color:var(--ink)}
+.foot .pg{width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:7.5pt;letter-spacing:0}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(to right,rgba(15,23,42,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(15,23,42,.05) 1px,transparent 1px);background-size:11mm 11mm;-webkit-mask-image:radial-gradient(ellipse at top,#000 20%,transparent 70%);mask-image:radial-gradient(ellipse at top,#000 20%,transparent 70%);pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:44px;height:44px}
+.logo .t{display:flex;flex-direction:column;line-height:1}
+.logo .t b{font-size:13pt;letter-spacing:-.02em}
+.logo .t span{font-size:6.5pt;letter-spacing:.24em;text-transform:uppercase;opacity:.65;margin-top:3px}
+/* cover */
+.cover{background:radial-gradient(1200px 700px at 80% -10%,#15336f 0%,var(--ink) 55%);color:#fff;padding:0}
+.cover .grid-bg{background-image:linear-gradient(to right,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.07) 1px,transparent 1px);-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%)}
+.cover .in{position:relative;height:100%;padding:18mm 18mm 16mm;display:flex;flex-direction:column}
+.cover .logo .t b,.cover .logo .t span{color:#fff}
+.cover h1{font-size:42pt;font-weight:700;margin-top:auto;max-width:150mm}
+.cover .glance{display:flex;gap:6mm;margin-top:10mm}
+.cover .glance div{border-left:2px solid var(--cyan);padding-left:10px}
+.cover .glance b{display:block;font-size:17pt;letter-spacing:-.02em}
+.cover .glance span{font-size:7.5pt;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.cover h1 .grad{background:linear-gradient(90deg,#8eb6ff,var(--cyan));-webkit-background-clip:text;background-clip:text}
+.cover .sub{font-size:12.5pt;color:rgba(255,255,255,.72);max-width:140mm;margin-top:8mm;line-height:1.5}
+.cover .tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;font-size:8pt;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);width:max-content;background:rgba(255,255,255,.06)}
+.cover h1{margin-top:6mm}
+.cover .tag i{width:7px;height:7px;border-radius:50%;background:#34d399;display:inline-block}
+.cover .meta{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;color:rgba(255,255,255,.6);font-size:8pt;letter-spacing:.14em;text-transform:uppercase}
+.cover .meta b{display:block;color:#fff;font-size:22pt;letter-spacing:-.02em;text-transform:none;margin-bottom:4px}
+.cover .bar{position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--brand),var(--cyan) 50%,var(--accent))}
+.cards-float{position:absolute;right:16mm;top:34mm;width:80mm;height:84mm}
+.fc{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px);border-radius:12px;padding:10px 12px;color:#fff;font-size:8.5pt}
+.fc small{display:block;font-size:7pt;color:rgba(255,255,255,.6);margin-bottom:3px}
+.fc b{font-size:11pt}
+.ring{position:absolute;left:50%;top:50%;width:54mm;height:54mm;transform:translate(-50%,-50%);border-radius:50%;background:linear-gradient(135deg,var(--brand2),var(--cyan));box-shadow:0 0 0 14px rgba(51,102,255,.12),0 0 0 30px rgba(51,102,255,.06);display:flex;align-items:center;justify-content:center}
+.ring svg{width:30mm;height:30mm;color:#fff}
+/* layout helpers */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:10mm;margin-bottom:8mm}
+.head h2{margin-top:3mm}
+.head .lead{max-width:120mm;margin-top:3mm}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff}
+.card.dark{background:var(--navy);color:#fff;border-color:transparent}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:7mm}
+.stat{padding:14px 12px;text-align:center;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font-size:24pt;letter-spacing:-.03em;color:var(--ink)}
+.stat span{display:block;font-size:8.5pt;font-weight:700;margin-top:2px}
+.stat small{display:block;font-size:7.5pt;color:var(--mute);margin-top:2px}
+.vi{width:34px;height:34px;border-radius:10px;background:#eef4ff;color:var(--brand);display:flex;align-items:center;justify-content:center;flex:none;padding:7px}
+.pil{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.pil h4{font-size:10.5pt;margin:8px 0 4px}
+.pil p,.val p,.step p,.model p{font-size:8.5pt;color:var(--mute)}
+.industries{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ind{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:8pt;font-weight:500;background:var(--soft)}
+/* services */
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:4.5mm}
+.svc{border:1px solid var(--line);border-radius:12px;padding:12px 13px;display:flex;flex-direction:column;min-height:0}
+.svc-ic{width:34px;height:34px;border-radius:9px;color:#fff;padding:7px;margin-bottom:9px}
+.svc h4{font-size:10.5pt;margin-bottom:4px}
+.svc p{font-size:8pt;color:var(--mute);margin-bottom:7px}
+.svc ul{list-style:none;font-size:7.6pt;color:var(--ink2)}
+.svc li{padding-left:10px;position:relative;margin-top:3px;line-height:1.35}
+.svc li:before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--brand)}
+/* featured work */
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.feat{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.feat-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.feat-head h4{font-size:12pt}
+.kicker{font-size:7pt;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;display:block;margin-bottom:2px}
+.status{margin-left:auto;font-size:6.8pt;font-weight:700;border-radius:999px;padding:3px 8px;white-space:nowrap}
+.s-live{background:#d1fae5;color:#047857} .s-delivered{background:#e0e9ff;color:#1d4ed8} .s-in{background:#ffedd5;color:#c2410c}
+.feat p{font-size:8.3pt;color:var(--mute);margin-bottom:7px}
+.feat ul{list-style:none;font-size:7.8pt;color:var(--ink2);margin-bottom:8px}
+.feat li{padding-left:12px;position:relative;margin-top:3px}
+.feat li:before{content:"";position:absolute;left:0;top:5px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chips span{background:var(--soft);border-radius:5px;padding:2px 7px;font-size:7pt;font-weight:500;color:var(--ink2)}
+.mark{width:40px;height:40px;border-radius:11px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;flex:none}
+.mark.lg{width:50px;height:50px;border-radius:13px}
+.mark img{width:100%;height:100%;object-fit:contain;padding:5px}
+.mark.cover img{object-fit:cover;padding:0}
+.mark.wide{width:78px;border-radius:9px}
+.mark.wide.lg{width:96px;height:50px}
+.mark.wide img{padding:4px 6px}
+.mark.mono{color:#fff;font-weight:700;font-size:11pt;border:0}
+/* portfolio grid */
+.pfs{display:grid;grid-template-columns:1fr 1fr;gap:2.4mm}
+.pf{display:flex;align-items:flex-start;gap:9px;border:1px solid var(--line);border-radius:10px;padding:7px 10px}
+.pf .mark{width:36px;height:36px;border-radius:9px} .pf .mark.wide{width:70px}
+.pf b{display:block;font-size:9pt}
+.pf b i{font-style:normal;font-weight:400;color:var(--mute);font-size:7.5pt}
+.pf span{display:block;font-size:7pt;color:var(--brand);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:1px}
+.pf em{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-style:normal;font-size:7.2pt;color:var(--mute);line-height:1.35;margin-top:2px}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;margin-top:6mm}
+.step .n{display:inline-flex;width:34px;height:34px;border-radius:10px;border:1px solid #bcd3ff;background:#fff;color:var(--brand);font-weight:700;font-size:10pt;align-items:center;justify-content:center;box-shadow:0 6px 16px -10px rgba(21,84,209,.5)}
+.step h4{font-size:9.5pt;margin:7px 0 4px}
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.model{background:var(--navy);color:#fff;border-radius:12px;padding:13px 14px}
+.model h4{font-size:10.5pt;margin-bottom:5px;color:#fff}
+.model p{color:rgba(255,255,255,.72)}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.weeks{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:3mm}
+.wk{display:flex;gap:10px;border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:var(--soft)}
+.wk .n{flex:none;font-size:7pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);background:#fff;border:1px solid #bcd3ff;border-radius:999px;padding:4px 8px;height:max-content;white-space:nowrap}
+.wk h4{font-size:9.5pt;margin-bottom:3px}
+.wk p{font-size:8.3pt;color:var(--mute)}
+.val{display:flex;gap:10px;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.val h4{font-size:10pt;margin-bottom:3px}
+.stacks{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.stk{border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.stk b{display:block;font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:4px}
+.stk span{font-size:9pt;line-height:1.5;color:var(--ink2)}
+.sec{margin-top:8mm}
+.sec .eyebrow{margin-bottom:3mm}
+.band{background:var(--navy);color:#fff;border-radius:14px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:10mm;margin-top:auto}
+.band h3{font-size:13pt;color:#fff}
+.band p{font-size:8.5pt;color:rgba(255,255,255,.7);margin-top:3px}
+.band .btn{background:#fff;color:var(--ink);border-radius:999px;padding:8px 16px;font-size:8.5pt;font-weight:700;white-space:nowrap}
+/* contact */
+.contact{background:radial-gradient(900px 500px at 20% 0%,#15336f 0%,var(--ink) 60%);color:#fff}
+.contact .grid-bg{background-image:linear-gradient(to right,rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.06) 1px,transparent 1px);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 40%,#000 10%,transparent 70%)}
+.contact h2{color:#fff;font-size:30pt;max-width:140mm}
+.contact .lead{color:rgba(255,255,255,.7)}
+.chan{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:8mm}
+.ch{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.ch .vi{background:rgba(255,255,255,.1);color:var(--cyan)}
+.ch small{display:block;font-size:7pt;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:3px}
+.ch b{font-size:10pt;display:block}
+.ch span{font-size:8.5pt;color:rgba(255,255,255,.75)}
+.contact .logo{margin-top:auto}
+.contact .logo .t b,.contact .logo .t span{color:#fff}
+.contact .bar{position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--brand),var(--cyan) 50%,var(--accent))}
+.contact .copy{position:absolute;right:16mm;bottom:12mm;font-size:7.5pt;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase}
+</style></head><body>
+
+<!-- 1 · Cover -->
+<section class="page cover">
+  <div class="grid-bg"></div>
+  <div class="blob" style="width:90mm;height:90mm;left:-25mm;top:120mm;background:#3366ff"></div>
+  <div class="blob" style="width:70mm;height:70mm;right:-10mm;top:20mm;background:#06b6d4;opacity:.35"></div>
+  <div class="blob" style="width:60mm;height:60mm;right:30mm;bottom:40mm;background:#f7931e;opacity:.25"></div>
+  <div class="in">
+    <div class="logo"><img src="../public/images/image.png" alt=""><div class="t"><b>Source Code</b><span>IT Solutions PLC</span></div></div>
+    <div class="cards-float" style="top:30mm">
+      <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div>
+      <div class="fc" style="left:0;top:0"><small>Dispatch engine</small><b>Driver matched · 42s</b></div>
+      <div class="fc" style="right:0;top:22mm"><small>Wallet settlement</small><b>ETB 1,240.00</b></div>
+      <div class="fc" style="left:4mm;bottom:12mm"><small>Telegram bot</small><b>Parcel left Mekelle 06:40</b></div>
+      <div class="fc" style="right:4mm;bottom:0"><small>API p95 · Uptime</small><b>118 ms · 99.9%</b></div>
+    </div>
+    <div class="tag" style="margin-top:118mm">
+      <i></i>Company profile · 2026</div>
+    <h1>Software that runs <span class="grad">real businesses</span> in Ethiopia.</h1>
+    <p class="sub">We are the engineering team behind ride-hailing, fintech, logistics and gaming platforms used every day across Ethiopia. Web, mobile, bots, ERP and the backends that hold it all together.</p>
+    <div class="glance"><div><b>17+</b><span>Products shipped</span></div><div><b>8</b><span>Industries</span></div><div><b>9</b><span>Service lines</span></div><div><b>24/7</b><span>Operations</span></div></div>
+    <div class="meta"><div><b>www.sourcecodeet.com</b>Commet Building, Office 201 · Addis Ababa, Ethiopia</div><div style="text-align:right"><b>+251 974 017 208</b>info@sourcecodeet.com</div></div>
+  </div>
+  <div class="bar"></div>
+</section>
+
+<!-- 2 · Who we are -->
+<section class="page">
+  <div class="grid-bg"></div>
+  <div class="head"><div><span class="eyebrow">Who we are</span><h2>An engineering company that <span class="grad">runs what it builds</span></h2>
+  <p class="lead">Source Code IT Solutions PLC designs, builds and operates software for businesses in Ethiopia and the diaspora. We are engineers first: our own platforms carry real passengers, parcels and payments every day, and that discipline shapes every client project.</p></div></div>
+  <div class="two">
+    <div class="card"><span class="eyebrow">Mission</span><p style="font-size:9.5pt;margin-top:6px;line-height:1.55">To give Ethiopian businesses software that is correct, resilient and genuinely theirs: built for local networks, payments and users, and kept running long after launch.</p></div>
+    <div class="card"><span class="eyebrow">Vision</span><p style="font-size:9.5pt;margin-top:6px;line-height:1.55">A country where every serious business, from a coffee exporter to a microfinance institution, runs on software engineered to the same standard as the best in the world.</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>17+</b><span>Products shipped</span><small>apps, platforms and bots in the field</small></div>
+    <div class="stat"><b>8</b><span>Industries served</span><small>mobility, fintech, logistics, gaming and more</small></div>
+    <div class="stat"><b>9</b><span>Service lines</span><small>from strategy to database operations</small></div>
+    <div class="stat"><b>24/7</b><span>Operations</span><small>we monitor and support what we build</small></div>
+  </div>
+  <div class="sec"><span class="eyebrow">What sets us apart</span>
+    <div class="three" style="grid-template-columns:1fr 1fr;margin-top:3mm"><div class="pil"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></span><h4>Built for Ethiopian reality</h4><p>Flaky networks, OTP delays, cash-heavy users, telebirr and CBE Birr, Amharic UI. Designed in from day one.</p></div><div class="pil"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></span><h4>Money-grade engineering</h4><p>Our fintech and gaming systems move real money. Double-entry ledgers, idempotent payments and audit trails are the default.</p></div><div class="pil"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg></span><h4>Product owners, not order takers</h4><p>We run our own consumer platforms, so we understand retention, fraud, support load and unit economics.</p></div><div class="pil"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg></span><h4>We operate what we ship</h4><p>Monitoring, on-call, upgrades and incident response are part of every engagement.</p></div></div></div>
+  <div class="sec"><span class="eyebrow">Industries</span><div class="industries"><span class="ind">Mobility</span><span class="ind">Logistics</span><span class="ind">Fintech</span><span class="ind">Gaming</span><span class="ind">Enterprise</span><span class="ind">Commerce</span><span class="ind">Consumer</span><span class="ind">Energy</span></div></div>
+  <div class="foot"><span><b>Source Code</b> · Company profile 2026</span><span class="pg">2</span></div>
+</section>
+
+<!-- 3 · Services -->
+<section class="page">
+  <div class="grid-bg"></div>
+  <div class="head"><div><span class="eyebrow">What we do</span><h2>Nine disciplines. <span class="grad">One accountable team.</span></h2>
+  <p class="lead">From a landing page to a national payments platform, every engagement is staffed by engineers who have shipped it before.</p></div></div>
+  <div class="svcs">
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#1554d1,#22d3ee)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg></div>
+  <h4>Web Development</h4>
+  <p>Websites and web platforms that load fast, rank well and scale.</p>
+  <ul><li>Responsive, mobile-first layouts tested on real devices</li><li>Core Web Vitals in the green: fast first paint and stable layout</li><li>SEO-ready structure: metadata, sitemaps, structured data</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#0ea5e9,#2563eb)"><svg viewBox="0 0 496 512" fill="currentColor" ><path d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg></div>
+  <h4>Telegram Bots</h4>
+  <p>Put your service where your customers already are.</p>
+  <ul><li>24/7 self-service for orders, bookings and support</li><li>Wallet and payment flows with OTP and transaction history</li><li>Broadcasts and segmented notifications to your audience</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#8b5cf6,#d946ef)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg></div>
+  <h4>Mobile App Development</h4>
+  <p>Native-quality apps for Android and iOS, built once, maintained well.</p>
+  <ul><li>Flutter or native Kotlin / Swift depending on the product</li><li>Offline-first flows and background services that keep running</li><li>Store listing, release management and crash monitoring</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#10b981,#2dd4bf)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></div>
+  <h4>Fintech Solutions</h4>
+  <p>Money movement you can audit, reconcile and trust.</p>
+  <ul><li>Double-entry ledgers with exactly-once settlement</li><li>Integrations: telebirr, CBE Birr, M-Pesa, EthSwitch, bank cores</li><li>USSD, WhatsApp and Telegram channels for customers</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#f59e0b,#f97316)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg></div>
+  <h4>ERP System Development</h4>
+  <p>One system for the whole business, shaped to how you actually work.</p>
+  <ul><li>Chart of accounts, journals and financial statements</li><li>Inventory, procurement and multi-warehouse stock</li><li>Role-based approvals and audit trails on every change</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#475569,#1e293b)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg></div>
+  <h4>IT Consultation</h4>
+  <p>Independent technical advice before you commit budget.</p>
+  <ul><li>Technical due diligence and code audits</li><li>Vendor and platform selection with clear trade-offs</li><li>Security and performance reviews with fixes prioritised</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#6366f1,#1d4ed8)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg></div>
+  <h4>System Architecture &amp; Design</h4>
+  <p>Foundations that hold when traffic, teams and features grow.</p>
+  <ul><li>Modular monoliths or microservices, chosen deliberately</li><li>Real-time: WebSockets, queues, event-driven workflows</li><li>Infrastructure as code, CI/CD, monitoring and alerting</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#1554d1,#059669)"><svg viewBox="0 0 448 512" fill="currentColor" ><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></div>
+  <h4>WhatsApp Bots</h4>
+  <p>Verified WhatsApp Business automation for sales and support.</p>
+  <ul><li>WhatsApp Business API onboarding and template approval</li><li>Interactive buttons, lists and rich media flows</li><li>Agent inbox with assignment, tags and SLAs</li></ul>
+</div>
+<div class="svc">
+  <div class="svc-ic" style="background:linear-gradient(135deg,#f43f5e,#1554d1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg></div>
+  <h4>Database Administration</h4>
+  <p>Your data, always available, always recoverable.</p>
+  <ul><li>Performance tuning and query optimisation</li><li>Automated, tested backups with point-in-time recovery</li><li>Replication, failover and zero-downtime migrations</li></ul>
+</div></div>
+  <div class="foot"><span><b>Source Code</b> · Services</span><span class="pg">3</span></div>
+</section>
+
+<!-- 4 · Flagship work -->
+<section class="page">
+  <div class="grid-bg"></div>
+  <div class="head"><div><span class="eyebrow">Selected work</span><h2>Platforms people in Ethiopia <span class="grad">use every day</span></h2>
+  <p class="lead">Ride-hailing, freight, lending, remittance and gaming: production systems we designed, built and still operate.</p></div></div>
+  <div class="feats">
+<div class="feat">
+  <div class="feat-head"><span class="mark contain lg"><img src="../public/images/work/emun-transport.png" alt=""></span><div><span class="kicker">Mobility</span><h4>Emun Transport</h4></div><span class="status s-live">Live</span></div>
+  <p>A full ride-hailing platform for Addis Ababa: passenger and driver apps, a real-time dispatch engine, dynamic fares, driver wallets, carpooling, equb savings circles and a complete operations back office.</p>
+  <ul><li>Real-time dispatch with offer queues, penalties and loyalty tiers</li><li>Fare engine with route anchoring and mock-GPS fraud detection</li><li>Passenger and driver wallets, Chapa top-ups, agent POS settlement</li></ul>
+  <div class="chips"><span>Flutter</span><span>Python</span><span>MongoDB</span><span>WebSockets</span><span>OpenStreetMap / OSRM</span></div>
+</div>
+<div class="feat">
+  <div class="feat-head"><span class="mark contain wide lg"><img src="../public/images/work/chenet.png" alt=""></span><div><span class="kicker">Logistics</span><h4>CHENET</h4></div><span class="status s-live">Live</span></div>
+  <p>A freight platform for Ethiopia: a fleet back office for trucking companies with GPS tracking, trip budgets and settlements, growing into a load board that connects shippers, brokers and drivers.</p>
+  <ul><li>Fleet TMS: vehicles, drivers, assignments, trip advances and settlement</li><li>Live GPS tracking with PostGIS and a dedicated tracker app</li><li>Kotlin / Spring Boot modular monolith with enforced module boundaries</li></ul>
+  <div class="chips"><span>Kotlin</span><span>Spring Boot</span><span>PostgreSQL + PostGIS</span><span>Redis</span><span>React</span></div>
+</div>
+<div class="feat">
+  <div class="feat-head"><span class="mark contain wide lg"><img src="../public/images/adopay.png" alt=""></span><div><span class="kicker">Fintech · for DECSI</span><h4>Adopay</h4></div><span class="status s-live">Live</span></div>
+  <p>A digital lending and payments platform for a microfinance institution: loan origination and repayment, customer service, USSD, airtime and integrations with telebirr, M-Pesa and EthSwitch across a microservice architecture.</p>
+  <ul><li>Loan, customer, user, transaction and configuration microservices</li><li>USSD channel plus mobile app for customers</li><li>Payment rails: telebirr, M-Pesa, EthSwitch, core banking write-back</li></ul>
+  <div class="chips"><span>Java / Spring Boot</span><span>Next.js</span><span>PostgreSQL</span><span>Docker</span><span>API Gateway</span></div>
+</div>
+<div class="feat">
+  <div class="feat-head"><span class="mark contain lg"><img src="../public/images/kacha.png" alt=""></span><div><span class="kicker">Fintech · for Kacha Digital Financial Service S.C.</span><h4>Kacha</h4></div><span class="status s-delivered">Delivered</span></div>
+  <p>WhatsApp remittance bot and crowdfunding web platform for Ethiopia's first licensed digital financial service provider.</p>
+  <ul><li>WhatsApp Business bot for remittance initiation and status</li><li>Crowdfunding web app with campaigns and contributions</li><li>Secure wallet and OTP flows</li></ul>
+  <div class="chips"><span>Node.js</span><span>React</span><span>WhatsApp Business API</span><span>PostgreSQL</span></div>
+</div>
+<div class="feat">
+  <div class="feat-head"><span class="mark cover lg"><img src="../public/images/work/addismark.svg" alt=""></span><div><span class="kicker">Gaming</span><h4>AddisMark</h4></div><span class="status s-in">In development</span></div>
+  <p>A sportsbook and gaming platform: pre-match and live betting, retail cashier panel, virtual games, bingo, Ludo, jackpots, bonuses and promoter programs, backed by payment, settlement and notification services.</p>
+  <ul><li>Go backend with betting, payment, settlement and user services</li><li>Web, retail panel, Android and iOS apps</li><li>Edge caching for odds with no-store pricing on bet detail</li></ul>
+  <div class="chips"><span>Go</span><span>PostgreSQL</span><span>Redis</span><span>React</span><span>Flutter</span></div>
+</div>
+<div class="feat">
+  <div class="feat-head"><span class="mark cover lg"><img src="../public/images/work/emun-express.png" alt=""></span><div><span class="kicker">Logistics</span><h4>Emun Express</h4></div><span class="status s-in">In development</span></div>
+  <p>Intercity parcel delivery between offices: customers book and track parcels, counter staff manage the lifecycle, and both sender and receiver are notified at every step.</p>
+  <ul><li>Kotlin / Spring Boot API with Flyway-managed Postgres</li><li>Native Android customer app in Jetpack Compose</li><li>React back office for counters and offices</li></ul>
+  <div class="chips"><span>Kotlin</span><span>Spring Boot</span><span>PostgreSQL</span><span>Jetpack Compose</span><span>React</span></div>
+</div></div>
+  <div class="foot"><span><b>Source Code</b> · Selected work</span><span class="pg">4</span></div>
+</section>
+
+<!-- 5 · Portfolio -->
+<section class="page">
+  <div class="grid-bg"></div>
+  <div class="head"><div><span class="eyebrow">Portfolio</span><h2>17 products across 8 industries</h2>
+  <p class="lead">Every product below was designed, built or operated by Source Code. Full case studies are available at www.sourcecodeet.com/work.</p></div></div>
+  <div class="pfs">
+<div class="pf"><span class="mark contain "><img src="../public/images/work/emun-transport.png" alt=""></span><div><b>Emun Transport</b><span>Mobility · Live</span><em>A full ride-hailing platform for Addis Ababa: passenger and driver apps, a real-time dispatch engine, dynamic fares, driver wallets, carpooling, equb savings circles and a complete operations back office.</em></div></div>
+<div class="pf"><span class="mark contain wide "><img src="../public/images/work/chenet.png" alt=""></span><div><b>CHENET</b><span>Logistics · Live</span><em>A freight platform for Ethiopia: a fleet back office for trucking companies with GPS tracking, trip budgets and settlements, growing into a load board that connects shippers, brokers and drivers.</em></div></div>
+<div class="pf"><span class="mark contain wide "><img src="../public/images/adopay.png" alt=""></span><div><b>Adopay <i>for DECSI</i></b><span>Fintech · Live</span><em>A digital lending and payments platform for a microfinance institution: loan origination and repayment, customer service, USSD, airtime and integrations with telebirr, M-Pesa and EthSwitch across a microservice architecture.</em></div></div>
+<div class="pf"><span class="mark contain "><img src="../public/images/kacha.png" alt=""></span><div><b>Kacha <i>for Kacha Digital Financial Service S.C.</i></b><span>Fintech · Delivered</span><em>WhatsApp remittance bot and crowdfunding web platform for Ethiopia's first licensed digital financial service provider.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/addismark.svg" alt=""></span><div><b>AddisMark</b><span>Gaming · In development</span><em>A sportsbook and gaming platform: pre-match and live betting, retail cashier panel, virtual games, bingo, Ludo, jackpots, bonuses and promoter programs, backed by payment, settlement and notification services.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/emun-express.png" alt=""></span><div><b>Emun Express</b><span>Logistics · In development</span><em>Intercity parcel delivery between offices: customers book and track parcels, counter staff manage the lifecycle, and both sender and receiver are notified at every step.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/melabooks.png" alt=""></span><div><b>Melabooks</b><span>Enterprise · Live</span><em>A mobile bookkeeping app that lets small businesses and freelancers record sales, expenses and stock, and see where their money goes, with an admin console and API behind it.</em></div></div>
+<div class="pf"><span class="mark contain wide "><img src="../public/images/duruj.png" alt=""></span><div><b>Duruj</b><span>Fintech · Delivered</span><em>A remittance platform website and customer flows for sending money home to Ethiopia.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/z-bingo.jpg" alt=""></span><div><b>Z-Bingo</b><span>Gaming · Live</span><em>An online bingo platform with player web app, admin console, game API and a real-time notification service, offered as a multi-tenant SaaS.</em></div></div>
+<div class="pf"><span class="mark contain wide "><img src="../public/images/work/wegagen-market-hub.png" alt=""></span><div><b>Wegagen Market Hub <i>for Wegagen Bank</i></b><span>Commerce · Delivered</span><em>A bank-backed online marketplace for Ethiopian merchants and shoppers, with virtual-account payments tied to the bank's core.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/maiden.png" alt=""></span><div><b>Maiden</b><span>Consumer · Live</span><em>A trust-first service marketplace: verified providers, bookings and payments, delivered as mobile app, web, admin and API with an end-to-end test suite.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/wattway.jpg" alt=""></span><div><b>WattWay</b><span>Energy · Delivered</span><em>An EV charging network platform: charging-station API, driver app to find and start a charge, station operator app and an admin console.</em></div></div>
+<div class="pf"><span class="mark contain wide "><img src="../public/images/work/esete-coffee.svg" alt=""></span><div><b>Esete Coffee</b><span>Commerce · Live</span><em>A fast, SEO-complete website for a specialty Ethiopian coffee exporter with live owner chat, Telegram alerts and six origin pages, shipped as a single Go binary.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/tindu-bot.jpg" alt=""></span><div><b>Tindu Bot</b><span>Consumer · Delivered</span><em>A Telegram and web bot platform with a broker API and admin console for managing users, flows and transactions.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/yes-taxi.png" alt=""></span><div><b>YES Taxi</b><span>Mobility · Delivered</span><em>A Flutter taxi-hailing mobile app with localisation, Firebase messaging and live trip tracking.</em></div></div>
+<div class="pf"><span class="mark cover "><img src="../public/images/work/meseret.svg" alt=""></span><div><b>Meseret</b><span>Fintech · In development</span><em>Escrow-backed, inspector-verified construction for the Ethiopian diaspora: owners abroad fund milestones into bank escrow, inspectors capture sealed evidence on site, and funds release only when work is verified.</em></div></div>
+<div class="pf"><span class="mark contain wide "><img src="../public/images/capstone.png" alt=""></span><div><b>Capstone</b><span>Enterprise · Delivered</span><em>Digital platform work for Capstone, delivered as part of our enterprise web and systems practice.</em></div></div></div>
+  <div class="band" style="margin-top:5mm;padding:11px 16px"><div><h3>Building something similar?</h3><p>We reuse proven architecture and integrations from these platforms to shorten your timeline and de-risk launch.</p></div><span class="btn">www.sourcecodeet.com/contact</span></div>
+  <div class="foot"><span><b>Source Code</b> · Portfolio</span><span class="pg">5</span></div>
+</section>
+
+<!-- 6 · How we work -->
+<section class="page">
+  <div class="grid-bg"></div>
+  <div class="head"><div><span class="eyebrow">How we work</span><h2>A delivery process that <span class="grad">removes surprises</span></h2>
+  <p class="lead">The same five steps on every project, whether it is a two-week bot or a two-year platform.</p></div></div>
+  <div class="steps"><div class="step"><span class="n">01</span><h4>Discover</h4><p>Users, workflows, constraints and what success looks like. You get a scoped plan with cost and timeline.</p></div><div class="step"><span class="n">02</span><h4>Design</h4><p>Flows and screens first, then the system design: data model, integrations, infrastructure.</p></div><div class="step"><span class="n">03</span><h4>Build in sprints</h4><p>Two-week sprints with a demo at the end of each. Working software early; priorities steered by evidence.</p></div><div class="step"><span class="n">04</span><h4>Harden & launch</h4><p>Load tests, security review, store submissions, monitoring and runbooks before launch day.</p></div><div class="step"><span class="n">05</span><h4>Operate & grow</h4><p>We keep running what we built: on-call, upgrades, new features and the data to decide what comes next.</p></div></div>
+  <div class="sec"><span class="eyebrow">Engagement models</span><div class="models" style="margin-top:3mm"><div class="model"><h4>Fixed-scope delivery</h4><p>A defined product, a written scope, a fixed price and date. Best for well-understood builds such as websites, bots and MVPs.</p></div><div class="model"><h4>Dedicated squad</h4><p>Two to six engineers plus a lead, embedded with your team on a monthly retainer. Best for platforms that keep evolving.</p></div><div class="model"><h4>Fractional CTO & consulting</h4><p>Senior technical leadership, audits and roadmaps without a full-time hire. Best before a large budget is committed.</p></div></div></div>
+  <div class="sec"><span class="eyebrow">Your first month with us</span><div class="weeks"><div class="wk"><span class="n">Week 1</span><div><h4>Kick-off & discovery</h4><p>Stakeholder workshops, access to existing systems, user and data review. Output: scope, risks, milestone plan.</p></div></div><div class="wk"><span class="n">Week 2</span><div><h4>Design & architecture</h4><p>Flows, screens and the system design signed off. Repositories, environments and CI/CD stood up.</p></div></div><div class="wk"><span class="n">Week 3–4</span><div><h4>First working increment</h4><p>The core flow demoed end to end on a staging environment, with your team using it and feedback shaping sprint two.</p></div></div><div class="wk"><span class="n">Ongoing</span><div><h4>Sprint rhythm</h4><p>Two-week sprints, a demo and a written status every sprint, invoices against delivered milestones.</p></div></div></div></div>
+  <div class="band"><div><h3>No surprises, by design</h3><p>You always know what was built, what it cost and what comes next. If something slips, you hear it from us first, with a plan.</p></div><span class="btn">Weekly demos · Written status</span></div>
+  <div class="foot"><span><b>Source Code</b> · How we work</span><span class="pg">6</span></div>
+</section>
+
+<!-- 7 · Technology -->
+<section class="page">
+  <div class="grid-bg"></div>
+  <div class="head"><div><span class="eyebrow">Technology</span><h2>A deliberately boring, <span class="grad">battle-tested stack</span></h2>
+  <p class="lead">We pick technologies our clients' teams can hire for and operate, and we go deep on each one.</p></div></div>
+  <div class="stacks"><div class="stk"><b>Backend</b><span>Go · Kotlin / Spring Boot · Python · Node.js · TypeScript</span></div><div class="stk"><b>Mobile</b><span>Flutter · Kotlin / Jetpack Compose · Swift · Firebase</span></div><div class="stk"><b>Web</b><span>React · Next.js · Tailwind CSS · Vercel</span></div><div class="stk"><b>Data</b><span>PostgreSQL / PostGIS · MongoDB · Redis · Kafka / NATS</span></div><div class="stk"><b>Infrastructure</b><span>Docker · Google Cloud · AWS · Caddy / nginx · CI/CD · Prometheus / Grafana</span></div><div class="stk"><b>Channels & payments</b><span>Telegram Bot API · WhatsApp Business API · USSD · telebirr · CBE Birr · M-Pesa · EthSwitch · Chapa</span></div></div>
+  <div class="sec"><span class="eyebrow">Engineering standards</span>
+    <div class="vals" style="margin-top:3mm">
+      <div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></span><div><h4>Security &amp; IP</h4><p>Your code lives in your repositories. Secrets, access and data handling follow least-privilege by default; audits on request.</p></div></div>
+      <div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg></span><div><h4>Quality gates</h4><p>Code review on every change, automated end-to-end suites, load tests and release checklists before anything reaches production.</p></div></div>
+      <div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z"/></svg></span><div><h4>Money-grade data</h4><p>Double-entry ledgers, idempotency keys, exactly-once settlement and full audit trails wherever value moves.</p></div></div>
+      <div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg></span><div><h4>Documentation &amp; handover</h4><p>Architecture decision records, runbooks and living docs, so your team can take over at any point.</p></div></div>
+    </div></div>
+  <div class="sec"><span class="eyebrow">Values</span><div class="vals" style="margin-top:3mm"><div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z"/></svg></span><div><h4>Correct before clever</h4><p>Money, trips and parcels must balance. We favour boring, verifiable designs over fashionable ones.</p></div></div><div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></span><div><h4>Nothing hidden</h4><p>Clients see the backlog, the demos and the invoices. Bad news travels first, with a plan attached.</p></div></div><div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg></span><div><h4>Ship, then improve</h4><p>A working release in users' hands beats a perfect plan. We launch early and iterate on evidence.</p></div></div><div class="val"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></span><div><h4>Built for here</h4><p>We build for Ethiopian users, networks, payments and regulations because we live with them too.</p></div></div></div></div>
+  <div class="band"><div><h3>Operations included</h3><p>Monitoring, on-call, upgrades and incident response are part of the engagement. You are never left holding code nobody maintains.</p></div><span class="btn">We operate what we ship</span></div>
+  <div class="foot"><span><b>Source Code</b> · Technology</span><span class="pg">7</span></div>
+</section>
+
+<!-- 8 · Contact -->
+<section class="page contact">
+  <div class="grid-bg"></div>
+  <div class="blob" style="width:80mm;height:80mm;right:-20mm;top:30mm;background:#3366ff;opacity:.45"></div>
+  <div class="blob" style="width:60mm;height:60mm;left:-10mm;bottom:50mm;background:#f7931e;opacity:.25"></div>
+  <span class="eyebrow" style="color:#fbb040">Let's talk</span>
+  <h2 style="margin-top:4mm">Tell us what you are trying to build.</h2>
+  <p class="lead" style="margin-top:5mm;max-width:140mm">Share the problem, the users and the deadline. An engineer, not a salesperson, replies within one business day with a clear next step.</p>
+  <div class="chan">
+    <div class="ch"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></span><div><small>Call</small><b>+251 974 017 208</b><span>Mon – Sat, 8:30 – 18:00 EAT</span></div></div>
+    <div class="ch"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></span><div><small>Email</small><b>info@sourcecodeet.com</b><span>support@sourcecodeet.com</span></div></div>
+    <div class="ch"><span class="vi"><svg viewBox="0 0 496 512" fill="currentColor" ><path d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg></span><div><small>Telegram</small><b>@sourcecodeet</b><span>t.me/sourcecodeet</span></div></div>
+    <div class="ch"><span class="vi"><svg viewBox="0 0 448 512" fill="currentColor" ><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></span><div><small>WhatsApp</small><b>+251 974 017 208</b><span>wa.me/251974017208</span></div></div>
+    <div class="ch"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></span><div><small>Office</small><b>Commet Building, Office 201</b><span>22, around Golagol, Addis Ababa, Ethiopia</span></div></div>
+    <div class="ch"><span class="vi"><svg viewBox="0 0 448 512" fill="currentColor" ><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></span><div><small>Online</small><b>www.sourcecodeet.com</b><span>www.linkedin.com/company/source-code-it-solutions-plc/</span></div></div>
+  </div>
+  <div class="sec"><span class="eyebrow" style="color:#fbb040">Next steps</span>
+    <div class="three" style="margin-top:3mm">
+      <div class="ch" style="flex-direction:column;gap:6px"><b style="font-size:16pt;color:var(--cyan)">01</b><b>Send a short brief</b><span>Who it is for, what it should do, and when you need it. A paragraph is enough.</span></div>
+      <div class="ch" style="flex-direction:column;gap:6px"><b style="font-size:16pt;color:var(--cyan)">02</b><b>30-minute call</b><span>An engineer asks about users, volumes, integrations and constraints.</span></div>
+      <div class="ch" style="flex-direction:column;gap:6px"><b style="font-size:16pt;color:var(--cyan)">03</b><b>Written scope in 2 days</b><span>Phases, team, timeline and cost, ready for your board or procurement.</span></div>
+    </div></div>
+  <div class="logo"><img src="../public/images/image.png" alt=""><div class="t"><b>Source Code</b><span>IT Solutions PLC</span></div></div>
+  <div class="copy">© 2026 Source Code IT Solutions PLC · Addis Ababa</div>
+  <div class="bar"></div>
+</section>
+</body></html>
